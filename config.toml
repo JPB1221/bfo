@@ -1,4 +1,37 @@
-baseURL = "http://example.org/"
+baseURL = "https://bareforceone.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Bare Force One LLC"
 theme = "ananke"
+
+paginate = 6
+
+[params]
+  description = "Digital modernization, software, and AI-powered automation for government and growing organizations."
+  author = "Bare Force One LLC"
+  favicon = ""
+  site_logo = "/img/logo.png"
+  background_color_class = "bg-black"
+  featured_image = "/img/hero.jpg"
+  recent_posts_number = 0
+
+[menu]
+  [[menu.main]]
+    name = "Capabilities"
+    url = "/capabilities/"
+    weight = 10
+  [[menu.main]]
+    name = "Government"
+    url = "/government/"
+    weight = 20
+  [[menu.main]]
+    name = "Commercial"
+    url = "/commercial/"
+    weight = 30
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 40
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 50
