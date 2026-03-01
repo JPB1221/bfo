@@ -35,3 +35,8 @@ paginate = 6
     name = "Contact"
     url = "/contact/"
     weight = 50
+
+[[menu.main]]
+  name = "Capability Statement"
+  url = "/capability-statement/"
+  weight = 60
