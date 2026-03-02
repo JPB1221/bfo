@@ -82,7 +82,7 @@ Place your logo file in `static/images/`:
 | PNG | `static/images/logo.png` |
 | SVG | `static/images/logo.svg` |
 
-The site detects the format automatically. PNG takes priority if both exist. Square or near-square logos at transparent backgrounds work best against the dark theme.
+The site detects the format automatically. PNG takes priority if both exist. Square or near-square logos with transparent backgrounds work best against the dark theme.
 
 ## License
 
