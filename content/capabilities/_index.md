@@ -4,21 +4,22 @@ title: "Capabilities"
 
 ## Core Capabilities
 
-- Website redesign and modernization  
-- Vendor and procurement portal development  
-- Workflow automation and internal systems  
-- SaaS application development  
-- Cloud migration and integration  
-- CRM integration and automation  
-- Citizen-facing applications and portals  
-- Secure backend and API development  
+- Custom Software Development
+- Mobile Application Development
+- Cloud Architecture
+- AI & Automation
+- Systems Integration
+- Digital Transformation Strategy
+- Secure Backend & API Development
+- Vendor and Procurement Portal Development
 
 ## Differentiators
 
-- Rapid modernization capabilities  
-- Maintainable, documented systems  
-- Strong experience with cloud and automation  
-- Vendor-focused government modernization approach  
-- Reliable long-term support and maintenance  
+- Secure-by-design architecture
+- Agile development process with clear milestones
+- Performance-focused engineering
+- Mission-driven execution
+- Maintainable, documented systems
+- Reliable long-term support and maintenance
 
-<a href="/contact/" style="display:inline-block;padding:12px 18px;border-radius:10px;background:#111;color:#fff;text-decoration:none;">Start a Conversation</a>
+<a href="/contact/" style="display:inline-block;padding:12px 18px;border-radius:10px;background:#111;color:#fff;text-decoration:none;">Start a Project</a>

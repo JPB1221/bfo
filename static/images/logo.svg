@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#3b82f6"/>
-      <stop offset="100%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1e40af"/>
     </linearGradient>
   </defs>
-  <rect width="40" height="40" rx="8" fill="url(#bg)"/>
-  <text x="50%" y="54%" dominant-baseline="central" text-anchor="middle"
-        font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif"
-        font-size="18" font-weight="800" fill="#ffffff" letter-spacing="-0.5">BF1</text>
+  <!-- Shield shape -->
+  <path d="M20 2 L36 8 L36 20 C36 30 28 37 20 39 C12 37 4 30 4 20 L4 8 Z"
+        fill="url(#shieldGrad)" stroke="none"/>
+  <!-- Inner chevron -->
+  <path d="M13 18 L20 25 L27 14" fill="none" stroke="#ffffff" stroke-width="3"
+        stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
