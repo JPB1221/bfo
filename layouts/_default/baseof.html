@@ -22,9 +22,7 @@
       <link href="{{ relURL (printf "%s%s" "dist/" .) }}" rel="stylesheet">
     {{ end }}
 
-    {{ range .Site.Params.custom_css }}
-      <link rel="stylesheet" href="{{ relURL ($.Site.BaseURL) }}{{ . }}">
-    {{ end }}
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
 
     {{ block "favicon" . }}
       {{ partialCached "site-favicon.html" . }}
@@ -45,7 +43,7 @@
     {{ end }}
   </head>
 
-  <body class="ma0 {{ $.Param "body_classes"  | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+  <body class="ma0">
 
     {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
     <main class="pb7" role="main">

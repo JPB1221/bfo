@@ -1,0 +1,86 @@
+{{ define "header" }}
+  {{ partial "site-navigation.html" . }}
+{{ end }}
+
+{{ define "main" }}
+
+  {{/* ---- Hero ---- */}}
+  <section class="bfo-hero">
+    <span class="bfo-hero__eyebrow">Government-first &middot; Built for everyone</span>
+    <h1 class="bfo-hero__title">Digital Modernization,<br>Software &amp; AI Solutions</h1>
+    <p class="bfo-hero__subtitle">
+      Bare Force One LLC builds secure web platforms, workflow automation systems,
+      and AI-powered operational tools for public sector agencies, enterprises,
+      and growing organizations.
+    </p>
+    <div class="bfo-hero__actions">
+      <a href="/contact/" class="bfo-btn bfo-btn--primary">Start a Conversation</a>
+      <a href="/capability-statement/" class="bfo-btn bfo-btn--outline">Capability Statement</a>
+    </div>
+    <p class="bfo-hero__meta">UEI: FJRRJ6JNJ375 &nbsp;&middot;&nbsp; Fort Lauderdale (Broward County), Florida</p>
+  </section>
+
+  {{/* ---- Services ---- */}}
+  <section style="background:var(--bfo-bg);border-bottom:1px solid var(--bfo-border);">
+    <div class="bfo-section">
+      <p class="bfo-section__label">What we deliver</p>
+      <h2 class="bfo-section__title">Solutions that work in the real world</h2>
+      <p class="bfo-section__lead">Practical, documented, and maintainable systems for government and enterprise clients.</p>
+      <div class="bfo-grid">
+        <div class="bfo-card">
+          <span class="bfo-card__icon">🏛️</span>
+          <h3 class="bfo-card__title">Modern Portals &amp; Platforms</h3>
+          <p class="bfo-card__body">Permit portals, vendor portals, internal tools, and citizen-facing applications designed for reliability and long-term maintainability.</p>
+        </div>
+        <div class="bfo-card">
+          <span class="bfo-card__icon">⚙️</span>
+          <h3 class="bfo-card__title">Workflow Automation</h3>
+          <p class="bfo-card__body">Automate intake, approvals, notifications, and reporting to reduce manual work and improve service delivery.</p>
+        </div>
+        <div class="bfo-card">
+          <span class="bfo-card__icon">☁️</span>
+          <h3 class="bfo-card__title">Cloud &amp; Integrations</h3>
+          <p class="bfo-card__body">Cloud migration, secure deployment, and integrations with CRMs, payments, document systems, and third-party APIs.</p>
+        </div>
+        <div class="bfo-card">
+          <span class="bfo-card__icon">🤖</span>
+          <h3 class="bfo-card__title">AI-Powered Automation</h3>
+          <p class="bfo-card__body">Document processing, intelligent search, decision support dashboards, and AI-assisted workflows that improve speed and accuracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* ---- Who we work with ---- */}}
+  <section class="bfo-audience">
+    <div class="bfo-audience__inner">
+      <div>
+        <span class="bfo-audience__badge">Government</span>
+        <h3 class="bfo-audience__title">Public Sector</h3>
+        <p class="bfo-audience__body">Local and state agencies, procurement teams, and operations departments replacing paper-heavy workflows with secure online systems. We collaborate with prime contractors for federal opportunities.</p>
+      </div>
+      <div>
+        <span class="bfo-audience__badge">Enterprise</span>
+        <h3 class="bfo-audience__title">Enterprise &amp; Mid-Market</h3>
+        <p class="bfo-audience__body">Departments modernizing legacy workflows and systems. We build reliable, well-documented solutions that are maintainable long after go-live.</p>
+      </div>
+      <div>
+        <span class="bfo-audience__badge">Commercial</span>
+        <h3 class="bfo-audience__title">Growing Businesses</h3>
+        <p class="bfo-audience__body">Service businesses and growing organizations needing fast, secure sites and back-office automation. Flexible pricing for smaller projects.</p>
+      </div>
+    </div>
+  </section>
+
+  {{/* ---- CTA ---- */}}
+  <section class="bfo-cta">
+    <h2 class="bfo-cta__title">Let&rsquo;s build something that works.</h2>
+    <p class="bfo-cta__body">
+      We scope projects clearly, document systems, and build for maintainability.
+      Whether you need a streamlined website or a full modernization initiative,
+      we&rsquo;ll propose the right approach for your budget and timeline.
+    </p>
+    <a href="/contact/" class="bfo-btn bfo-btn--primary">Start a Conversation</a>
+  </section>
+
+{{ end }}
