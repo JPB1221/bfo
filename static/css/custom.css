@@ -3,8 +3,9 @@
    Layered on top of Tachyons CSS from the ananke theme
    ========================================================== */
 
-/* ---- Custom Properties ---- */
+/* ---- Design Tokens ---- */
 :root {
+  /* Colors */
   --bfo-bg:        #0a0f1c;
   --bfo-surface:   #131b2e;
   --bfo-surface2:  #0d1424;
@@ -16,6 +17,26 @@
   --bfo-muted:     #7b8fa6;
   --bfo-white:     #f0f4f8;
   --bfo-radius:    8px;
+
+  /* Typography Scale */
+  --bfo-text-xs:   0.7rem;
+  --bfo-text-sm:   0.8125rem;
+  --bfo-text-base: 0.9375rem;
+  --bfo-text-lg:   1.1rem;
+  --bfo-text-xl:   1.6rem;
+  --bfo-text-2xl:  clamp(1.6rem, 3vw, 2.5rem);
+  --bfo-text-3xl:  clamp(2.25rem, 5.5vw, 4rem);
+
+  /* Spacing Scale */
+  --bfo-space-xs:  0.5rem;
+  --bfo-space-sm:  1rem;
+  --bfo-space-md:  1.5rem;
+  --bfo-space-lg:  2.5rem;
+  --bfo-space-xl:  4rem;
+  --bfo-space-2xl: 5.5rem;
+
+  /* Layout */
+  --bfo-max-width: 1200px;
 }
 
 /* ---- Base ---- */
@@ -636,6 +657,90 @@ html, body {
 
 .bfo-footer__contact a:hover {
   color: var(--bfo-white) !important;
+}
+
+/* ---- Trust Bar ---- */
+.bfo-trust {
+  background: var(--bfo-surface2);
+  border-bottom: 1px solid var(--bfo-border);
+  padding: 2rem;
+  text-align: center;
+}
+
+.bfo-trust__inner {
+  max-width: var(--bfo-max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem 3rem;
+}
+
+.bfo-trust__item {
+  font-size: var(--bfo-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bfo-muted);
+  white-space: nowrap;
+}
+
+/* ---- Case Study Cards ---- */
+.bfo-case-studies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.bfo-case-card {
+  background: var(--bfo-surface);
+  border: 1px solid var(--bfo-border);
+  border-radius: 10px;
+  padding: 2rem 1.75rem;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-decoration: none !important;
+  display: block;
+}
+
+.bfo-case-card:hover {
+  border-color: rgba(59, 130, 246, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--bfo-accent-glow);
+}
+
+.bfo-case-card__label {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bfo-accent);
+  margin-bottom: 0.65rem;
+}
+
+.bfo-case-card__title {
+  font-size: var(--bfo-text-base);
+  font-weight: 700;
+  color: var(--bfo-white);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.bfo-case-card__body {
+  font-size: 0.85rem;
+  color: var(--bfo-muted);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.bfo-case-card__result {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--bfo-accent);
+  border-top: 1px solid var(--bfo-border);
+  padding-top: 0.75rem;
+  margin: 0;
 }
 
 /* ---- Page Header (interior pages) ---- */
