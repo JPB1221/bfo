@@ -32,6 +32,10 @@ paginate = 6
     url = "/capabilities/"
     weight = 40
   [[menu.main]]
+    name = "Case Studies"
+    url = "/case-studies/"
+    weight = 45
+  [[menu.main]]
     name = "About"
     url = "/about/"
     weight = 50

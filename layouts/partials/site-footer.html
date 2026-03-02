@@ -1,11 +1,45 @@
 <footer class="bfo-footer" role="contentinfo">
   <div class="bfo-footer__inner">
-    <div class="bfo-footer__copy">
-      &copy; {{ now.Format "2006" }} Bare Force One LLC &mdash; Fort Lauderdale, Florida
+    <div class="bfo-footer__top">
+      <div>
+        <a href="{{ .Site.BaseURL }}" class="bfo-footer__brand">
+          <img src="{{ "images/logo.svg" | relURL }}" alt="Bare Force One" width="28" height="28">
+          Bare Force One
+        </a>
+        <p class="bfo-footer__tagline">Mission-ready software and digital transformation for government, enterprise, and growth-focused businesses.</p>
+      </div>
+      <div>
+        <div class="bfo-footer__col-title">Markets</div>
+        <ul class="bfo-footer__links">
+          <li><a href="/government/">Government</a></li>
+          <li><a href="/enterprise/">Enterprise</a></li>
+          <li><a href="/local-business/">Local Business</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="bfo-footer__col-title">Company</div>
+        <ul class="bfo-footer__links">
+          <li><a href="/capabilities/">Capabilities</a></li>
+          <li><a href="/case-studies/">Case Studies</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="bfo-footer__col-title">Contact</div>
+        <ul class="bfo-footer__links">
+          <li><a href="mailto:contracts@bareforceone.com">contracts@bareforceone.com</a></li>
+          <li><a href="tel:9542969953">954-296-9953</a></li>
+          <li><a href="/contact/">Start a Project</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="bfo-footer__contact">
-      <a href="mailto:contracts@bareforceone.com">contracts@bareforceone.com</a>
-      &nbsp;&middot;&nbsp; 954-296-9953
+    <div class="bfo-footer__bottom">
+      <div class="bfo-footer__copy">
+        &copy; {{ now.Format "2006" }} Bare Force One LLC &mdash; Fort Lauderdale, Florida
+      </div>
+      <div class="bfo-footer__contact">
+        UEI: FJRRJ6JNJ375
+      </div>
     </div>
   </div>
 </footer>

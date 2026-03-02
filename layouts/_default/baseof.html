@@ -54,5 +54,28 @@
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
     {{ block "scripts" . }}{{ partialCached "site-scripts.html" . }}{{ end }}
+
+    {{/* Scroll-reveal animations */}}
+    <script>
+    (function(){
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.bfo-reveal').forEach(function(el){
+          el.classList.add('bfo-reveal--visible');
+        });
+        return;
+      }
+      var els = document.querySelectorAll('.bfo-reveal');
+      if (!els.length) return;
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('bfo-reveal--visible');
+            observer.unobserve(e.target);
+          }
+        });
+      },{threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(el){observer.observe(el);});
+    })();
+    </script>
   </body>
 </html>
