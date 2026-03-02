@@ -4,6 +4,49 @@ Hugo-powered website for [bareforceone.com](https://bareforceone.com).
 
 ---
 
+## 👀 How to Preview the Site
+
+**All changes are pushed** and ready to review. Here's how to see them:
+
+### Option 1 — Review the code on GitHub (right now)
+- **View the PR:** [Pull Request #2](https://github.com/JPB1221/bfo/pull/2)
+- **Browse the files:** Click the **Files changed** tab in the PR to see every change
+
+### Option 2 — Go live on GitHub Pages (recommended)
+Merge the PR and the site deploys automatically — see **"How to go live"** below.
+
+### Option 3 — Run locally on your computer
+```bash
+# 1. Install Hugo: https://gohugo.io/installation/
+# 2. Clone and run:
+git clone https://github.com/JPB1221/bfo.git
+cd bfo
+git checkout copilot/ensure-site-functionality
+hugo server
+# 3. Open http://localhost:1313
+```
+
+---
+
+## 🖼️ How to Upload Your Custom Logo
+
+Drop your logo file into the `static/images/` folder. The site auto-detects the format:
+
+| Format | What to do |
+|--------|-----------|
+| **PNG** (recommended) | Save your file as **`static/images/logo.png`** — the site will use it automatically |
+| **SVG** | Replace **`static/images/logo.svg`** with your SVG file |
+
+**How to upload via GitHub (no code needed):**
+1. Go to the [`static/images/`](static/images/) folder in this repo
+2. Click **Add file → Upload files**
+3. Drag in your logo file named **`logo.png`** (or replace `logo.svg`)
+4. Click **Commit changes**
+
+The logo appears in the **top-left navigation bar** and the **footer**. It is displayed at 36x36px in the nav and 28x28px in the footer — a square or near-square logo works best. Transparent PNG backgrounds are ideal for the dark site theme.
+
+---
+
 ## ⚡ Is the site live right now?
 
 **Not yet** — the changes are currently in a pull request (PR) and have not been merged to `main`. Once merged, the site deploys automatically within ~1 minute.
@@ -54,7 +97,9 @@ All content is in the `content/` directory as Markdown files:
 | Home | `content/_index.md` |
 | Capabilities | `content/capabilities/_index.md` |
 | Government | `content/government/_index.md` |
-| Commercial | `content/commercial/_index.md` |
+| Enterprise | `content/enterprise/_index.md` |
+| Local Business | `content/local-business/_index.md` |
+| Case Studies | `content/case-studies/_index.md` |
 | About | `content/about/_index.md` |
 | Contact | `content/contact/_index.md` |
 | Capability Statement | `content/capability-statement/_index.md` |
@@ -71,6 +116,8 @@ All content is in the `content/` directory as Markdown files:
 │   └── index.html        # Home page template
 ├── static/
 │   ├── css/custom.css    # Custom styles
+│   ├── images/
+│   │   └── logo.png      # ← YOUR LOGO GOES HERE (or logo.svg)
 │   └── CNAME             # Custom domain
 └── themes/ananke/        # Base theme (Tachyons CSS)
 ```
