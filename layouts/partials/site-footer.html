@@ -3,7 +3,11 @@
     <div class="bfo-footer__top">
       <div>
         <a href="{{ .Site.BaseURL }}" class="bfo-footer__brand">
-          <img src="{{ "images/logo.svg" | relURL }}" alt="Bare Force One" width="28" height="28">
+          {{- $logo := "images/logo.svg" -}}
+          {{- if (fileExists "static/images/logo.png") -}}
+            {{- $logo = "images/logo.png" -}}
+          {{- end -}}
+          <img src="{{ $logo | relURL }}" alt="Bare Force One" width="28" height="28">
           Bare Force One
         </a>
         <p class="bfo-footer__tagline">Mission-ready software and digital transformation for government, enterprise, and growth-focused businesses.</p>
