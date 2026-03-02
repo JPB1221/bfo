@@ -43,6 +43,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
 
 .bfo-nav__brand {
@@ -52,6 +53,48 @@ html, body {
   color: var(--bfo-white) !important;
   text-decoration: none !important;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bfo-nav__logo {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+/* ---- Mobile Toggle ---- */
+.bfo-nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bfo-nav__toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--bfo-muted);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.bfo-nav--open .bfo-nav__toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.bfo-nav--open .bfo-nav__toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.bfo-nav--open .bfo-nav__toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .bfo-nav__links {
@@ -462,8 +505,27 @@ html, body {
 
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
+  .bfo-nav__toggle {
+    display: flex;
+  }
   .bfo-nav__links {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 14, 26, 0.98);
+    border-bottom: 1px solid var(--bfo-border);
+    flex-direction: column;
+    padding: 0.75rem 1.5rem 1rem;
+    gap: 0;
+  }
+  .bfo-nav--open .bfo-nav__links {
+    display: flex;
+  }
+  .bfo-nav__links a {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.9rem;
   }
   .bfo-hero {
     padding: 4rem 1rem 3.5rem;
