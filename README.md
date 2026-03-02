@@ -2,16 +2,36 @@
 
 Hugo-powered website for [bareforceone.com](https://bareforceone.com).
 
+---
+
+## ⚡ Is the site live right now?
+
+**Not yet** — the changes are currently in a pull request (PR) and have not been merged to `main`. Once merged, the site deploys automatically within ~1 minute.
+
+### How to go live — 3 steps, done once
+
+**Step 1 — Enable GitHub Pages (one time, ~30 seconds)**
+1. In this repo, go to **Settings → Pages**
+2. Under **Build and deployment → Source**, choose **GitHub Actions**
+3. Click **Save**
+
+**Step 2 — Merge this PR**
+Merge the open pull request into `main`. The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically:
+- Install Hugo
+- Build the site
+- Deploy it to GitHub Pages
+
+**Step 3 — (Optional) Add your custom domain**
+In **Settings → Pages → Custom domain**, enter `bareforceone.com`.
+Make sure your DNS has a CNAME record pointing `bareforceone.com` → `jpb1221.github.io`.
+
+After the initial setup, **every future push to `main` deploys the site automatically** — no manual steps needed.
+
+---
+
 ## Deployment
 
-This site is automatically deployed to GitHub Pages on every push to `main` via the GitHub Actions workflow in `.github/workflows/deploy.yml`.
-
-To enable GitHub Pages for your repository:
-1. Go to **Settings → Pages** in the GitHub repository
-2. Under **Source**, select **GitHub Actions**
-3. Push to `main` — the workflow will build and deploy the site automatically
-
-For a custom domain (`bareforceone.com`), add your domain in **Settings → Pages → Custom domain**.
+Once GitHub Pages is enabled and this PR is merged, every push to `main` automatically builds and deploys the site via `.github/workflows/deploy.yml`. No further configuration needed.
 
 ## Local Development
 
