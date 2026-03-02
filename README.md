@@ -4,6 +4,30 @@ Hugo-powered website for [bareforceone.com](https://bareforceone.com).
 
 ---
 
+## 👀 How to Preview the Site
+
+**All changes are pushed** and ready to review. Here's how to see them:
+
+### Option 1 — Review the code on GitHub (right now)
+- **View the PR:** [Pull Request #2](https://github.com/JPB1221/bfo/pull/2)
+- **Browse the files:** Click the **Files changed** tab in the PR to see every change
+
+### Option 2 — Go live on GitHub Pages (recommended)
+Merge the PR and the site deploys automatically — see **"How to go live"** below.
+
+### Option 3 — Run locally on your computer
+```bash
+# 1. Install Hugo: https://gohugo.io/installation/
+# 2. Clone and run:
+git clone https://github.com/JPB1221/bfo.git
+cd bfo
+git checkout copilot/ensure-site-functionality
+hugo server
+# 3. Open http://localhost:1313
+```
+
+---
+
 ## 🖼️ How to Upload Your Custom Logo
 
 Drop your logo file into the `static/images/` folder. The site auto-detects the format:
