@@ -5,6 +5,11 @@ theme = "ananke"
 
 paginate = 6
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   description = "Digital modernization, software, and AI-powered automation for government and growing organizations."
   author = "Bare Force One LLC"
@@ -35,8 +40,7 @@ paginate = 6
     name = "Contact"
     url = "/contact/"
     weight = 50
-
-[[menu.main]]
-  name = "Capability Statement"
-  url = "/capability-statement/"
-  weight = 60
+  [[menu.main]]
+    name = "Capability Statement"
+    url = "/capability-statement/"
+    weight = 60
