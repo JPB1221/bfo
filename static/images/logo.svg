@@ -9,6 +9,6 @@
   <path d="M20 2 L36 8 L36 20 C36 30 28 37 20 39 C12 37 4 30 4 20 L4 8 Z"
         fill="url(#shieldGrad)" stroke="none"/>
   <!-- Inner chevron -->
-  <path d="M13 18 L20 25 L27 14" fill="none" stroke="#ffffff" stroke-width="3"
+  <path d="M13 22 L20 15 L27 22" fill="none" stroke="#ffffff" stroke-width="3"
         stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
