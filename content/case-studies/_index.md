@@ -1,5 +1,6 @@
 ---
 title: "Case Studies"
+description: "Real results across government, enterprise, and local business. Case studies showcasing outcomes from Bare Force One LLC engagements."
 ---
 
 ## Real results across government, enterprise, and local business

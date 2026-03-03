@@ -1,5 +1,6 @@
 ---
 title: "Government Services"
+description: "Secure, compliant software systems for local and state government agencies. Digital modernization, workflow automation, and cloud migration by Bare Force One LLC."
 ---
 
 ## Digital modernization for the public sector

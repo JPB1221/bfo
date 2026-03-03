@@ -1,5 +1,6 @@
 import os
 import re
+import html
 import logging
 from datetime import datetime, timezone
 from fastapi import FastAPI, HTTPException, BackgroundTasks
@@ -76,12 +77,12 @@ def send_notification(subject: str, html_body: str):
 
 
 def send_auto_reply(to_email: str, name: str, form_type: str):
-    html = AUTO_REPLY_TEMPLATE.format(
-        name=name,
-        form_type=form_type,
-        form_type_lower=form_type.lower(),
+    html_content = AUTO_REPLY_TEMPLATE.format(
+        name=html.escape(name),
+        form_type=html.escape(form_type),
+        form_type_lower=html.escape(form_type.lower()),
     )
-    send_email(to_email, f"Bare Force One — We've Received Your {form_type}", html)
+    send_email(to_email, f"Bare Force One — We've Received Your {form_type}", html_content)
 
 
 class ContactSubmission(BaseModel):
@@ -134,13 +135,13 @@ async def submit_contact(submission: ContactSubmission, background_tasks: Backgr
         f"""<div style="font-family:sans-serif;max-width:600px;">
             <h2 style="color:#3b82f6;">New Contact Form Submission</h2>
             <table style="border-collapse:collapse;width:100%;">
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Name</td><td style="padding:8px;">{submission.name}</td></tr>
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Email</td><td style="padding:8px;"><a href="mailto:{submission.email}">{submission.email}</a></td></tr>
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Organization</td><td style="padding:8px;">{submission.organization or 'Not specified'}</td></tr>
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Sector</td><td style="padding:8px;">{submission.sector or 'Not specified'}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Name</td><td style="padding:8px;">{html.escape(submission.name)}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Email</td><td style="padding:8px;"><a href="mailto:{html.escape(submission.email)}">{html.escape(submission.email)}</a></td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Organization</td><td style="padding:8px;">{html.escape(submission.organization) or 'Not specified'}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Sector</td><td style="padding:8px;">{html.escape(submission.sector) or 'Not specified'}</td></tr>
             </table>
             <div style="background:#f8f9fa;padding:16px;margin-top:12px;border-left:3px solid #3b82f6;">
-                <strong>Message:</strong><br/>{submission.message}
+                <strong>Message:</strong><br/>{html.escape(submission.message)}
             </div></div>""",
     )
 
@@ -182,22 +183,22 @@ async def request_proposal(req: ProposalRequest, background_tasks: BackgroundTas
             <h2 style="color:#3b82f6;">New Proposal Request</h2>
             <h3 style="color:#333;">Contact Information</h3>
             <table style="border-collapse:collapse;width:100%;">
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Name</td><td style="padding:8px;">{req.name}</td></tr>
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Email</td><td style="padding:8px;"><a href="mailto:{req.email}">{req.email}</a></td></tr>
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Organization</td><td style="padding:8px;">{req.organization}</td></tr>
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Sector</td><td style="padding:8px;">{req.sector}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Name</td><td style="padding:8px;">{html.escape(req.name)}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Email</td><td style="padding:8px;"><a href="mailto:{html.escape(req.email)}">{html.escape(req.email)}</a></td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Organization</td><td style="padding:8px;">{html.escape(req.organization)}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Sector</td><td style="padding:8px;">{html.escape(req.sector)}</td></tr>
             </table>
             <h3 style="color:#333;">Project Details</h3>
             <table style="border-collapse:collapse;width:100%;">
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Type</td><td style="padding:8px;">{req.project_type or 'Not specified'}</td></tr>
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Timeline</td><td style="padding:8px;">{req.timeline or 'Not specified'}</td></tr>
-                <tr><td style="padding:8px;font-weight:bold;color:#666;">Budget</td><td style="padding:8px;">{req.budget_range or 'Not specified'}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Type</td><td style="padding:8px;">{html.escape(req.project_type) or 'Not specified'}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Timeline</td><td style="padding:8px;">{html.escape(req.timeline) or 'Not specified'}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;color:#666;">Budget</td><td style="padding:8px;">{html.escape(req.budget_range) or 'Not specified'}</td></tr>
             </table>
             <div style="background:#f8f9fa;padding:16px;margin-top:12px;border-left:3px solid #3b82f6;">
-                <strong>Description:</strong><br/>{req.description}
+                <strong>Description:</strong><br/>{html.escape(req.description)}
             </div>
-            {"<div style='background:#fff3cd;padding:16px;margin-top:12px;border-left:3px solid #ffc107;'><strong>Security Requirements:</strong><br/>" + req.security_requirements + "</div>" if req.security_requirements else ""}
-            {"<div style='background:#d1ecf1;padding:16px;margin-top:12px;border-left:3px solid #17a2b8;'><strong>Integration Needs:</strong><br/>" + req.integration_needs + "</div>" if req.integration_needs else ""}
+            {"<div style='background:#fff3cd;padding:16px;margin-top:12px;border-left:3px solid #ffc107;'><strong>Security Requirements:</strong><br/>" + html.escape(req.security_requirements) + "</div>" if req.security_requirements else ""}
+            {"<div style='background:#d1ecf1;padding:16px;margin-top:12px;border-left:3px solid #17a2b8;'><strong>Integration Needs:</strong><br/>" + html.escape(req.integration_needs) + "</div>" if req.integration_needs else ""}
         </div>""",
     )
 

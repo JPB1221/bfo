@@ -34,6 +34,7 @@ export default function SEO({ title, description, path = '' }) {
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Bare Force One LLC" />
+      <meta property="og:image" content="https://bareforceone.com/logo.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={desc} />

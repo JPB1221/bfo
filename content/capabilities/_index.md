@@ -1,5 +1,6 @@
 ---
 title: "Capabilities"
+description: "Core capabilities of Bare Force One LLC: custom software development, mobile apps, cloud architecture, AI & automation, systems integration, and digital transformation."
 ---
 
 ## Core Capabilities

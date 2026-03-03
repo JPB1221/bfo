@@ -1,5 +1,6 @@
 ---
 title: "About"
+description: "Bare Force One LLC is a software development and digital transformation firm building mission-ready solutions for government, enterprise, and growth-focused businesses."
 ---
 
 ## Bare Force One LLC

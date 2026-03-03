@@ -1,5 +1,6 @@
 ---
 title: "Local Business"
+description: "Fast, secure websites, mobile apps, and back-office automation for growth-focused local businesses. Custom solutions by Bare Force One LLC."
 ---
 
 ## Fast, secure solutions for growth-focused businesses

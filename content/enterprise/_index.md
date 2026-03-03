@@ -1,5 +1,6 @@
 ---
 title: "Enterprise"
+description: "Enterprise digital transformation, workflow automation, systems integration, and custom software development by Bare Force One LLC."
 ---
 
 ## Digital transformation for enterprise organizations

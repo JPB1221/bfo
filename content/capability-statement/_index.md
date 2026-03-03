@@ -1,5 +1,6 @@
 ---
 title: "Capability Statement"
+description: "Request the Bare Force One LLC capability statement outlining qualifications, past performance, and differentiators for government and enterprise clients."
 ---
 
 ## Capability Statement

@@ -1,5 +1,6 @@
 ---
 title: "Contact"
+description: "Contact Bare Force One LLC to start a project. Government, enterprise, and local business software development. Fort Lauderdale, Florida."
 ---
 
 ## Start a Conversation
