@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import { BtnPrimary } from '../components/Buttons';
@@ -53,6 +54,11 @@ const CASES = [
 export default function CaseStudies() {
   return (
     <>
+      <SEO
+        title="Case Studies"
+        description="Real outcomes from real engagements. HIPAA-compliant mHealth apps, 3D campus prototypes, enterprise middleware modernization, and global brand infrastructure."
+        path="/case-studies"
+      />
       <PageHeader
         eyebrow="Case Studies"
         title="Proven Results"

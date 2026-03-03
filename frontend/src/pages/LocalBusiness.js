@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, Smartphone, CreditCard, RefreshCw, Link2, TrendingUp } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import { BtnPrimary, BtnOutline } from '../components/Buttons';
@@ -23,6 +24,11 @@ const REASONS = [
 export default function LocalBusiness() {
   return (
     <>
+      <SEO
+        title="Local Business Solutions"
+        description="Fast, secure websites, mobile apps, and automation for growth-focused businesses. Clear ROI, direct communication, and flexible pricing."
+        path="/local-business"
+      />
       <PageHeader
         eyebrow="Local Business"
         title="Fast, Secure Solutions for Growth-Focused Businesses"

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 
@@ -33,6 +34,11 @@ export default function Contact() {
 
   return (
     <>
+      <SEO
+        title="Contact"
+        description="Contact Bare Force One LLC to start a project. Government, enterprise, and local business software development. contracts@bareforceone.com | 954-296-9953"
+        path="/contact"
+      />
       <PageHeader
         eyebrow="Contact"
         title="Start a Conversation"

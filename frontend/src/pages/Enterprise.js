@@ -1,5 +1,6 @@
 import React from 'react';
 import { Server, Cpu, Link2, BarChart3, Cloud, Zap } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import { BtnPrimary, BtnOutline } from '../components/Buttons';
@@ -20,11 +21,16 @@ const DIFFERENTIATORS = [
   'Secure-by-design architecture at every layer',
 ];
 
-const ENT_BG = 'https://images.unsplash.com/photo-1694843689189-2ad1a6c4a364?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwaHVkJTIwaW50ZXJmYWNlJTIwYWJzdHJhY3QlMjBkYXJrfGVufDB8fHx8MTc3MjU2NTcwOHww&ixlib=rb-4.1.0&q=85';
+const ENT_BG = 'https://static.prod-images.emergentagent.com/jobs/64593ea8-c63b-4b2f-ba8f-f4321e869c80/images/af828bb1ebc71170e2e11459418e875bb2ea7354085104a62d8e9a9b7a6fac12.png';
 
 export default function Enterprise() {
   return (
     <>
+      <SEO
+        title="Enterprise Solutions"
+        description="Digital transformation, automation, and data-driven systems for enterprise organizations. Custom software, cloud architecture, and systems integration engineered for scale."
+        path="/enterprise"
+      />
       <PageHeader
         bg={ENT_BG}
         eyebrow="Enterprise"

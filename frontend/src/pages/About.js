@@ -1,22 +1,27 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import CountUp from '../components/CountUp';
 import { BtnPrimary } from '../components/Buttons';
 
-const TEAM_BG = 'https://images.unsplash.com/photo-1758691737182-d42aefd6dee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBtZWV0aW5nJTIwZGl2ZXJzZSUyMHRlYW0lMjBzZXJpb3VzfGVufDB8fHx8MTc3MjU2NTcwOXww&ixlib=rb-4.1.0&q=85';
+const ABOUT_BG = 'https://static.prod-images.emergentagent.com/jobs/64593ea8-c63b-4b2f-ba8f-f4321e869c80/images/075c31a2650d4ca242f9ef6c0425208a1a4f78c010a3a8505010786d8a701894.png';
 
 export default function About() {
   return (
     <>
+      <SEO
+        title="About"
+        description="Bare Force One LLC — U.S.-registered software development and digital transformation firm. Fort Lauderdale, Florida. UEI: FJRRJ6JNJ375."
+        path="/about"
+      />
       <PageHeader
-        bg={TEAM_BG}
+        bg={ABOUT_BG}
         eyebrow="About"
         title="Bare Force One LLC"
         subtitle="Software development and digital transformation firm specializing in mission-ready solutions for government, enterprise, and growth-focused businesses."
       />
 
-      {/* What we are + What we are not */}
       <section data-testid="about-identity" className="bg-[#070b16] border-b border-slate-800/30">
         <div className="max-w-5xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -49,7 +54,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats */}
       <section className="bg-[#090e1a] border-b border-slate-800/30">
         <div className="max-w-5xl mx-auto px-6 lg:px-10 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -72,30 +76,27 @@ export default function About() {
         </div>
       </section>
 
-      {/* Company Info */}
       <section data-testid="about-info" className="bg-[#070b16] border-b border-slate-800/30">
         <div className="max-w-5xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
-          <Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {[
-                { label: 'Company', main: 'Bare Force One LLC', sub: 'U.S.-Registered Limited Liability Company' },
-                { label: 'Location', main: 'Fort Lauderdale, Florida', sub: 'UEI: FJRRJ6JNJ375' },
-                { label: 'Contact', main: 'contracts@bareforceone.com', sub: '954-296-9953', href: 'mailto:contracts@bareforceone.com' },
-              ].map((c, i) => (
-                <Reveal key={c.label} delay={i * 0.1} direction="up">
-                  <div className="glow-card bg-[#0c1222]/50 border border-slate-800/40 p-8 relative z-10">
-                    <h3 className="font-heading font-bold text-xs uppercase tracking-[0.15em] text-blue-400 mb-4">{c.label}</h3>
-                    {c.href ? (
-                      <a href={c.href} className="text-slate-300 text-sm font-medium hover:text-blue-400 transition-colors block mb-1">{c.main}</a>
-                    ) : (
-                      <p className="text-slate-300 text-sm font-medium mb-1">{c.main}</p>
-                    )}
-                    <p className="text-slate-500 text-xs font-mono">{c.sub}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { label: 'Company', main: 'Bare Force One LLC', sub: 'U.S.-Registered Limited Liability Company' },
+              { label: 'Location', main: 'Fort Lauderdale, Florida', sub: 'UEI: FJRRJ6JNJ375' },
+              { label: 'Contact', main: 'contracts@bareforceone.com', sub: '954-296-9953', href: 'mailto:contracts@bareforceone.com' },
+            ].map((c, i) => (
+              <Reveal key={c.label} delay={i * 0.1} direction="up">
+                <div className="glow-card bg-[#0c1222]/50 border border-slate-800/40 p-8 relative z-10">
+                  <h3 className="font-heading font-bold text-xs uppercase tracking-[0.15em] text-blue-400 mb-4">{c.label}</h3>
+                  {c.href ? (
+                    <a href={c.href} className="text-slate-300 text-sm font-medium hover:text-blue-400 transition-colors block mb-1">{c.main}</a>
+                  ) : (
+                    <p className="text-slate-300 text-sm font-medium mb-1">{c.main}</p>
+                  )}
+                  <p className="text-slate-500 text-xs font-mono">{c.sub}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
           <Reveal delay={0.2}>
             <div className="mt-12">
               <BtnPrimary to="/contact" data-testid="about-cta-contact">Start a Project</BtnPrimary>

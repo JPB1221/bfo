@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Server, Globe, Cpu, Link2, BarChart3, ChevronRight, Lock, Zap, Target, Clock, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
 import CountUp from '../components/CountUp';
 import Testimonials from '../components/Testimonials';
@@ -82,6 +83,7 @@ export default function Home() {
   return (
     <>
       {/* ============ HERO ============ */}
+      <SEO />
       <section data-testid="hero-section" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden scanline-overlay grid-texture">
         <HeroParallax />
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, Cpu, Server, Zap, Link2, BarChart3, Shield, Wrench } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import { BtnPrimary } from '../components/Buttons';
@@ -27,6 +28,11 @@ const DIFFERENTIATORS = [
 export default function Capabilities() {
   return (
     <>
+      <SEO
+        title="Capabilities"
+        description="Custom software, mobile apps, cloud architecture, AI automation, systems integration, and digital transformation. Full-stack engineering capabilities."
+        path="/capabilities"
+      />
       <PageHeader
         eyebrow="Capabilities"
         title="Core Capabilities"

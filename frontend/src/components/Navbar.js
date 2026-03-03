@@ -84,7 +84,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div data-testid="nav-mobile-menu" className="lg:hidden bg-[#070b16]/98 backdrop-blur-xl border-b border-slate-800/40">
+        <div data-testid="nav-mobile-menu" className="lg:hidden bg-[#070b16] backdrop-blur-xl border-b border-slate-800/40">
           <div className="px-6 py-4 space-y-1">
             {NAV_LINKS.map((link) => (
               <Link

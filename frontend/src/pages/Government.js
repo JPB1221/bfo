@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Lock, Cloud, FileCheck, Users, Eye, Globe, Link2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import { BtnPrimary, BtnOutline } from '../components/Buttons';
@@ -27,6 +28,11 @@ const GOV_BG = 'https://static.prod-images.emergentagent.com/jobs/64593ea8-c63b-
 export default function Government() {
   return (
     <>
+      <SEO
+        title="Government Solutions"
+        description="Secure, compliant software systems for local and state government agencies. NIST-informed security practices, cloud deployment, and digital modernization."
+        path="/government"
+      />
       <PageHeader
         bg={GOV_BG}
         eyebrow="Government & Defense"
