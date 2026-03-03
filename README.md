@@ -1,6 +1,6 @@
 # Bare Force One LLC
 
-Mission-ready software development and digital transformation for government, enterprise, and growth-focused businesses.
+Secure, scalable software systems for government agencies, enterprise organizations, and growth-focused businesses.
 
 **[bareforceone.com](https://bareforceone.com)**
 
@@ -8,83 +8,65 @@ Mission-ready software development and digital transformation for government, en
 
 ## Overview
 
-Bare Force One LLC delivers custom software, mobile applications, cloud architecture, and AI-powered automation solutions. We serve public sector agencies, enterprise organizations, and local businesses that require secure, scalable, and high-performance systems.
+Bare Force One LLC delivers custom software, mobile applications, cloud architecture, and AI-powered automation solutions. We serve public sector agencies, enterprise organizations, and local businesses that require high-performance, security-first engineering.
 
 - **UEI:** FJRRJ6JNJ375
 - **Location:** Fort Lauderdale, Florida
 - **Contact:** [contracts@bareforceone.com](mailto:contracts@bareforceone.com)
 
-## Technology
+## Architecture
 
-This site is built with [Hugo](https://gohugo.io), a high-performance static site generator. It uses the Ananke base theme with a fully custom design system layered on top.
+This site is a React single-page application with a FastAPI backend and MongoDB data layer.
 
-- Static HTML — fast, secure, zero runtime dependencies
-- Custom CSS design tokens and component system
-- Mobile-first responsive layout
-- GitHub Actions CI/CD pipeline for automated deployment
-
-## Local Development
-
-```bash
-# Requires Hugo (extended edition)
-# https://gohugo.io/installation/
-
-git clone https://github.com/JPB1221/bfo.git
-cd bfo
-hugo server
-# Open http://localhost:1313
-```
-
-## Deployment
-
-The site deploys automatically to GitHub Pages on every push to `main` via `.github/workflows/deploy.yml`.
-
-**Initial setup (one time):**
-
-1. Go to **Settings → Pages** in this repository
-2. Under **Build and deployment → Source**, select **GitHub Actions**
-3. Merge to `main` — the workflow handles the rest
-
-**Custom domain (optional):**
-
-Set `bareforceone.com` in **Settings → Pages → Custom domain** and configure a DNS CNAME record pointing to `jpb1221.github.io`.
+- **Frontend:** React 18, React Router, Tailwind CSS, Framer Motion
+- **Backend:** FastAPI (Python), Motor (async MongoDB driver)
+- **Database:** MongoDB
+- **Typography:** Barlow Condensed (headings), IBM Plex Sans (body), JetBrains Mono (data)
+- **Design System:** Custom CSS design tokens, dark cinematic theme, scroll-reveal animations
 
 ## Project Structure
 
 ```
-├── config.toml              # Site configuration
-├── content/                 # Markdown content pages
-│   ├── _index.md            # Home
-│   ├── government/          # Government sector
-│   ├── enterprise/          # Enterprise sector
-│   ├── local-business/      # Local business sector
-│   ├── capabilities/        # Core capabilities
-│   ├── capability-statement/ # Capability statement
-│   ├── case-studies/        # Case studies
-│   ├── about/               # About
-│   └── contact/             # Contact
-├── layouts/                 # Hugo templates
-│   ├── _default/            # Base and list templates
-│   ├── partials/            # Reusable components
-│   └── index.html           # Home page layout
-├── static/
-│   ├── css/custom.css       # Design system and styles
-│   └── images/              # Logo and assets
-└── themes/ananke/           # Base theme
+/app/
+├── backend/
+│   ├── server.py              # FastAPI application
+│   ├── requirements.txt       # Python dependencies
+│   └── .env                   # Environment configuration
+├── frontend/
+│   ├── public/                # Static assets (logo, favicon)
+│   ├── src/
+│   │   ├── components/        # Shared components (Navbar, Footer, Reveal, etc.)
+│   │   ├── pages/             # Route pages (Home, Government, Enterprise, etc.)
+│   │   ├── App.js             # Router configuration
+│   │   ├── index.js           # Entry point
+│   │   └── index.css          # Global styles + Tailwind
+│   ├── tailwind.config.js     # Tailwind configuration
+│   ├── package.json           # Node dependencies
+│   └── .env                   # Frontend environment
+└── README.md
 ```
 
-## Logo
+## Pages
 
-Place your logo file in `static/images/`:
+| Route | Description |
+|-------|-------------|
+| `/` | Home — immersive hero, trust bar, audience cards, capabilities, case studies |
+| `/government` | Public sector — security-first engineering, NIST-informed practices |
+| `/enterprise` | Enterprise — digital transformation, automation, systems integration |
+| `/local-business` | Local business — ROI-focused tools, mobile apps, automation |
+| `/capabilities` | Full capabilities listing with differentiators |
+| `/case-studies` | Structured case studies with quantified outcomes |
+| `/about` | Company positioning and identity |
+| `/contact` | Functional contact form with backend integration |
 
-| Format | File |
-|--------|------|
-| PNG | `static/images/logo.png` |
-| SVG | `static/images/logo.svg` |
+## API Endpoints
 
-The site detects the format automatically. PNG takes priority if both exist. Square or near-square logos with transparent backgrounds work best against the dark theme.
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/health` | Service health check |
+| POST | `/api/contact` | Submit contact form (validated) |
+| GET | `/api/contacts` | Retrieve submitted contacts |
 
 ## License
 
 © Bare Force One LLC. All rights reserved.
-

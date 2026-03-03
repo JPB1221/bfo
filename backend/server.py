@@ -1,6 +1,7 @@
 import os
 from datetime import datetime, timezone
-from fastapi import FastAPI
+import re
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -32,6 +33,10 @@ class ContactSubmission(BaseModel):
     message: str
     sector: str = ""
 
+    @classmethod
+    def validate_fields(cls, values):
+        return values
+
 
 @app.get("/api/health")
 async def health_check():
@@ -40,6 +45,12 @@ async def health_check():
 
 @app.post("/api/contact")
 async def submit_contact(submission: ContactSubmission):
+    if not submission.name.strip():
+        raise HTTPException(status_code=422, detail="Name is required")
+    if not submission.email.strip() or not re.match(r"[^@]+@[^@]+\.[^@]+", submission.email):
+        raise HTTPException(status_code=422, detail="Valid email is required")
+    if not submission.message.strip():
+        raise HTTPException(status_code=422, detail="Message is required")
     doc = {
         "name": submission.name,
         "email": submission.email,
