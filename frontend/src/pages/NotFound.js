@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
 import { BtnPrimary, BtnOutline } from '../components/Buttons';
