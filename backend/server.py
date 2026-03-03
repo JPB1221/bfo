@@ -47,10 +47,11 @@ def send_notification(subject: str, html_body: str):
             html_content=html_body,
         )
         sg = SendGridAPIClient(SENDGRID_API_KEY)
-        sg.send(message)
-        logger.info(f"Notification sent: {subject}")
+        response = sg.send(message)
+        logger.info(f"Notification sent: {subject} - status: {response.status_code}")
     except Exception as e:
         logger.error(f"SendGrid error: {e}")
+        logger.error(f"SendGrid details: from={SENDER_EMAIL}, to={NOTIFY_EMAIL}, key_prefix={SENDGRID_API_KEY[:10] if SENDGRID_API_KEY else 'NONE'}...")
 
 
 class ContactSubmission(BaseModel):
