@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="innerGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer shield -->
+  <path d="M20 1 L37 8 L37 19 C37 30.5 29 37.5 20 39.5 C11 37.5 3 30.5 3 19 L3 8 Z"
+        fill="url(#shieldGrad)" stroke="none"/>
+  <!-- Inner shield cutout -->
+  <path d="M20 5 L33 10.5 L33 19 C33 28 27 34 20 35.8 C13 34 7 28 7 19 L7 10.5 Z"
+        fill="#0a0f1c" stroke="none"/>
+  <!-- Inner chevron / check mark -->
+  <path d="M14 20 L19 25 L27 15" fill="none" stroke="url(#innerGrad)" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
