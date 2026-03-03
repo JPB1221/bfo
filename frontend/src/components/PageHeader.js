@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Reveal from './Reveal';
 
 export default function PageHeader({ eyebrow, title, subtitle, bg }) {
+  const [loaded, setLoaded] = useState(!bg);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!bg) return;
+    const img = new Image();
+    img.src = bg;
+    img.onload = () => setLoaded(true);
+  }, [bg]);
+
   return (
     <section
+      ref={ref}
       data-testid="page-header"
       className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden scanline-overlay grid-texture"
     >
       {bg && (
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }}>
+        <div
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ backgroundImage: `url(${bg})` }}
+        >
           <div className="absolute inset-0 bg-gradient-to-b from-[#070b16]/90 via-[#070b16]/80 to-[#070b16]" />
         </div>
       )}
 
-      {/* Radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-blue-500/[0.04] blur-[100px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">

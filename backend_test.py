@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 class BareForceOneAPITester:
-    def __init__(self, base_url="https://b0505bab-818b-4cde-921a-444c649ea1fe.preview.emergentagent.com"):
+    def __init__(self, base_url="https://bare-force-preview.preview.emergentagent.com"):
         self.base_url = base_url
         self.tests_run = 0
         self.tests_passed = 0
