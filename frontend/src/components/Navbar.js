@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: 'Local Business', to: '/local-business' },
   { label: 'Capabilities', to: '/capabilities' },
   { label: 'Case Studies', to: '/case-studies' },
+  { label: 'Insights', to: '/insights' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ];

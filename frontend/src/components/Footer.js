@@ -10,6 +10,7 @@ const MARKETS = [
 const COMPANY = [
   { label: 'Capabilities', to: '/capabilities' },
   { label: 'Case Studies', to: '/case-studies' },
+  { label: 'Insights', to: '/insights' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ];

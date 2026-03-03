@@ -11,6 +11,8 @@ import CaseStudies from './pages/CaseStudies';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import RequestProposal from './pages/RequestProposal';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/request-proposal" element={<RequestProposal />} />
+            <Route path="/insights" element={<Blog />} />
+            <Route path="/insights/:slug" element={<BlogPost />} />
           </Routes>
         </main>
         <Footer />

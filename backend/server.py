@@ -33,25 +33,55 @@ app.add_middleware(
 client = AsyncIOMotorClient(MONGO_URL)
 db = client[DB_NAME]
 
+AUTO_REPLY_TEMPLATE = """
+<div style="font-family:'Helvetica Neue',sans-serif;max-width:600px;margin:0 auto;background:#0a0f1c;color:#cbd5e1;padding:40px 32px;">
+    <div style="border-bottom:1px solid #1e293b;padding-bottom:20px;margin-bottom:24px;">
+        <strong style="color:#f8fafc;font-size:14px;letter-spacing:2px;">BARE FORCE ONE LLC</strong>
+    </div>
+    <h2 style="color:#f8fafc;font-size:22px;margin-bottom:8px;">We've Received Your {form_type}</h2>
+    <p style="color:#94a3b8;font-size:14px;line-height:1.7;margin-bottom:24px;">
+        Thank you, {name}. Your {form_type_lower} has been logged and assigned for review.
+        A member of our team will respond within <strong style="color:#f8fafc;">one business day</strong>.
+    </p>
+    <div style="background:#111827;border-left:3px solid #3b82f6;padding:16px 20px;margin-bottom:24px;">
+        <p style="color:#94a3b8;font-size:13px;margin:0;">
+            For urgent matters, call <a href="tel:+19542969953" style="color:#3b82f6;text-decoration:none;">954-296-9953</a>
+            or reply directly to this email.
+        </p>
+    </div>
+    <div style="border-top:1px solid #1e293b;padding-top:20px;margin-top:24px;">
+        <p style="color:#475569;font-size:11px;margin:0;">
+            Bare Force One LLC &middot; Fort Lauderdale, Florida<br/>
+            <a href="https://bareforceone.com" style="color:#3b82f6;text-decoration:none;">bareforceone.com</a>
+        </p>
+    </div>
+</div>
+"""
 
-def send_notification(subject: str, html_body: str):
-    """Send email notification via SendGrid"""
-    if not SENDGRID_API_KEY or not SENDER_EMAIL or not NOTIFY_EMAIL:
-        logger.warning("SendGrid not configured, skipping email")
+
+def send_email(to_email: str, subject: str, html_body: str):
+    if not SENDGRID_API_KEY or not SENDER_EMAIL:
         return
     try:
-        message = Mail(
-            from_email=SENDER_EMAIL,
-            to_emails=NOTIFY_EMAIL,
-            subject=subject,
-            html_content=html_body,
-        )
+        message = Mail(from_email=SENDER_EMAIL, to_emails=to_email, subject=subject, html_content=html_body)
         sg = SendGridAPIClient(SENDGRID_API_KEY)
-        response = sg.send(message)
-        logger.info(f"Notification sent: {subject} - status: {response.status_code}")
+        sg.send(message)
+        logger.info(f"Email sent to {to_email}: {subject}")
     except Exception as e:
-        logger.error(f"SendGrid error: {e}")
-        logger.error(f"SendGrid details: from={SENDER_EMAIL}, to={NOTIFY_EMAIL}, key_prefix={SENDGRID_API_KEY[:10] if SENDGRID_API_KEY else 'NONE'}...")
+        logger.error(f"SendGrid error sending to {to_email}: {e}")
+
+
+def send_notification(subject: str, html_body: str):
+    send_email(NOTIFY_EMAIL, subject, html_body)
+
+
+def send_auto_reply(to_email: str, name: str, form_type: str):
+    html = AUTO_REPLY_TEMPLATE.format(
+        name=name,
+        form_type=form_type,
+        form_type_lower=form_type.lower(),
+    )
+    send_email(to_email, f"Bare Force One — We've Received Your {form_type}", html)
 
 
 class ContactSubmission(BaseModel):
@@ -101,8 +131,7 @@ async def submit_contact(submission: ContactSubmission, background_tasks: Backgr
     background_tasks.add_task(
         send_notification,
         f"BFO Contact: {submission.name} ({submission.sector or 'General'})",
-        f"""
-        <div style="font-family:sans-serif;max-width:600px;">
+        f"""<div style="font-family:sans-serif;max-width:600px;">
             <h2 style="color:#3b82f6;">New Contact Form Submission</h2>
             <table style="border-collapse:collapse;width:100%;">
                 <tr><td style="padding:8px;font-weight:bold;color:#666;">Name</td><td style="padding:8px;">{submission.name}</td></tr>
@@ -112,10 +141,10 @@ async def submit_contact(submission: ContactSubmission, background_tasks: Backgr
             </table>
             <div style="background:#f8f9fa;padding:16px;margin-top:12px;border-left:3px solid #3b82f6;">
                 <strong>Message:</strong><br/>{submission.message}
-            </div>
-        </div>
-        """,
+            </div></div>""",
     )
+
+    background_tasks.add_task(send_auto_reply, submission.email, submission.name, "Message")
 
     return {"success": True, "message": "Thank you. We'll be in touch shortly."}
 
@@ -149,8 +178,7 @@ async def request_proposal(req: ProposalRequest, background_tasks: BackgroundTas
     background_tasks.add_task(
         send_notification,
         f"BFO Proposal Request: {req.organization} ({req.sector})",
-        f"""
-        <div style="font-family:sans-serif;max-width:600px;">
+        f"""<div style="font-family:sans-serif;max-width:600px;">
             <h2 style="color:#3b82f6;">New Proposal Request</h2>
             <h3 style="color:#333;">Contact Information</h3>
             <table style="border-collapse:collapse;width:100%;">
@@ -170,9 +198,10 @@ async def request_proposal(req: ProposalRequest, background_tasks: BackgroundTas
             </div>
             {"<div style='background:#fff3cd;padding:16px;margin-top:12px;border-left:3px solid #ffc107;'><strong>Security Requirements:</strong><br/>" + req.security_requirements + "</div>" if req.security_requirements else ""}
             {"<div style='background:#d1ecf1;padding:16px;margin-top:12px;border-left:3px solid #17a2b8;'><strong>Integration Needs:</strong><br/>" + req.integration_needs + "</div>" if req.integration_needs else ""}
-        </div>
-        """,
+        </div>""",
     )
+
+    background_tasks.add_task(send_auto_reply, req.email, req.name, "Proposal Request")
 
     return {"success": True, "message": "Your proposal request has been received. We'll respond with a tailored capability statement within 24 hours."}
 
