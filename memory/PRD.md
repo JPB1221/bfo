@@ -1,41 +1,23 @@
 # Bare Force One LLC — Website PRD
 
-## Original Problem Statement
-Transform bareforceone.com into a cinematic, high-authority digital presence for a government/enterprise software engineering firm.
-
 ## Architecture
 - **Frontend:** React 18 SPA + React Router + Tailwind CSS + CSS Animations
-- **Backend:** FastAPI (Python) + Motor (async MongoDB)
-- **Database:** MongoDB
-- **SEO:** react-helmet-async, JSON-LD, sitemap.xml, robots.txt
+- **Backend:** FastAPI + Motor (async MongoDB) + SendGrid
+- **SEO:** react-helmet-async, JSON-LD, sitemap.xml, robots.txt, GA4
 
 ## What's Been Implemented
-
-### Iteration 1-2: Initial Build + Major UI Overhaul
-- 8-page React SPA with cinematic Palantir-inspired design
-- CSS animations, gradient text, parallax, glow cards, scanlines
-
-### Iteration 3: Backgrounds, SEO, Polish
-- Custom AI-generated backgrounds for all pages
-- Per-page SEO meta tags, JSON-LD schema, OG/Twitter cards
-
-### Iteration 4: Polish, Reviews, Request Proposal
-- [x] Stats bumped 25→50+ (more credible for 10+ years)
-- [x] Testimonials rebranded: John/John-Paul → BFO team / Bare Force One
-- [x] Phone numbers clickable `tel:` links everywhere (Footer, Contact, About)
-- [x] sitemap.xml + robots.txt for search crawling
-- [x] Enterprise page: new holographic dashboard background
-- [x] About info cards tightened with tel links
-- [x] **NEW: /request-proposal page** — structured intake form with:
-  - Contact info (name, email, org, sector)
-  - Project details (type, timeline, budget, description)
-  - Technical requirements (security, integrations)
-  - Backend POST /api/request-proposal with validation
-- [x] Hero CTA "Start a Project" → /request-proposal
-- [x] Final CTA "Request Proposal" instead of "Contact Us"
+- 11 routes: Home, Government, Enterprise, Local Business, Capabilities, Case Studies, About, Contact, Request Proposal, Insights (blog listing), Insights/:slug (article)
+- Palantir-inspired cinematic design with scroll animations, gradient text, parallax, glow cards
+- 10 Upwork testimonials (rebranded to BFO), animated counters (50+, 99.9%, 5.0, 10+)
+- SendGrid: notification emails to contracts@bareforceone.com + branded auto-reply to submitters
+- GA4 tracking (G-7B76L2ZFDZ)
+- Blog with 4 SEO articles: Government Modernization, Enterprise Automation, Cloud Security, Small Business
+- Request Proposal page with structured intake form
+- sitemap.xml, robots.txt, per-page SEO meta tags, JSON-LD
 
 ## Testing: All iterations 100%
 
 ## Backlog
-### P1: GA4 integration (needs tracking ID), capability statement PDF auto-gen
-### P2: Blog section, admin dashboard, email notifications on form submit
+- P1: Capability Statement PDF (downloadable + auto-attach to proposals)
+- P2: Admin dashboard, CMS for blog posts, email templates
+- P3: A/B testing, social sharing for blog posts
