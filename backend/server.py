@@ -77,12 +77,12 @@ def send_notification(subject: str, html_body: str):
 
 
 def send_auto_reply(to_email: str, name: str, form_type: str):
-    html_content = AUTO_REPLY_TEMPLATE.format(
+    reply_html = AUTO_REPLY_TEMPLATE.format(
         name=html.escape(name),
         form_type=html.escape(form_type),
         form_type_lower=html.escape(form_type.lower()),
     )
-    send_email(to_email, f"Bare Force One — We've Received Your {form_type}", html_content)
+    send_email(to_email, f"Bare Force One — We've Received Your {form_type}", reply_html)
 
 
 class ContactSubmission(BaseModel):
