@@ -58,7 +58,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto px-6 lg:px-10 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: 25, suffix: '+', label: 'Projects' },
+              { value: 50, suffix: '+', label: 'Projects' },
               { value: 10, suffix: '+', label: 'Years' },
               { value: 5, suffix: '.0', label: 'Rating' },
               { value: 99, suffix: '%', label: 'On-Time' },
@@ -82,17 +82,21 @@ export default function About() {
             {[
               { label: 'Company', main: 'Bare Force One LLC', sub: 'U.S.-Registered Limited Liability Company' },
               { label: 'Location', main: 'Fort Lauderdale, Florida', sub: 'UEI: FJRRJ6JNJ375' },
-              { label: 'Contact', main: 'contracts@bareforceone.com', sub: '954-296-9953', href: 'mailto:contracts@bareforceone.com' },
+              { label: 'Contact', main: 'contracts@bareforceone.com', sub: '954-296-9953', href: 'mailto:contracts@bareforceone.com', tel: 'tel:+19542969953' },
             ].map((c, i) => (
               <Reveal key={c.label} delay={i * 0.1} direction="up">
-                <div className="glow-card bg-[#0c1222]/50 border border-slate-800/40 p-8 relative z-10">
-                  <h3 className="font-heading font-bold text-xs uppercase tracking-[0.15em] text-blue-400 mb-4">{c.label}</h3>
+                <div className="glow-card bg-[#0c1222]/50 border border-slate-800/40 p-6 relative z-10">
+                  <h3 className="font-heading font-bold text-xs uppercase tracking-[0.15em] text-blue-400 mb-3">{c.label}</h3>
                   {c.href ? (
                     <a href={c.href} className="text-slate-300 text-sm font-medium hover:text-blue-400 transition-colors block mb-1">{c.main}</a>
                   ) : (
                     <p className="text-slate-300 text-sm font-medium mb-1">{c.main}</p>
                   )}
-                  <p className="text-slate-500 text-xs font-mono">{c.sub}</p>
+                  {c.tel ? (
+                    <a href={c.tel} className="text-slate-500 text-xs font-mono hover:text-blue-400 transition-colors">{c.sub}</a>
+                  ) : (
+                    <p className="text-slate-500 text-xs font-mono">{c.sub}</p>
+                  )}
                 </div>
               </Reveal>
             ))}

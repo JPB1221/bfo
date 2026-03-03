@@ -10,6 +10,7 @@ import Capabilities from './pages/Capabilities';
 import CaseStudies from './pages/CaseStudies';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import RequestProposal from './pages/RequestProposal';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/request-proposal" element={<RequestProposal />} />
           </Routes>
         </main>
         <Footer />

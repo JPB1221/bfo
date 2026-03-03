@@ -40,7 +40,7 @@ const CASES = [
 ];
 
 const STATS = [
-  { value: 25, suffix: '+', label: 'Projects Delivered' },
+  { value: 50, suffix: '+', label: 'Projects Delivered' },
   { value: 99, suffix: '.9%', label: 'Uptime Record' },
   { value: 5, suffix: '.0', label: 'Client Rating' },
   { value: 10, suffix: '+', label: 'Years Experience' },
@@ -117,7 +117,7 @@ export default function Home() {
               <BtnPrimary to="/capabilities" data-testid="hero-cta-capabilities">
                 View Capabilities <ArrowRight size={14} className="inline ml-1" />
               </BtnPrimary>
-              <BtnOutline to="/contact" data-testid="hero-cta-contact">
+              <BtnOutline to="/request-proposal" data-testid="hero-cta-contact">
                 Start a Project
               </BtnOutline>
             </div>
@@ -347,8 +347,8 @@ export default function Home() {
               We'll propose the right approach for your budget and timeline.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <BtnPrimary to="/contact" data-testid="cta-contact">
-                Contact Us <ArrowRight size={14} className="inline ml-1" />
+              <BtnPrimary to="/request-proposal" data-testid="cta-contact">
+                Request Proposal <ArrowRight size={14} className="inline ml-1" />
               </BtnPrimary>
               <BtnOutline to="/case-studies" data-testid="cta-cases">
                 View Case Studies

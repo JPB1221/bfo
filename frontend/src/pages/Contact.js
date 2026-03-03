@@ -107,7 +107,7 @@ export default function Contact() {
                     <h3 className="font-heading font-bold text-xs uppercase tracking-[0.15em] text-blue-400 mb-4">Direct Contact</h3>
                     <div className="space-y-3 text-sm">
                       <p><a href="mailto:contracts@bareforceone.com" className="text-slate-300 hover:text-blue-400 transition-colors">contracts@bareforceone.com</a></p>
-                      <p className="text-slate-400">954-296-9953</p>
+                      <p><a href="tel:+19542969953" className="text-slate-400 hover:text-blue-400 transition-colors">954-296-9953</a></p>
                     </div>
                   </div>
                   <div>

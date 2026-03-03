@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_tests": 4,
-    "passed_tests": 4,
+    "total_tests": 9,
+    "passed_tests": 9,
     "failed_tests": 0,
     "success_rate": 100.0
   },
@@ -10,25 +10,55 @@
       "test": "Health Endpoint",
       "success": true,
       "details": "Status: 200, Response: {'status': 'healthy', 'service': 'Bare Force One API'}",
-      "timestamp": "2026-03-03T20:22:39.999978"
+      "timestamp": "2026-03-03T20:38:00.906823"
     },
     {
       "test": "Contact Form Submission",
       "success": true,
       "details": "Status: 200, Response: {'success': True, 'message': \"Thank you. We'll be in touch shortly.\"}",
-      "timestamp": "2026-03-03T20:22:40.339865"
+      "timestamp": "2026-03-03T20:38:01.070573"
     },
     {
       "test": "Contact Form Validation",
       "success": true,
       "details": "Correctly rejected invalid data with status: 422",
-      "timestamp": "2026-03-03T20:22:40.456629"
+      "timestamp": "2026-03-03T20:38:01.249688"
+    },
+    {
+      "test": "Proposal Request Submission",
+      "success": true,
+      "details": "Status: 200, Response: {'success': True, 'message': \"Your proposal request has been received. We'll respond with a tailored capability statement within 24 hours.\"}",
+      "timestamp": "2026-03-03T20:38:01.385258"
+    },
+    {
+      "test": "Proposal Validation - Empty Name",
+      "success": true,
+      "details": "Correctly rejected empty name with status: 422",
+      "timestamp": "2026-03-03T20:38:01.514386"
+    },
+    {
+      "test": "Proposal Validation - Invalid Email",
+      "success": true,
+      "details": "Correctly rejected invalid email with status: 422",
+      "timestamp": "2026-03-03T20:38:01.639972"
+    },
+    {
+      "test": "Proposal Validation - Empty Organization",
+      "success": true,
+      "details": "Correctly rejected empty organization with status: 422",
+      "timestamp": "2026-03-03T20:38:01.841158"
+    },
+    {
+      "test": "Proposal Validation - Empty Description",
+      "success": true,
+      "details": "Correctly rejected empty description with status: 422",
+      "timestamp": "2026-03-03T20:38:02.013274"
     },
     {
       "test": "CORS Headers",
       "success": true,
       "details": "CORS header found: *",
-      "timestamp": "2026-03-03T20:22:40.593823"
+      "timestamp": "2026-03-03T20:38:02.124202"
     }
   ]
 }

@@ -59,7 +59,7 @@ export default function Footer() {
             <h4 className="font-heading font-bold text-[0.6rem] uppercase tracking-[0.2em] text-slate-400 mb-5">Contact</h4>
             <div className="space-y-2.5 text-xs text-slate-600">
               <p><a href="mailto:contracts@bareforceone.com" className="hover:text-blue-400 transition-colors duration-300">contracts@bareforceone.com</a></p>
-              <p>954-296-9953</p>
+              <p><a href="tel:+19542969953" className="hover:text-blue-400 transition-colors duration-300">954-296-9953</a></p>
               <p>Fort Lauderdale, Florida</p>
             </div>
           </div>

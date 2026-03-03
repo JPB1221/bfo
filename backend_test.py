@@ -134,6 +134,185 @@ class BareForceOneAPITester:
         except Exception as e:
             return self.log_test("Contact Form Validation", False, f"Error: {str(e)}")
 
+    def test_proposal_request_submission(self):
+        """Test POST /api/request-proposal endpoint"""
+        test_data = {
+            "name": "Test User",
+            "email": "test@example.com",
+            "organization": "Test Organization",
+            "sector": "Government / Public Sector",
+            "project_type": "Custom Software Development",
+            "timeline": "3-6 months",
+            "budget_range": "$50,000 - $100,000",
+            "description": "This is a test proposal request from the automated testing suite.",
+            "security_requirements": "NIST compliant",
+            "integration_needs": "API integrations"
+        }
+        
+        try:
+            url = f"{self.base_url}/api/request-proposal"
+            response = requests.post(
+                url,
+                json=test_data,
+                headers={'Content-Type': 'application/json'},
+                timeout=15
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                if data.get("success") and "message" in data:
+                    return self.log_test(
+                        "Proposal Request Submission",
+                        True,
+                        f"Status: {response.status_code}, Response: {data}"
+                    )
+                else:
+                    return self.log_test(
+                        "Proposal Request Submission",
+                        False,
+                        f"Unexpected response format: {data}"
+                    )
+            else:
+                return self.log_test(
+                    "Proposal Request Submission",
+                    False,
+                    f"Status: {response.status_code}, Text: {response.text}"
+                )
+        except Exception as e:
+            return self.log_test("Proposal Request Submission", False, f"Error: {str(e)}")
+
+    def test_proposal_validation_empty_name(self):
+        """Test proposal validation - empty name should be rejected"""
+        invalid_data = {
+            "name": "",
+            "email": "test@example.com",
+            "organization": "Test Org",
+            "description": "Test description"
+        }
+        
+        try:
+            url = f"{self.base_url}/api/request-proposal"
+            response = requests.post(
+                url,
+                json=invalid_data,
+                headers={'Content-Type': 'application/json'},
+                timeout=10
+            )
+            
+            if response.status_code == 422:
+                return self.log_test(
+                    "Proposal Validation - Empty Name",
+                    True,
+                    f"Correctly rejected empty name with status: {response.status_code}"
+                )
+            else:
+                return self.log_test(
+                    "Proposal Validation - Empty Name",
+                    False,
+                    f"Should reject empty name, got status: {response.status_code}"
+                )
+        except Exception as e:
+            return self.log_test("Proposal Validation - Empty Name", False, f"Error: {str(e)}")
+
+    def test_proposal_validation_invalid_email(self):
+        """Test proposal validation - invalid email should be rejected"""
+        invalid_data = {
+            "name": "Test User",
+            "email": "invalid-email",
+            "organization": "Test Org",
+            "description": "Test description"
+        }
+        
+        try:
+            url = f"{self.base_url}/api/request-proposal"
+            response = requests.post(
+                url,
+                json=invalid_data,
+                headers={'Content-Type': 'application/json'},
+                timeout=10
+            )
+            
+            if response.status_code == 422:
+                return self.log_test(
+                    "Proposal Validation - Invalid Email",
+                    True,
+                    f"Correctly rejected invalid email with status: {response.status_code}"
+                )
+            else:
+                return self.log_test(
+                    "Proposal Validation - Invalid Email",
+                    False,
+                    f"Should reject invalid email, got status: {response.status_code}"
+                )
+        except Exception as e:
+            return self.log_test("Proposal Validation - Invalid Email", False, f"Error: {str(e)}")
+
+    def test_proposal_validation_empty_org(self):
+        """Test proposal validation - empty organization should be rejected"""
+        invalid_data = {
+            "name": "Test User",
+            "email": "test@example.com",
+            "organization": "",
+            "description": "Test description"
+        }
+        
+        try:
+            url = f"{self.base_url}/api/request-proposal"
+            response = requests.post(
+                url,
+                json=invalid_data,
+                headers={'Content-Type': 'application/json'},
+                timeout=10
+            )
+            
+            if response.status_code == 422:
+                return self.log_test(
+                    "Proposal Validation - Empty Organization",
+                    True,
+                    f"Correctly rejected empty organization with status: {response.status_code}"
+                )
+            else:
+                return self.log_test(
+                    "Proposal Validation - Empty Organization",
+                    False,
+                    f"Should reject empty organization, got status: {response.status_code}"
+                )
+        except Exception as e:
+            return self.log_test("Proposal Validation - Empty Organization", False, f"Error: {str(e)}")
+
+    def test_proposal_validation_empty_description(self):
+        """Test proposal validation - empty description should be rejected"""
+        invalid_data = {
+            "name": "Test User",
+            "email": "test@example.com",
+            "organization": "Test Org",
+            "description": ""
+        }
+        
+        try:
+            url = f"{self.base_url}/api/request-proposal"
+            response = requests.post(
+                url,
+                json=invalid_data,
+                headers={'Content-Type': 'application/json'},
+                timeout=10
+            )
+            
+            if response.status_code == 422:
+                return self.log_test(
+                    "Proposal Validation - Empty Description",
+                    True,
+                    f"Correctly rejected empty description with status: {response.status_code}"
+                )
+            else:
+                return self.log_test(
+                    "Proposal Validation - Empty Description",
+                    False,
+                    f"Should reject empty description, got status: {response.status_code}"
+                )
+        except Exception as e:
+            return self.log_test("Proposal Validation - Empty Description", False, f"Error: {str(e)}")
+
     def test_cors_headers(self):
         """Test CORS configuration"""
         try:
@@ -166,6 +345,11 @@ class BareForceOneAPITester:
         self.test_health_endpoint()
         self.test_contact_submission()
         self.test_contact_validation()
+        self.test_proposal_request_submission()
+        self.test_proposal_validation_empty_name()
+        self.test_proposal_validation_invalid_email()
+        self.test_proposal_validation_empty_org()
+        self.test_proposal_validation_empty_description()
         self.test_cors_headers()
         
         # Summary
