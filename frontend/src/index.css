@@ -4,22 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 body {
-  background: #0a0f1c;
+  background: #070b16;
   color: #cbd5e1;
   font-family: "IBM Plex Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
@@ -28,17 +24,214 @@ body {
   color: #f8fafc;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #050a14; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+/* ============================================
+   REVEAL ANIMATIONS — CSS-only, GPU-accelerated
+   ============================================ */
+.reveal-base {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-::-webkit-scrollbar-track {
-  background: #050a14;
+
+.reveal-up { transform: translateY(40px); }
+.reveal-down { transform: translateY(-40px); }
+.reveal-left { transform: translateX(60px); }
+.reveal-right { transform: translateX(-60px); }
+.reveal-scale { transform: scale(0.92); }
+.reveal-fade { transform: none; }
+
+.reveal-base.revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
 }
-::-webkit-scrollbar-thumb {
-  background: #1f2937;
-  border-radius: 3px;
+
+/* ============================================
+   ANIMATED GRADIENT TEXT
+   ============================================ */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 40%, #93c5fd 60%, #3b82f6 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
 }
-::-webkit-scrollbar-thumb:hover {
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ============================================
+   SCANLINE OVERLAY (Palantir-style)
+   ============================================ */
+.scanline-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(59, 130, 246, 0.015) 2px,
+    rgba(59, 130, 246, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================
+   GRID TEXTURE
+   ============================================ */
+.grid-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(59,130,246,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 70%);
+}
+
+/* ============================================
+   HORIZONTAL SCROLL TESTIMONIALS
+   ============================================ */
+.testimonial-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: scrollTestimonials 40s linear infinite;
+  width: max-content;
+}
+
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollTestimonials {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   PULSING DOT
+   ============================================ */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
   background: #3b82f6;
+  border-radius: 50%;
+  position: relative;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  animation: pulseDot 2s ease-out infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ============================================
+   COUNTER ANIMATION
+   ============================================ */
+.counter-value {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+   CARD GLOW ON HOVER
+   ============================================ */
+.glow-card {
+  position: relative;
+  transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-card:hover {
+  border-color: rgba(59, 130, 246, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(59, 130, 246, 0.08);
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   LINE DRAWING ANIMATION
+   ============================================ */
+.line-draw {
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  height: 1px;
+  transform: scaleX(0);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: left;
+}
+
+.revealed .line-draw {
+  transform: scaleX(1);
+}
+
+/* ============================================
+   NUMBER LABEL (Palantir /0.1 style)
+   ============================================ */
+.section-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(59, 130, 246, 0.5);
+  letter-spacing: 0.1em;
+}
+
+/* ============================================
+   HERO PARALLAX
+   ============================================ */
+.hero-bg-parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ============================================
+   STAGGER CHILDREN
+   ============================================ */
+.stagger-children > .reveal-base:nth-child(1) { transition-delay: 0s; }
+.stagger-children > .reveal-base:nth-child(2) { transition-delay: 0.08s; }
+.stagger-children > .reveal-base:nth-child(3) { transition-delay: 0.16s; }
+.stagger-children > .reveal-base:nth-child(4) { transition-delay: 0.24s; }
+.stagger-children > .reveal-base:nth-child(5) { transition-delay: 0.32s; }
+.stagger-children > .reveal-base:nth-child(6) { transition-delay: 0.4s; }
+.stagger-children > .reveal-base:nth-child(7) { transition-delay: 0.48s; }
+.stagger-children > .reveal-base:nth-child(8) { transition-delay: 0.56s; }
+
+/* Responsive fix */
+@media (max-width: 640px) {
+  .testimonial-track {
+    animation-duration: 25s;
+  }
 }

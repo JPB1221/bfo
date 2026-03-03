@@ -1,19 +1,40 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useEffect, useRef, useCallback } from 'react';
 
-export default function Reveal({ children, delay = 0, className = '' }) {
+export default function Reveal({ children, delay = 0, direction = 'up', className = '' }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-60px' });
+
+  const handleIntersect = useCallback((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${delay}s`;
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, [delay]);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(handleIntersect, {
+      threshold: 0.1,
+      rootMargin: '-40px',
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [handleIntersect]);
+
+  const dirClass = {
+    up: 'reveal-up',
+    down: 'reveal-down',
+    left: 'reveal-left',
+    right: 'reveal-right',
+    scale: 'reveal-scale',
+    none: 'reveal-fade',
+  }[direction] || 'reveal-up';
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 28 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
-      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={className}
-    >
+    <div ref={ref} className={`reveal-base ${dirClass} ${className}`}>
       {children}
-    </motion.div>
+    </div>
   );
 }
