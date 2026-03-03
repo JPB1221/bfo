@@ -1,4 +1,7 @@
 .env
 .env.build
 public/
-.hugo_build.lock
+.hugo_build.lock-e 
+# Environment files
+*.env
+*.env.*
