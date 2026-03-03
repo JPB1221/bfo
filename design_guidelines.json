@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "persona": "E1: The Anti-AI Designer",
+    "mission": "Create a cinematic, high-authority digital presence for Bare Force One.",
+    "tone": "Cinematic, Engineered, Authoritative, Secure, Mission-Driven",
+    "principles": [
+      "Fusion over Imitation: Blend Defense Tech with Swiss Precision.",
+      "Emotion First: Evoke 'Competence' and 'Security'.",
+      "Content is King: Every pixel must support the mission narrative.",
+      "Negative Space: Use deep dark voids to create focus.",
+      "Contrast: High contrast text on dark backgrounds."
+    ]
+  },
+  "visual_system": {
+    "theme": "dark",
+    "colors": {
+      "palette": {
+        "base": {
+          "void": "#050a14",
+          "navy": "#0a0f1c",
+          "surface": "#111827",
+          "surface_highlight": "#1f2937"
+        },
+        "accent": {
+          "primary": "#3b82f6",
+          "secondary": "#2563eb",
+          "glow": "rgba(59, 130, 246, 0.5)"
+        },
+        "signal": {
+          "success": "#10b981",
+          "warning": "#f59e0b",
+          "critical": "#ef4444",
+          "neutral": "#64748b"
+        },
+        "text": {
+          "heading": "#f8fafc",
+          "body": "#cbd5e1",
+          "muted": "#64748b"
+        },
+        "border": {
+          "subtle": "rgba(148, 163, 184, 0.1)",
+          "strong": "rgba(59, 130, 246, 0.3)"
+        }
+      },
+      "usage": {
+        "background": "bg-[#0a0f1c]",
+        "text_primary": "text-slate-50",
+        "text_secondary": "text-slate-400",
+        "border_default": "border-slate-800",
+        "accent_glow": "shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+      }
+    },
+    "typography": {
+      "headings": {
+        "family": "\"Barlow Condensed\", sans-serif",
+        "weights": ["600", "700", "800"],
+        "style": "uppercase tracking-wider"
+      },
+      "body": {
+        "family": "\"IBM Plex Sans\", sans-serif",
+        "weights": ["400", "500"],
+        "style": "tracking-normal leading-relaxed"
+      },
+      "mono": {
+        "family": "\"JetBrains Mono\", monospace",
+        "usage": "Data points, labels, technical specs"
+      }
+    },
+    "layout": {
+      "spacing": {
+        "container_padding": "p-6 md:p-12 lg:p-24",
+        "section_gap": "gap-12 md:gap-24",
+        "element_gap": "gap-4 md:gap-8"
+      },
+      "grid": {
+        "bento": "grid grid-cols-1 md:grid-cols-3 gap-6",
+        "hero": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+      },
+      "containers": {
+        "max_width": "max-w-7xl mx-auto",
+        "glass": "backdrop-blur-xl bg-navy/80 border border-white/10"
+      }
+    },
+    "shapes": {
+      "radius": "rounded-sm",
+      "borders": "1px solid",
+      "effects": [
+        "Clip-path corners for 'tactical' look",
+        "1px solid borders with 10% opacity",
+        "Subtle inner glow on active elements"
+      ]
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_background": {
+        "url": "https://images.unsplash.com/photo-1704773988833-af2f8709a831?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHw0fHxhZXJpYWwlMjB2aWV3JTIwY2l0eSUyMG5pZ2h0JTIwY3liZXIlMjBmdXR1cmV8ZW58MHx8fHwxNzcyNTY1NzA2fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Aerial view of city at night with cybernetic overlay",
+        "description": "Primary Hero Background. Apply dark overlay (opacity-80) and blue vignette."
+      },
+      "capabilities_satellite": {
+        "url": "https://images.unsplash.com/photo-1770370419338-f9a813302baa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHw0fHxzYXRlbGxpdGUlMjBvcmJpdCUyMGVhcnRoJTIwbmV0d29yayUyMGNvbm5lY3Rpb258ZW58MHx8fHwxNzcyNTY1NzA3fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Satellite orbiting earth connecting network",
+        "description": "Use for 'Government/Defense' capability card."
+      },
+      "technology_abstract": {
+        "url": "https://images.unsplash.com/photo-1694843689189-2ad1a6c4a364?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwaHVkJTIwaW50ZXJmYWNlJTIwYWJzdHJhY3QlMjBkYXJrfGVufDB8fHx8MTc3MjU2NTcwOHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Abstract digital data waves",
+        "description": "Background texture for 'Enterprise' section."
+      },
+      "team_meeting": {
+        "url": "https://images.unsplash.com/photo-1758691737182-d42aefd6dee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBtZWV0aW5nJTIwZGl2ZXJzZSUyMHRlYW0lMjBzZXJpb3VzfGVufDB8fHx8MTc3MjU2NTcwOXww&ixlib=rb-4.1.0&q=85",
+        "alt": "Serious diverse team in modern office",
+        "description": "Use for 'About' or 'Culture' section. Ensure it's desaturated to match the theme."
+      }
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "Stroke width 1.5px, size 24px usually. Use strictly functional icons (Shield, Server, Globe, Cpu)."
+    }
+  },
+  "components": {
+    "Button": {
+      "variants": {
+        "primary": "bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-none uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]",
+        "outline": "border border-blue-500/50 text-blue-400 hover:border-blue-400 hover:text-white hover:bg-blue-500/10 py-3 px-8 rounded-none uppercase tracking-widest transition-all"
+      }
+    },
+    "Card": {
+      "base": "bg-slate-900/50 backdrop-blur-md border border-white/10 p-8 hover:border-blue-500/50 transition-colors duration-300 group",
+      "content": "Relative z-10"
+    },
+    "Input": {
+      "base": "bg-slate-950/50 border border-slate-700 text-slate-200 p-4 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none w-full transition-all"
+    }
+  },
+  "motion": {
+    "library": "framer-motion",
+    "defaults": {
+      "duration": 0.5,
+      "ease": "easeOut"
+    },
+    "variants": {
+      "fadeInUp": {
+        "initial": { "opacity": 0, "y": 20 },
+        "animate": { "opacity": 1, "y": 0 }
+      },
+      "staggerContainer": {
+        "animate": {
+          "transition": {
+            "staggerChildren": 0.1
+          }
+        }
+      }
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. Setup: Install 'framer-motion', 'lucide-react', 'clsx', 'tailwind-merge' if not present.",
+    "2. Fonts: Import 'Barlow Condensed' (400,600,700) and 'IBM Plex Sans' (400,500) from Google Fonts in index.css.",
+    "3. Global CSS: Set body background to #0a0f1c and text to slate-200.",
+    "4. Navigation: Create a sticky navbar with a glass effect (backdrop-blur-md bg-navy/80).",
+    "5. Hero: Implement the 'Aerial City' image as a full-screen background with a heavy gradient overlay (to-navy from-transparent).",
+    "6. Cards: Use the 'Tracing Beam' or simple hover-border-light effects for the Capabilities grid.",
+    "7. Forms: Ensure all inputs have accessible contrast labels and focus states.",
+    "8. Footer: Massive footer with 'Bare Force One' in large typography.",
+    "9. Testing: Add data-testid to all interactive elements."
+  ],
+  "universal_guidelines": {
+    "contrast": "Ensure text contrast ratio of 4.5:1 for normal text.",
+    "spacing": "Use comfortable spacing (p-8, p-12) to avoid clutter.",
+    "interactive": "All interactive elements must have hover and focus states.",
+    "testing": "Include data-testid attributes for automation."
+  }
+}
