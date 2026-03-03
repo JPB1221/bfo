@@ -44,7 +44,7 @@ export default function About() {
               <h3 className="font-heading font-bold text-xl uppercase tracking-wide text-slate-50 mb-6">What We Are Not</h3>
               <div className="space-y-3">
                 {['Not a flashy design agency', 'Not a generic web dev freelancer', 'Not overly corporate and stiff', 'Not playful SaaS startup pastel branding'].map((item, i) => (
-                  <div key={i} data-testid={`about-not-${i}`} className="border-l-2 border-slate-700 hover:border-blue-500 pl-5 py-2 transition-colors">
+                  <div key={i} data-testid={`about-not-${i}`} className="border-l-2 border-blue-500/30 pl-5 py-2">
                     <p className="text-slate-400 text-sm">{item}</p>
                   </div>
                 ))}
