@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 
-const API = process.env.REACT_APP_BACKEND_URL;
+const API = process.env.REACT_APP_BACKEND_URL || '';
 
 const SECTORS = ['Government / Public Sector', 'Enterprise', 'Local Business', 'Nonprofit', 'Other'];
 const PROJECT_TYPES = ['Custom Software Development', 'Mobile Application', 'Cloud Migration', 'Systems Integration', 'AI & Automation', 'Digital Transformation', 'Website / Web Application', 'Other'];

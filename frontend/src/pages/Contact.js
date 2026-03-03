@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 
-const API = process.env.REACT_APP_BACKEND_URL;
+const API = process.env.REACT_APP_BACKEND_URL || '';
 const SECTORS = ['Government', 'Enterprise', 'Local Business', 'Other'];
 
 export default function Contact() {
