@@ -26,7 +26,7 @@ AUTO_REPLY_TEMPLATE = """
     <div style="background:#111827;border-left:3px solid #3b82f6;padding:16px 20px;margin-bottom:24px;">
         <p style="color:#94a3b8;font-size:13px;margin:0;">
             For urgent matters, call <a href="tel:+19542969953" style="color:#3b82f6;text-decoration:none;">954-296-9953</a>
-            or reply directly to this email.
+            or email us at <a href="mailto:info@bareforceone.com" style="color:#3b82f6;text-decoration:none;">info@bareforceone.com</a>.
         </p>
     </div>
     <div style="border-top:1px solid #1e293b;padding-top:20px;margin-top:24px;">
