@@ -232,6 +232,6 @@ body {
 /* Responsive fix */
 @media (max-width: 640px) {
   .testimonial-track {
-    animation-duration: 25s;
+    animation-duration: 45s;
   }
 }

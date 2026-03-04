@@ -51,7 +51,7 @@ export default function Testimonials() {
           </div>
           <div className="flex items-center gap-3">
             <div className="pulse-dot" />
-            <span className="font-mono text-xs text-slate-500">10+ verified reviews</span>
+            <span className="font-mono text-xs text-slate-500">What our clients have been saying</span>
           </div>
         </div>
       </div>

@@ -40,7 +40,7 @@ const CASES = [
 ];
 
 const STATS = [
-  { value: 50, suffix: '+', label: 'Projects Delivered' },
+  { value: 183, suffix: '+', label: 'Projects Completed' },
   { value: 99, suffix: '.9%', label: 'Uptime Record' },
   { value: 5, suffix: '.0', label: 'Client Rating' },
   { value: 10, suffix: '+', label: 'Years Experience' },
