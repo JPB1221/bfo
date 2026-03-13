@@ -1,5 +1,11 @@
 {
   "rewrites": [
+    { "source": "/demo/construction", "destination": "/demo/construction/index.html" },
+    { "source": "/demo/construction/(.*)", "destination": "/demo/construction/index.html" },
+    { "source": "/demo/customCar", "destination": "/demo/customCar/index.html" },
+    { "source": "/demo/customCar/(.*)", "destination": "/demo/customCar/index.html" },
+    { "source": "/demo/tax", "destination": "/demo/tax/index.html" },
+    { "source": "/demo/tax/(.*)", "destination": "/demo/tax/index.html" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
