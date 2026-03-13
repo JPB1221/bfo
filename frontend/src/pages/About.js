@@ -58,7 +58,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto px-6 lg:px-10 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: 50, suffix: '+', label: 'Projects' },
+              { value: 183, suffix: '+', label: 'Projects' },
               { value: 10, suffix: '+', label: 'Years' },
               { value: 5, suffix: '.0', label: 'Rating' },
               { value: 99, suffix: '%', label: 'On-Time' },
@@ -76,8 +76,69 @@ export default function About() {
         </div>
       </section>
 
-      <section data-testid="about-info" className="bg-[#070b16] border-b border-slate-800/30">
+      <section className="bg-[#070b16] border-b border-slate-800/30">
         <div className="max-w-5xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
+          <Reveal direction="up">
+            <span className="section-number block mb-3">/03</span>
+            <h2 className="font-heading font-[800] text-3xl md:text-4xl uppercase tracking-wide text-slate-50 mb-6">
+              Leadership
+            </h2>
+            <div className="line-draw w-16 mb-12" />
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Reveal direction="right">
+              <div className="glow-card bg-[#0c1222]/50 border border-slate-800/40 p-8 relative z-10">
+                <div className="flex items-start gap-5 mb-6">
+                  <div className="w-14 h-14 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
+                    <span className="font-heading font-[800] text-blue-400 text-xl">JP</span>
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-bold text-lg uppercase tracking-wide text-slate-50 mb-1">Founder &amp; Lead Engineer</h3>
+                    <p className="text-blue-400 text-xs font-mono uppercase tracking-widest">Bare Force One LLC</p>
+                  </div>
+                </div>
+                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                  Founded Bare Force One LLC with a single focus: build software that actually works under pressure. With over a decade of hands-on engineering experience spanning government systems, enterprise platforms, and consumer-facing applications, BFO was built to deliver the kind of precision engineering that larger agencies can't match on speed — and smaller shops can't match on depth.
+                </p>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Based in Fort Lauderdale, Florida. SAM.gov registered. Available for federal, state, and commercial engagements.
+                </p>
+                <div className="mt-6 pt-6 border-t border-slate-800/40">
+                  <div className="flex flex-wrap gap-2">
+                    {['Full-Stack Engineering', 'Cloud Architecture', 'Mobile Development', 'AI & Automation', 'Government Contracting'].map((skill) => (
+                      <span key={skill} className="text-[0.6rem] font-mono uppercase tracking-wider text-slate-500 border border-slate-800/60 px-2 py-1">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={0.15} direction="left">
+              <div className="space-y-4">
+                {[
+                  { label: 'Approach', body: 'Every engagement starts with a clear scope. We document requirements, agree on milestones, and build iteratively — no surprises, no scope creep.' },
+                  { label: 'Philosophy', body: 'Security and performance are not features — they are requirements. Every system we deliver is built with both as first-class concerns from day one.' },
+                  { label: 'Availability', body: 'We take on a focused number of engagements at a time. This means your project gets direct attention from senior engineers, not hand-offs to junior staff.' },
+                ].map((item, i) => (
+                  <div key={i} className="glow-card bg-[#0c1222]/50 border border-slate-800/40 p-6 relative z-10">
+                    <h4 className="font-heading font-bold text-xs uppercase tracking-[0.15em] text-blue-400 mb-2">{item.label}</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section data-testid="about-info" className="bg-[#090e1a] border-b border-slate-800/30">
+        <div className="max-w-5xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
+          <Reveal direction="up">
+            <span className="section-number block mb-3">/04</span>
+            <h2 className="font-heading font-[800] text-3xl md:text-4xl uppercase tracking-wide text-slate-50 mb-6">
+              Company Info
+            </h2>
+            <div className="line-draw w-16 mb-12" />
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { label: 'Company', main: 'Bare Force One LLC', sub: 'U.S.-Registered Limited Liability Company' },

@@ -18,11 +18,14 @@ const SCHEMA = {
   "sameAs": []
 };
 
-export default function SEO({ title, description, path = '' }) {
+const OG_IMAGE = 'https://bareforceone.com/og-image.png';
+
+export default function SEO({ title, description, path = '', image }) {
   const base = 'Bare Force One LLC';
   const fullTitle = title ? `${title} | ${base}` : `${base} — Software Development & Digital Transformation`;
   const desc = description || 'Bare Force One LLC builds secure, scalable software systems for government agencies, enterprise organizations, and growth-focused businesses.';
   const url = `https://bareforceone.com${path}`;
+  const ogImage = image || OG_IMAGE;
 
   return (
     <Helmet>
@@ -34,9 +37,13 @@ export default function SEO({ title, description, path = '' }) {
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Bare Force One LLC" />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={desc} />
+      <meta name="twitter:image" content={ogImage} />
       <meta name="robots" content="index, follow" />
       {path === '' && (
         <script type="application/ld+json">{JSON.stringify(SCHEMA)}</script>
