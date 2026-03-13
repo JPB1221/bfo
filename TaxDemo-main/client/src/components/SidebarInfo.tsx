@@ -100,7 +100,7 @@ export default function SidebarInfo() {
             </svg>
             <div>
               <div className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Phone</div>
-              <a href="tel:5550000000" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <a href="tel:+15550000000" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                 (555) 000-0000
               </a>
             </div>

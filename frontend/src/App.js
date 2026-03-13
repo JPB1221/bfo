@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import RequestProposal from './pages/RequestProposal';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Demos from './pages/Demos';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -35,6 +36,7 @@ function App() {
             <Route path="/request-proposal" element={<RequestProposal />} />
             <Route path="/insights" element={<Blog />} />
             <Route path="/insights/:slug" element={<BlogPost />} />
+            <Route path="/demos" element={<Demos />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
