@@ -1,5 +1,0 @@
-.manus-logs/
-node_modules/
-server/
-.env*
-*.log
