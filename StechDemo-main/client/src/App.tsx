@@ -22,7 +22,7 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <Router base="/demo/stech">
+          <Router base="/demo/education">
             <AppRouter />
           </Router>
         </TooltipProvider>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Lock, Cloud, FileCheck, Users, Eye, Globe, Link2 } from 'lucide-react';
+import { Shield, Lock, Cloud, FileCheck, Users, Eye, Globe, Link2, ExternalLink, Monitor, LayoutDashboard, GitBranch } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
@@ -88,6 +88,95 @@ export default function Government() {
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* Reference Government Solution — Permit Portal */}
+      <section data-testid="gov-reference-solution" className="bg-[#070b16] border-b border-slate-800/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
+          <Reveal>
+            <span className="section-number block mb-3">/03</span>
+            <h2 className="font-heading font-[800] text-3xl md:text-4xl uppercase tracking-wide text-slate-50 mb-2">
+              Reference Government <span className="gradient-text">Solution</span>
+            </h2>
+            <div className="line-draw w-16 mb-4" />
+            <p className="text-slate-400 text-base leading-relaxed max-w-2xl mb-12">
+              The following platform was designed and built by Bare Force One to demonstrate the type of municipal digital infrastructure we deliver for government clients.
+            </p>
+          </Reveal>
+
+          <Reveal direction="up">
+            <div className="bg-[#0c1222]/60 border border-slate-800/50 hover:border-blue-500/30 transition-colors overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Left: Info */}
+                <div className="p-8 lg:p-10 flex flex-col justify-between">
+                  <div>
+                    <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold px-3 py-1 mb-6 uppercase tracking-wider">
+                      Municipal Government Platform
+                    </div>
+                    <h3 className="font-heading font-bold text-2xl text-slate-50 mb-3">City of Maplewood — Permit &amp; Inspection Portal</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                      A full-stack municipal permitting system with a citizen-facing portal, staff dashboard, and permit workflow tracker. Designed to replace paper-based processes with a secure, auditable digital platform.
+                    </p>
+                    <div className="space-y-3 mb-8">
+                      {[
+                        { icon: Monitor, label: 'Citizen Portal', desc: 'Online permit applications, status tracking, and document upload' },
+                        { icon: LayoutDashboard, label: 'Staff Dashboard', desc: 'Permit queue management, inspection scheduling, and GIS map integration' },
+                        { icon: GitBranch, label: 'Permit Workflow', desc: 'End-to-end permit lifecycle with multi-stage approval and audit trail' },
+                      ].map((item) => (
+                        <div key={item.label} className="flex items-start gap-3">
+                          <item.icon className="text-blue-500 flex-shrink-0 w-4 h-4 mt-0.5" strokeWidth={1.5} />
+                          <div>
+                            <span className="text-slate-200 text-sm font-semibold">{item.label}</span>
+                            <span className="text-slate-500 text-sm"> — {item.desc}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex gap-3 flex-wrap">
+                    <a
+                      href="/demo/permit-portal"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-5 py-2.5 transition-colors"
+                    >
+                      View Concept Demo <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                    <a
+                      href="/contact"
+                      className="inline-flex items-center gap-2 border border-slate-700 hover:border-blue-500/50 text-slate-300 hover:text-slate-100 text-sm font-semibold px-5 py-2.5 transition-colors"
+                    >
+                      Request a Similar Solution
+                    </a>
+                  </div>
+                </div>
+                {/* Right: Preview panels */}
+                <div className="bg-[#070b16] border-l border-slate-800/50 p-6 flex flex-col gap-4">
+                  <div className="text-xs text-slate-600 uppercase tracking-widest mb-1 font-semibold">Platform Preview</div>
+                  {[
+                    { href: '/demo/permit-portal', label: 'Citizen Portal', color: 'bg-blue-500/10 border-blue-500/20 text-blue-400' },
+                    { href: '/demo/permit-portal/dashboard', label: 'Staff Dashboard', color: 'bg-amber-500/10 border-amber-500/20 text-amber-400' },
+                    { href: '/demo/permit-portal/workflow', label: 'Permit Workflow', color: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' },
+                  ].map((panel) => (
+                    <a
+                      key={panel.label}
+                      href={panel.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center justify-between p-4 border ${panel.color} hover:opacity-80 transition-opacity`}
+                    >
+                      <span className="text-sm font-semibold">{panel.label}</span>
+                      <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                    </a>
+                  ))}
+                  <p className="text-slate-600 text-xs mt-2 leading-relaxed">
+                    Concept demonstration created by Bare Force One to illustrate a modern municipal permitting system.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

@@ -10,10 +10,15 @@ import Gallery from "@/components/Gallery";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import BFOBanner from "@/components/BFOBanner";
+import BFOHero from "@/components/BFOHero";
+import BFOFooter from "@/components/BFOFooter";
 
 export default function Home() {
   return (
     <div className="min-h-screen" style={{ background: "#080c14" }}>
+      <BFOBanner />
+      <BFOHero />
       <Navbar />
       <Hero />
       <Services />
@@ -21,6 +26,7 @@ export default function Home() {
       <About />
       <Contact />
       <Footer />
+      <BFOFooter />
     </div>
   );
 }

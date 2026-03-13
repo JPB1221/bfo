@@ -14,6 +14,8 @@ import WhyUsSection from "../components/WhyUsSection";
 import NewsSection from "../components/NewsSection";
 import CTABanner from "../components/CTABanner";
 import Footer from "../components/Footer";
+import BFOHero from "../components/BFOHero";
+import BFOFooter from "../components/BFOFooter";
 
 export default function Home() {
   return (
@@ -23,6 +25,7 @@ export default function Home() {
 
       {/* Concept demo notice bar */}
       <DemoBanner />
+      <BFOHero />
 
       {/* Navigation */}
       <Navbar />
@@ -50,6 +53,7 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+      <BFOFooter />
     </>
   );
 }
