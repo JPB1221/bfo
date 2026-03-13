@@ -14,6 +14,9 @@ import RequestProposal from './pages/RequestProposal';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import NotFound from './pages/NotFound';
+import DemoContractor from './pages/DemoContractor';
+import DemoAutomotive from './pages/DemoAutomotive';
+import DemoTax from './pages/DemoTax';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -35,6 +38,9 @@ function App() {
             <Route path="/request-proposal" element={<RequestProposal />} />
             <Route path="/insights" element={<Blog />} />
             <Route path="/insights/:slug" element={<BlogPost />} />
+            <Route path="/demo/contractor" element={<DemoContractor />} />
+            <Route path="/demo/automotive" element={<DemoAutomotive />} />
+            <Route path="/demo/tax" element={<DemoTax />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

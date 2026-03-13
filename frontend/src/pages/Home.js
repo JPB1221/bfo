@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Server, Globe, Cpu, Link2, BarChart3, ChevronRight, Lock, Zap, Target, Clock, ArrowRight } from 'lucide-react';
+import { Shield, Server, Globe, Cpu, Link2, BarChart3, ChevronRight, Lock, Zap, Target, Clock, ArrowRight, Hammer, Car, Calculator } from 'lucide-react';
 import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
 import CountUp from '../components/CountUp';
@@ -44,6 +44,12 @@ const STATS = [
   { value: 99, suffix: '.9%', label: 'Uptime Record' },
   { value: 5, suffix: '.0', label: 'Client Rating' },
   { value: 10, suffix: '+', label: 'Years Experience' },
+];
+
+const DEMOS = [
+  { icon: Hammer, title: 'Contractor Website', body: 'A professional website for a concrete restoration and general contracting company — services, projects, and contact.', to: '/demo/contractor', industry: 'Construction' },
+  { icon: Car, title: 'Automotive Website', body: 'A premium automotive styling studio website — vinyl wraps, ceramic coating, PPF, and window tinting.', to: '/demo/automotive', industry: 'Automotive' },
+  { icon: Calculator, title: 'Tax Services Website', body: 'A warm, professional website for a family-owned tax and accounting firm — services, team, and legacy.', to: '/demo/tax', industry: 'Financial Services' },
 ];
 
 function HeroParallax() {
@@ -319,6 +325,47 @@ export default function Home() {
                     <p className="text-slate-400 text-sm leading-relaxed mb-4">{c.body}</p>
                     <span className="inline-flex items-center gap-1.5 text-blue-400 text-xs font-heading font-bold uppercase tracking-[0.15em] group-hover:gap-3 transition-all duration-300">
                       Read More <ArrowRight size={12} />
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ EXAMPLE WEBSITES ============ */}
+      <section data-testid="demo-section" className="bg-[#090e1a] border-b border-slate-800/30 relative">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-32">
+          <Reveal>
+            <span className="section-number block mb-4">/05</span>
+            <h2 className="font-heading font-[800] text-4xl md:text-5xl uppercase tracking-wide text-slate-50 leading-[1.05] mb-2">
+              Example Websites <span className="gradient-text">We Can Build</span>
+            </h2>
+            <p className="text-slate-400 text-base max-w-lg leading-relaxed mb-4">
+              Explore live demonstrations of the types of websites we create for small businesses across different industries.
+            </p>
+            <div className="line-draw w-24 mb-12" />
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {DEMOS.map((d, i) => (
+              <Reveal key={d.to} delay={i * 0.12} direction="up">
+                <Link
+                  to={d.to}
+                  data-testid={`demo-card-${i}`}
+                  className="glow-card group block bg-[#0c1222]/50 border border-slate-800/40 overflow-hidden h-full"
+                >
+                  <div className="bg-[#0a1020] border-b border-slate-800/30 px-7 py-5 flex items-center gap-4">
+                    <d.icon className="text-blue-500 w-6 h-6" strokeWidth={1.5} />
+                    <span className="font-mono text-[0.55rem] text-blue-400 uppercase tracking-wider">{d.industry}</span>
+                  </div>
+                  <div className="p-7 relative z-10">
+                    <h3 className="font-heading font-bold text-base uppercase tracking-wide text-slate-50 mb-3">{d.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-4">{d.body}</p>
+                    <span className="inline-flex items-center gap-1.5 text-blue-400 text-xs font-heading font-bold uppercase tracking-[0.15em] group-hover:gap-3 transition-all duration-300">
+                      View Demo <ArrowRight size={12} />
                     </span>
                   </div>
                 </Link>
