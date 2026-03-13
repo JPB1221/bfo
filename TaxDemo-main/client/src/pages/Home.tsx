@@ -1,9 +1,10 @@
 /*
- * Home.tsx — Main page for Premier Accounting & Tax Specialists (Demo Site)
+ * Home.tsx — Main page for Premier Accounting Demo
  * Design: Warm Heritage Modernism — deep navy #1B4F72, gold #D4A843
  * Fonts: Cormorant Garamond (headings) + Nunito Sans (body)
  */
 
+import DemoBanner from "@/components/DemoBanner";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -22,6 +23,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FAFAF8]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+      <DemoBanner />
       <AnnouncementBar />
       <Navbar />
       <HeroSection />

@@ -60,7 +60,7 @@ export default function CTASection() {
           className="text-white/80 text-lg mb-8 max-w-xl mx-auto"
           style={{ fontFamily: "'Nunito Sans', sans-serif" }}
         >
-          Contact the professionals at Premier Accounting & Tax Specialists. We are here to help you achieve your financial goals.
+          Contact the professionals at Premier Accounting Demo. We are here to help you achieve your financial goals.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">

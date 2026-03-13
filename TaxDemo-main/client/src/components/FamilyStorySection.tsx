@@ -50,14 +50,14 @@ export default function FamilyStorySection() {
       <div className="rounded-xl overflow-hidden shadow-lg mb-10 bg-[#1B4F72]">
         <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
           <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSantosAssociatesAccountants%2Fvideos%2F&show_text=false&width=734"
+            src="https://www.youtube.com/embed/placeholder_demo_video"
             className="absolute inset-0 w-full h-full"
             style={{ border: "none", overflow: "hidden" }}
             scrolling="no"
             frameBorder="0"
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            title="Santos Associates Accountants and Income Tax Specialists since 1961"
+            title="Premier Accounting Demo — Our Story"
           />
         </div>
         <div className="px-4 py-3 flex items-center gap-2">
@@ -65,7 +65,7 @@ export default function FamilyStorySection() {
             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
           </svg>
           <span className="text-white/80 text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-            Santos Associates Accountants and Income Tax Specialists since 1961
+            Premier Accounting Demo — Accountants and Income Tax Specialists
           </span>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function FamilyStorySection() {
           Our Story
         </h3>
 
-        {/* Historic photos row — actual photos from Santos Associates */}
+        {/* Historic photos row */}
         <div className="grid grid-cols-3 gap-3 mb-6">
           {[
             { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/1961_311b6c87.jpg", label: "1961" },
@@ -90,7 +90,7 @@ export default function FamilyStorySection() {
               <div className="aspect-square">
                 <img
                   src={src}
-                  alt={`Santos Associates ${label}`}
+                  alt={`Premier Accounting Demo ${label}`}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
               </div>
@@ -111,10 +111,10 @@ export default function FamilyStorySection() {
 
         <div className="space-y-4 text-[#374151] leading-relaxed" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
           <p>
-            Our roots date back to 1961, when company founder, Edward J. Santos, began building his business out of the trunk of his car in Miramar and Miami, Florida! Prior to this, he worked as an accountant for various firms locally after attending the University of Miami. During this time, he was determined to be his own boss, so began Ed Santos Associates. His first office, with rent at $75 a month, was located off Pembroke Road and 63rd Ave in Miramar, FL. In 1965, he moved a few streets down to an office off Pembroke Rd and the Florida turnpike until moving to Griffin Road and University Drive in Davie, FL in 1982.
+            Our firm was founded with a simple belief: every client deserves personal attention and expert guidance. Starting as a small local practice, we built our reputation on trust, accuracy, and a commitment to helping individuals and small businesses navigate complex tax and financial challenges.
           </p>
           <p>
-            In 2007, the office moved to Pembroke Pines. Over the years Ed has included family and friends in his workforce, beginning with his wife, Pat, mother in law, sister, sister in law, his 4 children, 10 grandchildren and friends ranging from secretary, file clerk, computer tech and income tax experts. Our successes lay in faith, family, friends and loyal clients! Santos has had many Associates over the years which included 'Woody' Savage and 'Don' Uebelacker for over 40 years. Today his four daughters and grandchildren are helping carry on his commitment to family, friends, and our community. Join our clients in becoming part of our history. We will give you…
+            Over the decades, our team has grown to include certified public accountants, enrolled agents, and financial planners — all united by the same values our founder instilled from day one. Today, we proudly serve multiple generations of families and businesses in our community.
           </p>
           <p className="text-[#1B4F72] font-bold text-lg" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             JUST ONE LESS THING TO WORRY ABOUT!
@@ -131,7 +131,7 @@ export default function FamilyStorySection() {
           Our Services
         </h4>
         <p className="text-[#374151] text-sm leading-relaxed" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-          Santos Associates has been filing Income Tax Returns and serving Dade & Broward County for over 60 years while offering convenient appointments at your request. We specialize in:
+          Premier Accounting Demo has been filing Income Tax Returns and serving our community for over 60 years while offering convenient appointments at your request. We specialize in:
         </p>
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
           {[

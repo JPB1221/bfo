@@ -63,7 +63,7 @@ export default function Navbar() {
                 }`}
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
-                PREMIER ACCOUNTING
+                PREMIER ACCOUNTING DEMO
               </div>
               <div
                 className={`text-xs tracking-widest uppercase transition-colors ${
@@ -71,7 +71,7 @@ export default function Navbar() {
                 }`}
                 style={{ fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                & Tax Specialists
+                Demonstration Website
               </div>
             </div>
           </a>

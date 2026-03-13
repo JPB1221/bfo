@@ -89,7 +89,7 @@ export default function HeroSection() {
                 className="text-[#D4A843] text-xs font-bold tracking-[0.2em] uppercase"
                 style={{ fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                Premier Accounting & Tax Specialists · Est. 1965
+                Premier Accounting Demo · Est. 1965
               </span>
             </div>
 

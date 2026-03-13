@@ -25,13 +25,13 @@ export default function Footer() {
                   className="text-white font-bold text-sm leading-tight"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
-                  PREMIER ACCOUNTING
+                  PREMIER ACCOUNTING DEMO
                 </div>
                 <div
                   className="text-[#D4A843] text-xs tracking-widest uppercase"
                   style={{ fontFamily: "'Nunito Sans', sans-serif" }}
                 >
-                  & Tax Specialists
+                  Demonstration Website
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@ export default function Footer() {
               className="text-white/60 text-sm leading-relaxed mb-4"
               style={{ fontFamily: "'Nunito Sans', sans-serif" }}
             >
-              Accountants and Income Tax Specialists serving our community since 1965.
+              A demonstration website for tax and accounting businesses. Created by Bare Force One.
             </p>
             <p
               className="text-[#D4A843] text-sm italic font-light"
@@ -171,7 +171,7 @@ export default function Footer() {
             className="text-white/40 text-xs"
             style={{ fontFamily: "'Nunito Sans', sans-serif" }}
           >
-            © 2026 Premier Accounting & Tax Specialists and/or its licensors
+            © 2026 Premier Accounting Demo — Demonstration Website by Bare Force One
           </p>
           <div className="flex items-center gap-4">
             <a

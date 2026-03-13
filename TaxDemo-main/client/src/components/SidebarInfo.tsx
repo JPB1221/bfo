@@ -6,24 +6,24 @@
 export default function SidebarInfo() {
   return (
     <aside className="space-y-6 lg:sticky lg:top-24">
-      {/* 65th Anniversary Badge — actual image from Santos Associates */}
+      {/* 65th Anniversary Badge */}
       <div className="bg-[#1B4F72] rounded-xl p-5 text-center text-white shadow-lg">
         <div className="w-28 h-28 mx-auto mb-3">
           <img
             src="https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/65Years_05fad030.jpg"
-            alt="65 Years - Associates Tax Specialists Florida 1961-2026"
+            alt="65 Years - Premier Accounting Demo 1961-2026"
             className="w-full h-full object-contain"
           />
         </div>
         <div className="text-[#D4A843] text-xs font-bold tracking-widest uppercase mb-1" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-          Associates Tax Specialists
+          Premier Accounting Demo
         </div>
         <div className="text-white text-sm font-medium" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-          Florida · 1961–2026
+          Demonstration Website
         </div>
       </div>
 
-      {/* Enrolled Agent Badge — actual logo from Santos Associates */}
+      {/* Enrolled Agent Badge */}
       <div className="bg-white rounded-xl p-5 border-2 border-[#1B4F72] shadow-md">
         <div className="flex items-center gap-3">
           <div className="flex-shrink-0">
@@ -100,8 +100,8 @@ export default function SidebarInfo() {
             </svg>
             <div>
               <div className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Phone</div>
-              <a href="tel:9544371040" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-                954-437-1040
+              <a href="tel:5550000000" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                (555) 000-0000
               </a>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function SidebarInfo() {
             </svg>
             <div>
               <div className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Fax</div>
-              <span className="text-[#374151] text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>954-437-6898</span>
+              <span className="text-[#374151] text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>(555) 000-0001</span>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -120,8 +120,8 @@ export default function SidebarInfo() {
             </svg>
             <div>
               <div className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Email</div>
-              <a href="mailto:edna@low-tax.net" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-                edna@low-tax.net
+              <a href="mailto:info@premieraccountingdemo.com" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                info@premieraccountingdemo.com
               </a>
             </div>
           </div>
@@ -133,8 +133,8 @@ export default function SidebarInfo() {
             <div>
               <div className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Address</div>
               <address className="not-italic text-[#374151] text-sm leading-relaxed" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-                1961 N.W. 150th Avenue, Suite 104<br />
-                Pembroke Pines, FL 33028
+                123 Main Street, Suite 200<br />
+                Your City, FL 00000
               </address>
             </div>
           </div>
@@ -142,9 +142,10 @@ export default function SidebarInfo() {
 
         {/* Facebook link */}
         <a
-          href="https://www.facebook.com/SantosAssociatesAccountants"
+          href="https://www.facebook.com"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Facebook (demo placeholder)"
           className="mt-4 flex items-center gap-2 text-[#1877F2] hover:text-[#1B4F72] transition-colors text-sm font-semibold"
           style={{ fontFamily: "'Nunito Sans', sans-serif" }}
         >
