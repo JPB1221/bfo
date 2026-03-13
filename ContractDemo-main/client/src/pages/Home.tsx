@@ -14,14 +14,12 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BFOBanner from "@/components/BFOBanner";
-import BFOHero from "@/components/BFOHero";
 import BFOFooter from "@/components/BFOFooter";
 
 export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "oklch(0.97 0.003 80)" }}>
       <BFOBanner />
-      <BFOHero />
       <Navbar />
       <HeroSection />
       <StatsBar />

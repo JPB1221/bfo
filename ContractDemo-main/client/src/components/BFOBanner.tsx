@@ -6,25 +6,32 @@ export default function BFOBanner() {
   return (
     <div
       role="banner"
-      style={{ backgroundColor: "#0f2744", borderBottom: "1px solid rgba(255,255,255,0.1)", position: "relative", zIndex: 100 }}
-      className="flex items-center justify-center gap-3 px-6 py-3 text-center flex-wrap"
+      style={{
+        backgroundColor: "#0f2744",
+        borderBottom: "1px solid rgba(255,255,255,0.12)",
+        position: "relative",
+        zIndex: 100,
+      }}
+      className="flex items-center justify-center gap-4 px-10 py-2.5"
     >
-      <p className="text-white/80 text-xs leading-relaxed">
-        <span className="text-amber-400 font-semibold">Concept Demonstration</span>
+      <p className="text-white/70 text-xs leading-snug">
+        <span className="text-amber-400 font-semibold">Bare Force One</span>
         {" — "}
-        This interface was created by{" "}
-        <a href="https://bareforceone.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2">
-          Bare Force One
-        </a>{" "}
-        to illustrate the types of digital systems we design and deploy for government agencies, enterprises, and growing organizations.
+        Concept demonstration. Not a live business.
       </p>
       <a
         href="https://bareforceone.com/contact"
-        className="flex-shrink-0 bg-amber-400 hover:bg-amber-300 text-[#0f2744] font-semibold text-xs px-4 py-1.5 rounded transition-colors whitespace-nowrap"
+        className="flex-shrink-0 bg-amber-400 hover:bg-amber-300 text-[#0f2744] font-semibold text-xs px-3.5 py-1 rounded transition-colors whitespace-nowrap"
       >
         Request a Similar Solution
       </a>
-      <button onClick={() => setDismissed(true)} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 text-lg leading-none" aria-label="Dismiss">×</button>
+      <button
+        onClick={() => setDismissed(true)}
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 text-base leading-none transition-colors"
+        aria-label="Dismiss"
+      >
+        ×
+      </button>
     </div>
   );
 }

@@ -19,14 +19,12 @@ import TributeSection from "@/components/TributeSection";
 import ContactFormSection from "@/components/ContactFormSection";
 import Footer from "@/components/Footer";
 import BFOBanner from "@/components/BFOBanner";
-import BFOHero from "@/components/BFOHero";
 import BFOFooter from "@/components/BFOFooter";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FAFAF8]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
       <BFOBanner />
-      <BFOHero />
       <AnnouncementBar />
       <Navbar />
       <HeroSection />
