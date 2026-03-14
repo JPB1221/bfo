@@ -1,6 +1,6 @@
 /* ==========================================================================
    COMPONENT: DemoBanner
-   Purpose: Slim BFO concept demo notice bar
+   Purpose: Slim BFO concept demo notice bar — sticky so fixed navbars clear it
    ========================================================================== */
 
 import { X } from "lucide-react";
@@ -13,8 +13,15 @@ export default function DemoBanner() {
     <div
       role="banner"
       aria-label="Concept demonstration notice"
-      className="relative z-[60] flex items-center justify-center gap-4 px-10 py-2.5"
-      style={{ backgroundColor: "#0f2744", borderBottom: "1px solid rgba(255,255,255,0.12)", fontFamily: "'DM Sans', sans-serif" }}
+      className="relative flex items-center justify-center gap-4 px-10 py-2.5"
+      style={{
+        backgroundColor: "#0f2744",
+        borderBottom: "1px solid rgba(255,255,255,0.12)",
+        position: "sticky",
+        top: 0,
+        zIndex: 9999,
+        fontFamily: "'DM Sans', sans-serif",
+      }}
     >
       <p className="text-white/70 text-xs leading-snug">
         <span className="text-amber-400 font-semibold">Bare Force One</span>

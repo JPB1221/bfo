@@ -5,12 +5,14 @@ export default function BFOBanner() {
   if (dismissed) return null;
   return (
     <div
+      id="bfo-banner"
       role="banner"
       style={{
         backgroundColor: "#0f2744",
         borderBottom: "1px solid rgba(255,255,255,0.12)",
-        position: "relative",
-        zIndex: 100,
+        position: "sticky",
+        top: 0,
+        zIndex: 9999,
       }}
       className="flex items-center justify-center gap-4 px-10 py-2.5"
     >
