@@ -32,6 +32,10 @@ const ORG_SCHEMA = {
     "name": "Software Development Services",
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Local Business Website Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Small Business Website Design" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Government Software Contracts" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Government Web Development Contracts" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Government Digital Modernization" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Enterprise Digital Transformation" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Architecture & Deployment" } },
@@ -42,7 +46,7 @@ const ORG_SCHEMA = {
   "sameAs": []
 };
 
-const OG_IMAGE = 'https://bareforceone.com/og-image.png';
+const OG_IMAGE = 'https://bareforceone.com/og-image.jpg';
 const SITE_NAME = 'Bare Force One LLC';
 
 function buildBreadcrumb(path) {
@@ -96,7 +100,7 @@ export default function SEO({ title, description, path = '', image }) {
   const fullTitle = title
     ? `${title} | ${SITE_NAME}`
     : `Custom Software Development & Digital Transformation | ${SITE_NAME}`;
-  const desc = description || 'Bare Force One LLC delivers custom software development, cloud architecture, and digital transformation for government agencies, enterprise organizations, and growth-focused businesses. Fort Lauderdale, FL.';
+  const desc = description || 'Bare Force One LLC — custom software development, local business websites, and government software contracts. Serving government agencies, enterprise organizations, and small businesses in Fort Lauderdale, FL and nationwide.';
   const url = `https://bareforceone.com${path}`;
   const ogImage = image || OG_IMAGE;
   const isHomepage = path === '' || path === '/';
