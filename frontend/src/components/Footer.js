@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800/20">
           <div>
             <Link to="/" className="flex items-center gap-3 mb-4 group">
-              <img src="/logo.png" alt="Bare Force One LLC" className="w-7 h-7 object-contain rounded" width="28" height="28" />
+              <img src="/logo-sm.webp" alt="Bare Force One LLC" className="w-7 h-7 object-contain rounded" width="28" height="28" loading="lazy" />
               <span className="font-heading font-bold text-slate-50 text-[0.65rem] uppercase tracking-[0.15em] group-hover:text-blue-400 transition-colors">
                 Bare Force One
               </span>

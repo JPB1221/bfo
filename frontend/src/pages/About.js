@@ -5,7 +5,7 @@ import Reveal from '../components/Reveal';
 import CountUp from '../components/CountUp';
 import { BtnPrimary } from '../components/Buttons';
 
-const ABOUT_BG = 'https://static.prod-images.emergentagent.com/jobs/64593ea8-c63b-4b2f-ba8f-f4321e869c80/images/075c31a2650d4ca242f9ef6c0425208a1a4f78c010a3a8505010786d8a701894.png';
+const ABOUT_BG = '/about-bg.webp';
 
 export default function About() {
   return (

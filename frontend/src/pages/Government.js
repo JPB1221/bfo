@@ -23,7 +23,7 @@ const SECURITY_FEATURES = [
   'Structured Project Governance',
 ];
 
-const GOV_BG = 'https://static.prod-images.emergentagent.com/jobs/64593ea8-c63b-4b2f-ba8f-f4321e869c80/images/4e5d915539e2595e27a5da74b9248f49471a403e580981ac6c4fd2fe37850060.png';
+const GOV_BG = '/government-bg.webp';
 
 export default function Government() {
   return (

@@ -22,8 +22,17 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="/hero-bg.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/logo-sm.webp" type="image/webp" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google Fonts: preload for performance, non-render-blocking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+
     <!-- Google Analytics (GA4) - deferred for performance -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTG6FQM33Y"></script>
     <script>

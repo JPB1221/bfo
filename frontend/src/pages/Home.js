@@ -7,7 +7,7 @@ import CountUp from '../components/CountUp';
 import Testimonials from '../components/Testimonials';
 import { BtnPrimary, BtnOutline } from '../components/Buttons';
 
-const HERO_BG = 'https://static.prod-images.emergentagent.com/jobs/64593ea8-c63b-4b2f-ba8f-f4321e869c80/images/f400d9f854fbc90bbeda319a6106648bc1c498ee804c25fffef55884cc347c27.png';
+const HERO_BG = '/hero-bg.webp';
 
 const TRUST_ITEMS = ['SAM.gov Registered', 'Secure-by-Design', 'Cloud-Ready Architecture', 'NIST-Aligned Practices', 'Agile Delivery'];
 

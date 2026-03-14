@@ -48,7 +48,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-16 lg:h-[4.5rem]">
           <Link to="/" className="flex items-center gap-3 group" data-testid="nav-logo">
-            <img src="/logo.png" alt="Bare Force One LLC — Software Development" className="w-8 h-8 object-contain rounded" width="32" height="32" />
+            <img src="/logo-sm.webp" alt="Bare Force One LLC — Software Development" className="w-8 h-8 object-contain rounded" width="32" height="32" fetchpriority="high" />
             <span className="font-heading font-bold text-slate-50 text-[0.7rem] uppercase tracking-[0.18em] group-hover:text-blue-400 transition-colors duration-300">
               Bare Force One
             </span>

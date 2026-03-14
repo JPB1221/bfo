@@ -21,7 +21,7 @@ const DIFFERENTIATORS = [
   'Secure-by-design architecture at every layer',
 ];
 
-const ENT_BG = 'https://static.prod-images.emergentagent.com/jobs/64593ea8-c63b-4b2f-ba8f-f4321e869c80/images/af828bb1ebc71170e2e11459418e875bb2ea7354085104a62d8e9a9b7a6fac12.png';
+const ENT_BG = '/enterprise-bg.webp';
 
 export default function Enterprise() {
   return (
