@@ -29,8 +29,8 @@ export default function Government() {
   return (
     <>
       <SEO
-        title="Government Solutions"
-        description="Secure, compliant software systems for local and state government agencies. NIST-informed security practices, cloud deployment, and digital modernization."
+        title="Government Software Development & Digital Modernization"
+        description="Bare Force One builds secure, compliant software systems for local and state government agencies. NIST-informed security, cloud deployment, permit portals, and legacy system modernization."
         path="/government"
       />
       <PageHeader

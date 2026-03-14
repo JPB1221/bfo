@@ -121,8 +121,8 @@ export default function Blog() {
   return (
     <>
       <SEO
-        title="Insights"
-        description="Perspectives on government software modernization, enterprise automation, secure cloud architecture, and digital transformation from Bare Force One LLC."
+        title="Software Development Insights & Technical Articles"
+        description="Practical insights on government software modernization, enterprise workflow automation, secure cloud architecture, and mobile app development from Bare Force One LLC."
         path="/insights"
       />
       <PageHeader

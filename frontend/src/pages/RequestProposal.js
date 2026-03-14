@@ -42,8 +42,8 @@ export default function RequestProposal() {
   return (
     <>
       <SEO
-        title="Request Proposal"
-        description="Request a tailored capability statement from Bare Force One LLC. Tell us about your project and receive a structured proposal within 24 hours."
+        title="Request a Software Development Proposal"
+        description="Request a tailored software development proposal from Bare Force One LLC. Describe your project requirements and receive a structured capability statement within 24 hours."
         path="/request-proposal"
       />
       <PageHeader

@@ -19,6 +19,25 @@ export default function BlogPost() {
     );
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.excerpt,
+    "author": {
+      "@type": "Organization",
+      "name": "Bare Force One LLC",
+      "url": "https://bareforceone.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bare Force One LLC",
+      "logo": { "@type": "ImageObject", "url": "https://bareforceone.com/logo.png" }
+    },
+    "url": `https://bareforceone.com/insights/${article.slug}`,
+    "mainEntityOfPage": `https://bareforceone.com/insights/${article.slug}`
+  };
+
   return (
     <>
       <SEO
@@ -26,6 +45,7 @@ export default function BlogPost() {
         description={article.excerpt}
         path={`/insights/${article.slug}`}
       />
+      <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
 
       <article className="pt-28 pb-20 lg:pt-36">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">

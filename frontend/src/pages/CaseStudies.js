@@ -55,8 +55,8 @@ export default function CaseStudies() {
   return (
     <>
       <SEO
-        title="Case Studies"
-        description="Real outcomes from real engagements. HIPAA-compliant mHealth apps, 3D campus prototypes, enterprise middleware modernization, and global brand infrastructure."
+        title="Software Development Case Studies & Project Results"
+        description="Explore Bare Force One's software development case studies: HIPAA-compliant mHealth apps, 3D campus prototypes, enterprise middleware modernization, and global brand infrastructure."
         path="/case-studies"
       />
       <PageHeader

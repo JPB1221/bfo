@@ -11,8 +11,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About"
-        description="Bare Force One LLC — U.S.-registered software development and digital transformation firm. Fort Lauderdale, Florida. UEI: FJRRJ6JNJ375."
+        title="About Us — Custom Software Development Firm"
+        description="Bare Force One LLC is a U.S.-registered custom software development and digital transformation firm based in Fort Lauderdale, Florida. SAM.gov registered. UEI: FJRRJ6JNJ375."
         path="/about"
       />
       <PageHeader

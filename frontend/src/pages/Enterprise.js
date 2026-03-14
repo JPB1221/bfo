@@ -27,8 +27,8 @@ export default function Enterprise() {
   return (
     <>
       <SEO
-        title="Enterprise Solutions"
-        description="Digital transformation, automation, and data-driven systems for enterprise organizations. Custom software, cloud architecture, and systems integration engineered for scale."
+        title="Enterprise Digital Transformation & Custom Software"
+        description="Bare Force One delivers enterprise digital transformation, workflow automation, and custom software engineered for scale. Cloud architecture, systems integration, and AI automation for enterprise teams."
         path="/enterprise"
       />
       <PageHeader

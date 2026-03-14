@@ -25,8 +25,8 @@ export default function LocalBusiness() {
   return (
     <>
       <SEO
-        title="Local Business Solutions"
-        description="Fast, secure websites, mobile apps, and automation for growth-focused businesses. Clear ROI, direct communication, and flexible pricing."
+        title="Website & App Development for Local Businesses"
+        description="Bare Force One builds fast, secure websites, mobile apps, and back-office automation for local and service-based businesses. Clear ROI, direct communication, and flexible pricing. Fort Lauderdale, FL."
         path="/local-business"
       />
       <PageHeader

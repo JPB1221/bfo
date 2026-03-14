@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bare Force One",
+  "name": "Bare Force One LLC — Custom Software Development",
+  "description": "Custom software development, cloud architecture, and digital transformation for government, enterprise, and local businesses.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#070b16",
+  "background_color": "#070b16"
 }

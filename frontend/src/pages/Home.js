@@ -83,7 +83,7 @@ export default function Home() {
   return (
     <>
       {/* ============ HERO ============ */}
-      <SEO />
+      <SEO path="/" />
       <section data-testid="hero-section" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden scanline-overlay grid-texture">
         <HeroParallax />
 

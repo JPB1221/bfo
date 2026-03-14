@@ -35,8 +35,8 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact"
-        description="Contact Bare Force One LLC to start a project. Government, enterprise, and local business software development. contracts@bareforceone.com | 954-296-9953"
+        title="Contact Us — Start Your Software Project"
+        description="Contact Bare Force One LLC to start a custom software development project. Serving government agencies, enterprise organizations, and local businesses. Fort Lauderdale, FL. 954-296-9953."
         path="/contact"
       />
       <PageHeader

@@ -29,8 +29,8 @@ export default function Capabilities() {
   return (
     <>
       <SEO
-        title="Capabilities"
-        description="Custom software, mobile apps, cloud architecture, AI automation, systems integration, and digital transformation. Full-stack engineering capabilities."
+        title="Software Development Capabilities — Custom Software, Cloud, AI & Mobile"
+        description="Bare Force One offers full-stack custom software development, mobile app development, cloud architecture, AI automation, and systems integration. Mission-driven engineering for government and enterprise."
         path="/capabilities"
       />
       <PageHeader
