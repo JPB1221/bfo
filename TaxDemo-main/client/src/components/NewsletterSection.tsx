@@ -7,39 +7,39 @@ import { useEffect, useRef, useState } from "react";
 
 const ARTICLES = [
   {
-    title: "Tax Documents May Come in Different Formats This Filing Season",
+    title: "Navigating the Shift to Digital-First Tax Reporting",
     date: "March 1, 2026",
-    excerpt: 'Keep an eye out over the next 2-3 weeks for important documents you will need to file a complete and accurate tax return. These documents may include Form W-2 (Wage and Tax Statement for employees), along with various 1099 forms showing interest, dividend, rental, royalty or self-employment income.',
-    content: `Keep an eye out over the next 2-3 weeks for important documents you will need to file a complete and accurate tax return. These documents may include Form W-2 (Wage and Tax Statement for employees), along with various 1099 forms showing interest, dividend, rental, royalty or self-employment income. Traditionally, these forms came in the mail or were distributed to employees at a workplace. However, they may now be sent digitally, or made available through an online system.
+    excerpt: 'As financial institutions and employers increasingly move away from paper statements, taxpayers must adapt to digital document delivery. Learn how to ensure you have all necessary forms before filing.',
+    content: `The era of waiting by the mailbox for your W-2s and 1099s is largely behind us. This year, the IRS reports that over 85% of standard tax documents will be delivered electronically. While this shift reduces paper waste and mailing delays, it places a new burden on taxpayers to actively track down their digital forms across multiple portals.
 
-Gathering up needed forms may be especially challenging this tax season for people who qualify for the new "No Tax on Tips," "No Tax on Overtime" and/or "No Tax on Car Loan Interest" deductions. In the future, the information needed to claim these deductions will be included on W-2, 1099 or other standard IRS forms. This year, however, employers and lenders may use alternative reporting formats.
+Before you begin your tax preparation, create a checklist of all expected income sources. This includes your primary employer, freelance platforms, investment brokerages, and even peer-to-peer payment apps. Many of these platforms will not send an email notification when your tax documents are ready; you must log in and download them manually from your account dashboard.
 
-In order to claim any of these deductions, or the enhanced deduction for seniors, you will need to file a new tax form just released by the IRS called Schedule 1-A. A tax professional can help you assemble all the needed information, complete this form and file your entire return electronically so you can receive your refund as quickly as possible.`,
+If you are missing a document, do not estimate the amounts. The IRS automated matching system will flag discrepancies between what you report and what institutions file, leading to processing delays or audits. Our team at Premier Accounting can help you identify exactly which forms you need based on your financial profile and ensure your return is filed accurately the first time.`,
     category: "Tax Filing",
     icon: "📄",
   },
   {
-    title: 'No Tax on Overtime Deduction',
+    title: 'Maximizing Home Office Deductions in the Hybrid Era',
     date: "March 1, 2026",
-    excerpt: 'The IRS has provided additional guidance on the No Tax on Overtime deduction created under the One Big Beautiful Bill Act (OBBBA). In order to claim the deduction, you must be an FLSA overtime-eligible employee.',
-    content: `The IRS has provided additional guidance on the No Tax on Overtime deduction created under the One Big Beautiful Bill Act (OBBBA). In order to claim the deduction, you must be an FLSA overtime-eligible employee, where FLSA stands for the Fair Labor Standards Act. Many full-time employees fit this category but some do not, so if you are unsure about your FLSA designation, check with your employer.
+    excerpt: 'With hybrid work models becoming the permanent standard for many businesses, understanding the strict IRS rules around home office deductions is more critical than ever for self-employed individuals.',
+    content: `The shift toward remote and hybrid work has led to widespread confusion regarding home office deductions. The most important rule to remember is that W-2 employees are currently not eligible to claim the home office deduction, regardless of how many days they work from home. This deduction is strictly reserved for self-employed individuals, freelancers, and independent contractors.
 
-You may only claim the No Tax on Overtime deduction if you have a Social Security number (SSN) valid for U.S. employment. If you are married, you must file a joint tax return with your spouse. Note that the deduction applies only to bonus overtime pay above your normal salary or wage rate.
+If you qualify, the IRS requires that the space be used "exclusively and regularly" as your principal place of business. A desk in the corner of your guest bedroom or kitchen table does not meet the exclusivity test. The space must be a clearly defined area used only for business activities.
 
-You do not need to itemize deductions in order to deduct overtime pay. The maximum deduction amount is $12,500, or $25,000 for joint filers if both spouses have qualifying overtime pay and valid SSNs. The deduction amount decreases for people with modified adjusted gross incomes above $150,000 (or $300,000 for joint filers). A tax professional can help you determine whether you qualify to deduct overtime, and if so, help you properly figure your deduction amount.`,
+Taxpayers can choose between the simplified method (a standard deduction of $5 per square foot, up to 300 square feet) or the regular method (deducting actual expenses based on the percentage of your home used for business). While the simplified method is easier, the regular method often yields a higher deduction if you have significant mortgage interest, rent, or utility costs. Consult with your CPA to determine which method provides the greatest tax benefit for your specific situation.`,
     category: "Tax Deductions",
     icon: "💼",
   },
   {
-    title: "Upcoming Tax Deadlines",
+    title: "Quarterly Estimated Tax Strategies for Small Businesses",
     date: "March 1, 2026",
-    excerpt: 'Staying ahead of important tax deadlines helps ensure smooth operations and avoid unnecessary penalties. Each month, we highlight key due dates so you know exactly what is coming up and can plan accordingly.',
-    content: `Staying ahead of important tax deadlines helps ensure smooth operations and avoid unnecessary penalties. Each month, we highlight key due dates so you know exactly what's coming up and can plan accordingly. Be sure to review the items below and contact us if you have any questions about your specific situation.
+    excerpt: 'Failing to pay adequate quarterly estimated taxes is one of the most common—and costly—mistakes made by new business owners. Learn how to project your income and avoid underpayment penalties.',
+    content: `Unlike W-2 employees who have taxes withheld from every paycheck, small business owners and freelancers are responsible for paying their taxes as they earn income throughout the year. The IRS requires you to make quarterly estimated tax payments if you expect to owe $1,000 or more when your return is filed.
 
-Key upcoming deadlines include quarterly estimated tax payments, corporate filing deadlines, and individual return extensions. Our team monitors all federal and Florida state tax deadlines to keep you informed and compliant throughout the year.
+The challenge for many businesses is accurately projecting income in an unpredictable economy. If you underpay your quarterly estimates, you will face underpayment penalties and interest charges. To avoid this, you can use the "safe harbor" rule: pay 100% of the tax shown on your prior year's return (or 110% if your adjusted gross income was over $150,000).
 
-Contact Premier Accounting today to ensure you never miss an important tax deadline. We provide proactive reminders and guidance to keep your tax obligations on track.`,
-    category: "Tax Deadlines",
+We recommend setting aside 25-30% of your gross business income in a separate savings account specifically designated for taxes. This ensures you always have the funds available when quarterly deadlines approach. If your business experiences significant seasonal fluctuations, our advisors can help you calculate annualized income installment payments to better align your tax payments with your actual cash flow.`,
+    category: "Tax Planning",
     icon: "📅",
   },
 ];

@@ -1,13 +1,23 @@
 {
   "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/build",
+  "redirects": [
+    { "source": "/demo/customCar", "destination": "/demo/custom-car", "permanent": true },
+    { "source": "/demo/customCar/(.*)", "destination": "/demo/custom-car/$1", "permanent": true },
+    { "source": "/demo/stech", "destination": "/demo/education", "permanent": true },
+    { "source": "/demo/stech/(.*)", "destination": "/demo/education/$1", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/demo/construction", "destination": "/demo/construction/index.html" },
     { "source": "/demo/construction/(.*)", "destination": "/demo/construction/index.html" },
-    { "source": "/demo/customCar", "destination": "/demo/customCar/index.html" },
-    { "source": "/demo/customCar/(.*)", "destination": "/demo/customCar/index.html" },
+    { "source": "/demo/custom-car", "destination": "/demo/custom-car/index.html" },
+    { "source": "/demo/custom-car/(.*)", "destination": "/demo/custom-car/index.html" },
     { "source": "/demo/tax", "destination": "/demo/tax/index.html" },
     { "source": "/demo/tax/(.*)", "destination": "/demo/tax/index.html" },
+    { "source": "/demo/education", "destination": "/demo/education/index.html" },
+    { "source": "/demo/education/(.*)", "destination": "/demo/education/index.html" },
+    { "source": "/demo/permit-portal", "destination": "/demo/permit-portal/index.html" },
+    { "source": "/demo/permit-portal/(.*)", "destination": "/demo/permit-portal/index.html" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }

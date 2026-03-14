@@ -126,19 +126,19 @@ export default function MainContent() {
               {/* Pull quote */}
               <blockquote className="border-l-4 border-[#D4A843] pl-5 py-2 mb-6 bg-[#1B4F72]/5 rounded-r-lg">
                 <p className="text-[#1B4F72] text-lg italic font-medium leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                  "Fueled by an enterprising spirit that values relationships above all, we're proud to carry on our family business."
+                  "We believe that true financial guidance goes beyond the numbers—it's about understanding the people behind them."
                 </p>
               </blockquote>
 
               <div className="space-y-4 text-[#374151] text-sm leading-relaxed" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                 <p>
-                  Our roots date back to 1965, when company founder, [Founder Name], began building this practice with a single desk and a commitment to serving the local community. After years working at regional firms following graduation from the University of [City], he was determined to build something of his own — a firm where clients were treated like family, not account numbers.
+                  Founded in 1978 by William A. Hargrove, Premier Accounting began with a simple vision: to provide everyday people and local businesses with the same caliber of financial strategy usually reserved for large corporations. William started the firm from a small storefront office, armed with a ledger, a calculator, and an unwavering commitment to his clients' success.
                 </p>
                 <p>
-                  Over the decades, the firm grew from a one-person operation to a full-service accounting and tax practice with a dedicated team of CPAs, Enrolled Agents, and financial specialists. Through every tax law change, economic cycle, and technological shift, our core promise has remained the same: personalized service, expert guidance, and one less thing for you to worry about.
+                  As the financial landscape grew more complex over the decades, so did our firm. We expanded our team to include specialized CPAs, strategic tax planners, and business consultants. Yet, despite our growth, we never lost sight of our founder's original philosophy. We still take the time to sit down with every client, listen to their unique challenges, and craft personalized strategies that protect their assets and foster growth.
                 </p>
                 <p>
-                  Today, the second generation of the founding family carries on that legacy alongside a talented team of professionals. We serve individuals, families, small businesses, and nonprofits across the region — and we look forward to becoming part of your financial story. Join our clients in becoming part of our history. We will give you… <strong>JUST ONE LESS THING TO WORRY ABOUT!</strong>
+                  Today, Premier Accounting stands as a pillar of stability in the community. Whether you are navigating your first year as a small business owner, planning for retirement, or managing a complex corporate tax structure, our team is here to guide you. We handle the complexities of the tax code so you can focus on what matters most—your family, your business, and your future.
                 </p>
               </div>
             </div>
