@@ -6,9 +6,9 @@
 import { ArrowRight, Calendar, Tag } from "lucide-react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
-const NEWS_1 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/euod9L2oubRzMbrTSbdEXv/news-1-9gs3MYBJRHcmNgEhb5WPjq.webp";
-const NEWS_2 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/euod9L2oubRzMbrTSbdEXv/news-2-FULSEVMiZ4BmGeCBRMaBbv.webp";
-const NEWS_3 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/euod9L2oubRzMbrTSbdEXv/news-3-LGCgpJiTD8Lq6oUrxh9Fgc.webp";
+const NEWS_1 = "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=500&fit=crop&q=80";
+const NEWS_2 = "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop&q=80";
+const NEWS_3 = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop&q=80";
 
 const newsItems = [
   {

@@ -6,12 +6,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Building2, Droplets, Layers, Hammer, RectangleHorizontal, Wrench } from "lucide-react";
 
-const WATERPROOFING_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/ZPwmxekkEKT4zbbsEeYCsE/str-waterproofing-dTJ3CaCHzqNKcBqUgmNGDG.webp";
-const FLATWORK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/ZPwmxekkEKT4zbbsEeYCsE/str-flatwork-9pyptvf8rEAfNUHGVELoTt.webp";
-const RESTORATION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/ZPwmxekkEKT4zbbsEeYCsE/str-restoration-bYxHcZVpbe9fJDz7woXYNC.webp";
-const FOUNDATIONS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/ZPwmxekkEKT4zbbsEeYCsE/str-foundations-fR3NH8seNztAY8wPgez3L8.webp";
-const PAVING_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/ZPwmxekkEKT4zbbsEeYCsE/str-paving-XcKoYBVJd9WckssNem9Cnt.webp";
-const GENERAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/ZPwmxekkEKT4zbbsEeYCsE/str-general-contracting-3ogT4K3KaNJvoChrKHZn4d.webp";
+const WATERPROOFING_IMG = "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop&q=80";
+const FLATWORK_IMG = "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80";
+const RESTORATION_IMG = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&q=80";
+const FOUNDATIONS_IMG = "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop&q=80";
+const PAVING_IMG = "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=800&h=600&fit=crop&q=80";
+const GENERAL_IMG = "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&h=600&fit=crop&q=80";
 
 const services = [
   {

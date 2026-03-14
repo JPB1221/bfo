@@ -41,17 +41,17 @@ export default function Navbar() {
           <a
             href="#top"
             className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded"
-            aria-label="Southland Technical College — Home"
+            aria-label="Maplewood Technical Institute — Home"
           >
             <div className="w-9 h-9 rounded-md bg-[#E8A020] flex items-center justify-center flex-shrink-0 group-hover:bg-amber-400 transition-colors">
               <GraduationCap className="w-5 h-5 text-[#0D4F5C]" aria-hidden="true" />
             </div>
             <div className="leading-tight">
               <span className="block text-white font-bold text-base tracking-tight" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                Southland
+                Maplewood
               </span>
               <span className="block text-amber-300 text-xs font-medium tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                Technical College
+                Technical Institute
               </span>
             </div>
           </a>

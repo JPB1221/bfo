@@ -63,7 +63,7 @@ export default function Footer() {
                   STech
                 </span>
                 <span className="block text-amber-300 text-xs font-medium tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  stech.edu
+                  maplewoodtech.edu
                 </span>
               </div>
             </a>
@@ -80,8 +80,8 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span className="text-white/70 text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  1200 Technical Drive<br />
-                  Fort Lauderdale, FL 33301
+                  500 Innovation Blvd<br />
+                  Maplewood, FL 33000
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -97,11 +97,11 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-amber-400 flex-shrink-0" aria-hidden="true" />
                 <a
-                  href="mailto:info@stech.edu"
+                  href="mailto:info@maplewoodtech.edu"
                   className="text-white/70 hover:text-amber-300 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                 >
-                  info@stech.edu
+                  info@maplewoodtech.edu
                 </a>
               </div>
             </address>

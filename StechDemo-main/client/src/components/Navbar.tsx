@@ -51,7 +51,7 @@ export default function Navbar() {
                 STech
               </span>
               <span className="block text-amber-300 text-xs font-medium tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                stech.edu
+                maplewoodtech.edu
               </span>
             </div>
           </a>

@@ -18,7 +18,7 @@ const quickLinks = [
 ];
 
 const aboutLinks = [
-  { label: "About STC", href: "#about" },
+  { label: "About MTI", href: "#about" },
   { label: "Mission & Values", href: "#" },
   { label: "Leadership", href: "#" },
   { label: "Accreditation", href: "#" },
@@ -53,17 +53,17 @@ export default function Footer() {
             <a
               href="#top"
               className="flex items-center gap-2.5 mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded w-fit"
-              aria-label="Southland Technical College — Home"
+              aria-label="Maplewood Technical Institute — Home"
             >
               <div className="w-9 h-9 rounded-md bg-[#E8A020] flex items-center justify-center flex-shrink-0">
                 <GraduationCap className="w-5 h-5 text-[#0D4F5C]" aria-hidden="true" />
               </div>
               <div className="leading-tight">
                 <span className="block text-white font-bold text-base tracking-tight" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  Southland
+                  Maplewood
                 </span>
                 <span className="block text-amber-300 text-xs font-medium tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  Technical College
+                  Technical Institute
                 </span>
               </div>
             </a>
@@ -81,7 +81,7 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span className="text-white/70 text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                   1200 Technical Drive<br />
-                  Southland, ST 00000
+                  Maplewood, ST 00000
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -97,11 +97,11 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-amber-400 flex-shrink-0" aria-hidden="true" />
                 <a
-                  href="mailto:info@stc.edu"
+                  href="mailto:info@maplewoodtech.edu"
                   className="text-white/70 hover:text-amber-300 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                 >
-                  info@stc.edu
+                  info@maplewoodtech.edu
                 </a>
               </div>
             </address>
@@ -136,7 +136,7 @@ export default function Footer() {
               className="text-white font-semibold text-sm tracking-widest uppercase mb-5"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              About STC
+              About MTI
             </h3>
             <ul className="flex flex-col gap-2.5" role="list">
               {aboutLinks.map((link) => (
@@ -229,7 +229,7 @@ export default function Footer() {
               className="text-white/40 text-xs text-center md:text-left"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              &copy; 2026 Southland Technical College. All rights reserved.{" "}
+              &copy; 2026 Maplewood Technical Institute. All rights reserved.{" "}
               <span className="text-amber-500/60">
                 This is a concept demo — not an official college website.
               </span>

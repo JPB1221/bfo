@@ -1,5 +1,5 @@
 /* =============================================================
-   HOME PAGE — S.T.R. Concrete Restoration LLC
+   HOME PAGE — C.R.S. Concrete Restoration Specialists
    Design: Industrial Brutalist Precision
    Sections: Navbar → Hero → Stats → Services → About → WhyUs → Projects → Contact → Footer
    ============================================================= */

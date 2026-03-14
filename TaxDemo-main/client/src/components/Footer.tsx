@@ -39,7 +39,7 @@ export default function Footer() {
               className="text-white/60 text-sm leading-relaxed mb-4"
               style={{ fontFamily: "'Nunito Sans', sans-serif" }}
             >
-              Accountants and Income Tax Specialists serving our community since 1965.
+              Accountants and Income Tax Specialists serving our community since 1978.
             </p>
             <p
               className="text-[#D4A843] text-sm italic font-light"

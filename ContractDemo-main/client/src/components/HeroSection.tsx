@@ -6,7 +6,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Phone, ChevronDown, ShieldCheck, Award, Wrench } from "lucide-react";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/ZPwmxekkEKT4zbbsEeYCsE/str-hero-K2bjJDFuv4hBpkpFNcR4AX.webp";
+const HERO_IMAGE = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&q=80";
 
 export default function HeroSection() {
   const [visible, setVisible] = useState(false);
@@ -28,7 +28,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <img
           src={HERO_IMAGE}
-          alt="S.T.R. Concrete Restoration — Fort Lauderdale FL"
+          alt="C.R.S. Concrete Restoration Specialists — Professional Contractor"
           className="w-full h-full object-cover object-center"
           style={{ filter: "brightness(0.45)" }}
         />

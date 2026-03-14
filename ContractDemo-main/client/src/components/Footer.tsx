@@ -93,7 +93,7 @@ export default function Footer() {
                   lineHeight: 1,
                 }}
               >
-                S.T.R.
+                C.R.S.
               </div>
               <div
                 style={{

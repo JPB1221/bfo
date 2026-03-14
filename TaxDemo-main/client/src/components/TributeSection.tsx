@@ -35,7 +35,7 @@ export default function TributeSection() {
                 className="text-[#D4A843] text-xs font-bold tracking-widest uppercase"
                 style={{ fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                In Memoriam
+                Our Founding Story
               </span>
               <div className="h-px w-12 bg-[#D4A843]/60" />
             </div>
@@ -43,13 +43,13 @@ export default function TributeSection() {
               className="text-[#1B4F72] text-4xl font-semibold"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Robert A. Mitchell
+              Built on a Simple Promise
             </h2>
             <p
               className="text-gray-500 mt-1 text-sm italic"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Founder, Premier Accounting &amp; Tax Specialists · November 2020
+              Premier Accounting &amp; Tax Specialists · Founded 1978
             </p>
           </div>
 
@@ -61,8 +61,8 @@ export default function TributeSection() {
                 <div className="text-center">
                   <div className="w-40 h-48 mx-auto rounded-xl overflow-hidden shadow-xl mb-4 bg-[#0d2d45] flex items-center justify-center">
                     <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=380&fit=crop&q=80"
-                      alt="Robert A. Mitchell, Founder"
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=380&fit=crop&q=80"
+                      alt="Firm Founder"
                       className="w-full h-full object-cover grayscale"
                     />
                   </div>
@@ -70,13 +70,13 @@ export default function TributeSection() {
                     className="text-[#D4A843] font-semibold text-sm"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
-                    Robert A. Mitchell
+                    William A. Hargrove, CPA
                   </div>
                   <div
                     className="text-white/60 text-xs mt-1"
                     style={{ fontFamily: "'Nunito Sans', sans-serif" }}
                   >
-                    Founder &amp; President
+                    Founder &amp; Managing Partner
                   </div>
                   <div
                     className="text-white/60 text-xs"
@@ -93,7 +93,7 @@ export default function TributeSection() {
                   className="text-gray-400 text-sm mb-4 italic"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
-                  November 16, 2020
+                  From the desk of the founding partner
                 </p>
                 <p
                   className="text-[#1B4F72] font-semibold mb-4"
@@ -104,16 +104,16 @@ export default function TributeSection() {
 
                 <div className="space-y-4 text-[#374151] text-sm leading-relaxed" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                   <p>
-                    It is with great sadness that we announce the passing of Robert A. Mitchell, our firm's founder. Robert passed away peacefully on November 1, 2020, surrounded by his loving family after a courageous battle with illness.
+                    When I opened this firm in 1978, I had one goal: to give every client the same quality of financial guidance that large corporations receive — delivered with the personal attention only a local firm can provide.
                   </p>
                   <p>
-                    Robert was deeply loved by his family and friends, and words cannot fully express the loss that is felt by his passing. He took great pride in building this practice and was grateful for every client relationship formed over nearly six decades. In January, we will celebrate 60 years in business — a milestone he worked his entire life to reach.
+                    Over nearly five decades, that promise has never changed. We have grown from a one-person practice into a team of certified professionals, but every client still receives direct access to their advisor and a commitment to their long-term financial wellbeing.
                   </p>
                   <p>
-                    Robert was an extraordinarily bright and accomplished entrepreneur who built a company that still represents and practices the same principles he used to create this firm. He had an exceptional work ethic, long-term commitments to his clients, and diligence in strong financial practices. His belief that his colleagues were integral to both his personal and the company's success made him truly one of a kind.
+                    Our work is built on trust. We don't just prepare returns — we build relationships. We learn your situation, anticipate your needs, and stand beside you through every financial decision, year after year.
                   </p>
                   <p>
-                    We thank you heartily for the patronage you have extended to us and sincerely hope that the same will be continued in the future.
+                    Thank you for allowing us to be part of your financial journey. It is a responsibility we take seriously and a privilege we do not take for granted.
                   </p>
                 </div>
 
@@ -128,24 +128,14 @@ export default function TributeSection() {
                     className="text-[#1B4F72] font-bold text-base mb-2"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
-                    Premier Accounting &amp; Family
+                    William A. Hargrove, CPA
                   </p>
-                  <div className="grid grid-cols-2 gap-1">
-                    {[
-                      "Jennifer Mitchell",
-                      "Michael Mitchell",
-                      "Sarah Mitchell-Park",
-                      "Laura Mitchell-Chen",
-                    ].map((name) => (
-                      <div
-                        key={name}
-                        className="text-gray-500 text-sm italic"
-                        style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                      >
-                        {name}
-                      </div>
-                    ))}
-                  </div>
+                  <p
+                    className="text-gray-500 text-sm italic"
+                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  >
+                    Founder, Premier Accounting &amp; Tax Specialists
+                  </p>
                 </div>
               </div>
             </div>

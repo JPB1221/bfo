@@ -52,7 +52,7 @@ export default function ValuesStrip() {
     <section
       className="relative py-20 overflow-hidden"
       style={{
-        backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/Beach1_d03a43e4.jpg'), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=600&fit=crop&q=80')`,
+        backgroundImage: `url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=600&fit=crop&q=80')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

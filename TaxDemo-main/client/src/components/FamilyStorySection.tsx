@@ -1,7 +1,7 @@
-/*
- * FamilyStorySection — Family business story with video and narrative
- * Design: Serif headings, warm gold accents, readable body text
- */
+/* ==========================================================================
+   COMPONENT: FamilyStorySection
+   Design: Premier Accounting — fictional firm history, completely original
+   ========================================================================== */
 
 import { useEffect, useRef, useState } from "react";
 
@@ -33,7 +33,7 @@ export default function FamilyStorySection() {
             className="text-[#D4A843] text-xs font-bold tracking-widest uppercase"
             style={{ fontFamily: "'Nunito Sans', sans-serif" }}
           >
-            Est. 1961
+            Est. 1978
           </span>
         </div>
         <h2
@@ -42,32 +42,8 @@ export default function FamilyStorySection() {
         >
           A Family Business
           <br />
-          <em className="font-normal">Since 1961</em>
+          <em className="font-normal">Since 1978</em>
         </h2>
-      </div>
-
-      {/* Video embed */}
-      <div className="rounded-xl overflow-hidden shadow-lg mb-10 bg-[#1B4F72]">
-        <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSantosAssociatesAccountants%2Fvideos%2F&show_text=false&width=734"
-            className="absolute inset-0 w-full h-full"
-            style={{ border: "none", overflow: "hidden" }}
-            scrolling="no"
-            frameBorder="0"
-            allowFullScreen
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            title="Santos Associates Accountants and Income Tax Specialists since 1961"
-          />
-        </div>
-        <div className="px-4 py-3 flex items-center gap-2">
-          <svg className="w-4 h-4 text-[#D4A843] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-          </svg>
-          <span className="text-white/80 text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-            Santos Associates Accountants and Income Tax Specialists since 1961
-          </span>
-        </div>
       </div>
 
       {/* Our Story */}
@@ -79,24 +55,16 @@ export default function FamilyStorySection() {
           Our Story
         </h3>
 
-        {/* Historic photos row — actual photos from Santos Associates */}
-        <div className="grid grid-cols-3 gap-3 mb-6">
+        {/* Milestone cards */}
+        <div className="grid grid-cols-3 gap-3 mb-8">
           {[
-            { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/1961_311b6c87.jpg", label: "1961" },
-            { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/1963_02eea933.jpg", label: "1963" },
-            { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/1967_29ab68ff.jpg", label: "1967" },
-          ].map(({ src, label }) => (
-            <div key={label} className="relative rounded-lg overflow-hidden shadow-md group">
-              <div className="aspect-square">
-                <img
-                  src={src}
-                  alt={`Santos Associates ${label}`}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent py-2 px-3">
-                <span className="text-white/90 text-xs font-semibold" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>{label}</span>
-              </div>
+            { label: "Founded", year: "1978" },
+            { label: "Expanded", year: "1995" },
+            { label: "Today", year: "2026" },
+          ].map(({ label, year }) => (
+            <div key={label} className="relative rounded-lg overflow-hidden shadow-md bg-[#1B4F72] flex flex-col items-center justify-center py-8">
+              <span className="text-[#D4A843] text-3xl font-bold" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{year}</span>
+              <span className="text-white/70 text-xs mt-1 tracking-widest uppercase" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>{label}</span>
             </div>
           ))}
         </div>
@@ -106,18 +74,21 @@ export default function FamilyStorySection() {
           className="text-[#1B4F72] text-xl font-medium italic border-l-4 border-[#D4A843] pl-5 mb-6 leading-relaxed"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
-          Fueled by an enterprising spirit that values relationships above all, we're proud to carry on our family business.
+          Built on trust, grown through relationships — we've been part of this community for nearly five decades.
         </blockquote>
 
         <div className="space-y-4 text-[#374151] leading-relaxed" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
           <p>
-            Our roots date back to 1961, when company founder, Edward J. Santos, began building his business out of the trunk of his car in Miramar and Miami, Florida! Prior to this, he worked as an accountant for various firms locally after attending the University of Miami. During this time, he was determined to be his own boss, so began Ed Santos Associates. His first office, with rent at $75 a month, was located off Pembroke Road and 63rd Ave in Miramar, FL. In 1965, he moved a few streets down to an office off Pembroke Rd and the Florida turnpike until moving to Griffin Road and University Drive in Davie, FL in 1982.
+            Premier Accounting & Tax Specialists was founded in 1978 by William A. Hargrove, a licensed CPA who spent his early career at regional accounting firms before deciding to build something of his own. Starting with a small office and a handful of clients, William's philosophy was simple: treat every client like family, stay available year-round, and never stop learning.
           </p>
           <p>
-            In 2007, the office moved to Pembroke Pines. Over the years Ed has included family and friends in his workforce, beginning with his wife, Pat, mother in law, sister, sister in law, his 4 children, 10 grandchildren and friends ranging from secretary, file clerk, computer tech and income tax experts. Our successes lay in faith, family, friends and loyal clients! Santos has had many Associates over the years which included 'Woody' Savage and 'Don' Uebelacker for over 40 years. Today his four daughters and grandchildren are helping carry on his commitment to family, friends, and our community. Join our clients in becoming part of our history. We will give you…
+            Over the decades, the firm grew steadily through referrals and community involvement. In 1995, William's daughter, Catherine Hargrove-Reyes, joined the practice after earning her CPA license, bringing fresh expertise in small business accounting and financial planning. Together, they expanded the firm's services and client base while maintaining the personal touch that had always defined the practice.
+          </p>
+          <p>
+            Today, Premier Accounting serves hundreds of families and businesses across the region. The next generation is actively involved, carrying forward the same commitment to accuracy, integrity, and genuine client care that William established nearly 50 years ago.
           </p>
           <p className="text-[#1B4F72] font-bold text-lg" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-            JUST ONE LESS THING TO WORRY ABOUT!
+            RELAX. WE ARE HERE TO HELP.
           </p>
         </div>
       </div>
@@ -131,20 +102,20 @@ export default function FamilyStorySection() {
           Our Services
         </h4>
         <p className="text-[#374151] text-sm leading-relaxed" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-          Santos Associates has been filing Income Tax Returns and serving Dade & Broward County for over 60 years while offering convenient appointments at your request. We specialize in:
+          Premier Accounting & Tax Specialists has been serving individuals and businesses for nearly 50 years. We offer convenient appointments and year-round support. We specialize in:
         </p>
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
           {[
             "Personal Income Tax Preparation",
-            "Small Business Income Tax Preparation",
-            "Business Entity Selection & Incorporation",
-            "Certified Financial Planning™",
-            "Accounting, Bookkeeping & Write-Up Services",
-            "Audits (Non-Certified)",
-            "Financial Analysis & Statements",
-            "Financial Elder Care",
-            "Insurance Services",
+            "Small Business Tax Preparation",
+            "Business Entity Formation",
+            "Financial Planning & Retirement",
+            "Bookkeeping & Write-Up Services",
             "IRS Representation",
+            "Financial Statements & Analysis",
+            "Payroll Services",
+            "Estate & Trust Tax Returns",
+            "Nonprofit Tax Compliance",
           ].map((service) => (
             <div key={service} className="flex items-start gap-2">
               <svg className="w-4 h-4 text-[#D4A843] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">

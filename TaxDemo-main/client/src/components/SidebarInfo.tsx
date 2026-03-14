@@ -1,37 +1,40 @@
 /*
  * SidebarInfo — Right sidebar with contact info, quick actions, and helpful links
  * Design: Clean cards with navy/gold accents
+ * DEMO: All contact info is fictional — no real addresses, phone numbers, or emails
  */
 
 export default function SidebarInfo() {
   return (
     <aside className="space-y-6 lg:sticky lg:top-24">
-      {/* 65th Anniversary Badge — actual image from Santos Associates */}
+      {/* Anniversary Badge — SVG-based, no external images */}
       <div className="bg-[#1B4F72] rounded-xl p-5 text-center text-white shadow-lg">
-        <div className="w-28 h-28 mx-auto mb-3">
-          <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/65Years_05fad030.jpg"
-            alt="65 Years - Associates Tax Specialists Florida 1961-2026"
-            className="w-full h-full object-contain"
-          />
+        <div className="w-28 h-28 mx-auto mb-3 flex items-center justify-center">
+          {/* SVG badge — completely original, no external assets */}
+          <svg viewBox="0 0 120 120" className="w-full h-full" aria-label="Premier Accounting — Est. 1978">
+            <circle cx="60" cy="60" r="56" fill="none" stroke="#D4A843" strokeWidth="3" />
+            <circle cx="60" cy="60" r="48" fill="none" stroke="#D4A843" strokeWidth="1" strokeDasharray="4 3" />
+            <text x="60" y="44" textAnchor="middle" fill="#D4A843" fontSize="11" fontFamily="serif" fontWeight="bold">PREMIER</text>
+            <text x="60" y="60" textAnchor="middle" fill="#ffffff" fontSize="22" fontFamily="serif" fontWeight="bold">48</text>
+            <text x="60" y="72" textAnchor="middle" fill="#D4A843" fontSize="8" fontFamily="sans-serif" letterSpacing="1">YEARS</text>
+            <text x="60" y="86" textAnchor="middle" fill="#ffffff" fontSize="8" fontFamily="sans-serif">EST. 1978</text>
+          </svg>
         </div>
         <div className="text-[#D4A843] text-xs font-bold tracking-widest uppercase mb-1" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-          Associates Tax Specialists
+          Premier Accounting
         </div>
         <div className="text-white text-sm font-medium" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-          Florida · 1961–2026
+          Serving clients since 1978
         </div>
       </div>
 
-      {/* Enrolled Agent Badge — actual logo from Santos Associates */}
+      {/* Enrolled Agent Badge */}
       <div className="bg-white rounded-xl p-5 border-2 border-[#1B4F72] shadow-md">
         <div className="flex items-center gap-3">
-          <div className="flex-shrink-0">
-            <img
-              src="https://cdn1.getnetset.com/wp-content/uploads/ea-gns-120.gif"
-              alt="Enrolled Agent - Admitted to Practice Before the IRS"
-              className="h-12 w-auto"
-            />
+          <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[#1B4F72] flex items-center justify-center">
+            <svg className="w-7 h-7 text-[#D4A843]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
           </div>
           <div>
             <div className="text-[#1B4F72] font-bold text-sm uppercase tracking-wide" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
@@ -85,7 +88,7 @@ export default function SidebarInfo() {
         </a>
       </div>
 
-      {/* Contact Info */}
+      {/* Contact Info — all fictional */}
       <div className="bg-white rounded-xl p-5 shadow-md border border-gray-100">
         <h4
           className="text-[#1B4F72] text-lg font-semibold mb-4 pb-2 border-b border-[#D4A843]/30"
@@ -100,8 +103,8 @@ export default function SidebarInfo() {
             </svg>
             <div>
               <div className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Phone</div>
-              <a href="tel:9544371040" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-                954-437-1040
+              <a href="tel:5551234567" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                (555) 123-4567
               </a>
             </div>
           </div>
@@ -111,7 +114,7 @@ export default function SidebarInfo() {
             </svg>
             <div>
               <div className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Fax</div>
-              <span className="text-[#374151] text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>954-437-6898</span>
+              <span className="text-[#374151] text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>(555) 123-4568</span>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -120,8 +123,8 @@ export default function SidebarInfo() {
             </svg>
             <div>
               <div className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Email</div>
-              <a href="mailto:edna@low-tax.net" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-                edna@low-tax.net
+              <a href="mailto:info@premieraccounting.com" className="text-[#1B4F72] font-semibold hover:text-[#D4A843] transition-colors text-sm" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                info@premieraccounting.com
               </a>
             </div>
           </div>
@@ -133,16 +136,16 @@ export default function SidebarInfo() {
             <div>
               <div className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Address</div>
               <address className="not-italic text-[#374151] text-sm leading-relaxed" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-                1961 N.W. 150th Avenue, Suite 104<br />
-                Pembroke Pines, FL 33028
+                123 Main Street, Suite 200<br />
+                Your City, FL 33000
               </address>
             </div>
           </div>
         </div>
 
-        {/* Facebook link */}
+        {/* Generic social link */}
         <a
-          href="https://www.facebook.com/SantosAssociatesAccountants"
+          href="https://www.facebook.com"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 flex items-center gap-2 text-[#1877F2] hover:text-[#1B4F72] transition-colors text-sm font-semibold"

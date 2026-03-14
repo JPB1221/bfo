@@ -5,7 +5,7 @@
 
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/euod9L2oubRzMbrTSbdEXv/hero-banner-iAVXsr926cpUL3TYivUyn5.webp";
+const HERO_IMAGE = "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&h=1080&fit=crop&q=80";
 
 export default function HeroSection() {
   return (

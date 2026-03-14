@@ -7,17 +7,17 @@ import { useEffect, useRef, useState } from "react";
 
 const PARTNERS = [
   {
-    name: "Robert A. Mitchell, CPA",
+    name: "William A. Hargrove, CPA",
     role: "Founder & Managing Partner",
     photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&q=80",
-    bio: "Robert founded the firm in 1965 and has spent nearly six decades helping individuals and businesses navigate complex tax and financial challenges. His entrepreneurial spirit and dedication to clients define the firm's culture.",
+    bio: "William founded the firm in 1978 and has spent nearly five decades helping individuals and businesses navigate complex tax and financial challenges. His entrepreneurial spirit and dedication to clients define the firm's culture.",
     credential: "Founder",
   },
   {
-    name: "Jennifer Mitchell, CPA",
+    name: "Catherine Hargrove-Reyes, CPA",
     role: "Partner",
     photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80",
-    bio: "Jennifer carries on her father's legacy with the same commitment to personal service and financial excellence. She specializes in individual and small business tax planning.",
+    bio: "Catherine carries on her father's legacy with the same commitment to personal service and financial excellence. She specializes in individual and small business tax planning.",
     credential: "CPA",
   },
   {
@@ -46,9 +46,9 @@ const PARTNERS = [
 const PRESS_RELEASES = [
   "Premier Accounting Recognized as Top 100 Accounting Firms in the Region",
   "Partner David Chen Earns IRS Enrolled Agent Designation",
-  "Firm Celebrates 60 Years of Serving the Community",
+  "Firm Celebrates 45 Years of Serving the Community",
   "Premier Accounting Expands Services to Include Virtual CFO Consulting",
-  "Jennifer Mitchell Named to 40 Under 40 Business Leaders List",
+  "Catherine Hargrove-Reyes Named to 40 Under 40 Business Leaders List",
 ];
 
 const COMMUNITY = [

@@ -26,7 +26,7 @@ const coreValues = [
   },
   {
     title: "Effectiveness",
-    body: "We seek out new ideas and we adapt to the changing needs of our clients, community and constituents by creating and implementing win-win solutions. We are client results orientated and try to help you to adapt to your ever changing goals and needs… and we are thankful for the opportunities to be of service to you, your family and friends!",
+    body: "We cut through complexity to deliver clear, actionable financial guidance. Our clients don't just get answers — they get strategies that work.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -35,7 +35,7 @@ const coreValues = [
   },
   {
     title: "Commitment",
-    body: "We are committed to save you time and money, to work with you to develop the best book-keeping strategy for YOU or your company, and to answer your questions at anytime.",
+    body: "We show up year-round, not just at tax time. Our clients have direct access to their advisor whenever questions arise — no runaround, no delays.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -104,7 +104,7 @@ export default function VisionMissionSection() {
               className="text-white/85 leading-relaxed"
               style={{ fontFamily: "'Nunito Sans', sans-serif" }}
             >
-              <strong className="text-white">Our Vision is…</strong> to improve your quality of life by saving you tax dollars while forming a personal relationship with our firm as your income tax preparer and partner.
+              <strong className="text-white">Our Vision</strong> is to be the most trusted financial partner in our community — a firm where every client feels confident, informed, and genuinely cared for.
             </p>
           </div>
 
@@ -130,7 +130,7 @@ export default function VisionMissionSection() {
               className="text-[#374151] leading-relaxed"
               style={{ fontFamily: "'Nunito Sans', sans-serif" }}
             >
-              <strong className="text-[#1B4F72]">Our Mission is to…</strong> help clients become aware of the options available to them, making a difference through strategic financial planning.
+              <strong className="text-[#1B4F72]">Our Mission</strong> is to simplify the financial lives of our clients through expert guidance, proactive planning, and a commitment to their long-term success.
             </p>
           </div>
         </div>

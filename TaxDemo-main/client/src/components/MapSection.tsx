@@ -42,7 +42,7 @@ export default function MapSection() {
             <div
               className="relative h-80 flex items-center justify-center cursor-pointer group"
               style={{
-                backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/Everglades1_c40c371d.jpg'), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&h=400&fit=crop&q=80')`,
+                backgroundImage: `url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&h=400&fit=crop&q=80')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -78,7 +78,7 @@ export default function MapSection() {
             </div>
           ) : (
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.3!2d-80.3!3d26.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a4f9a9a9a9a9%3A0x0!2s1961+NW+150th+Ave+%23104%2C+Pembroke+Pines%2C+FL+33028!5e0!3m2!1sen!2sus!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-80.19!3d25.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQ2JzEyLjAiTiA4MMKwMTEnMjQuMCJX!5e0!3m2!1sen!2sus!4v1234567890"
               width="100%"
               height="400"
               style={{ border: 0 }}

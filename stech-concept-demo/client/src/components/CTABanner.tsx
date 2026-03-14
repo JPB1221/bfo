@@ -6,7 +6,7 @@
 import { ArrowRight, CalendarCheck } from "lucide-react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
-const CTA_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/euod9L2oubRzMbrTSbdEXv/cta-banner-2YvJxi2ysHt6shhPZ5Z8yG.webp";
+const CTA_IMAGE = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&h=800&fit=crop&q=80";
 
 export default function CTABanner() {
   const { ref, isVisible } = useScrollReveal(0.2);
@@ -22,7 +22,7 @@ export default function CTABanner() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${CTA_IMAGE})` }}
         role="img"
-        aria-label="Aerial view of the Southland Technical College campus at golden hour"
+        aria-label="Aerial view of the Maplewood Technical Institute campus at golden hour"
       />
 
       {/* Overlay */}

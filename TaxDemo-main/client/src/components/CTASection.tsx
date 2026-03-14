@@ -23,7 +23,7 @@ export default function CTASection() {
       id="contact"
       className="relative py-24 overflow-hidden"
       style={{
-        backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/Everglades1_ab21cca9.jpg'), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=600&fit=crop&q=80')`,
+        backgroundImage: `url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&h=600&fit=crop&q=80')`,
         backgroundSize: "cover",
         backgroundPosition: "center 40%",
       }}

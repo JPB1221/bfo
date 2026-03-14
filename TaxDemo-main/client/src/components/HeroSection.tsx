@@ -7,32 +7,28 @@ import { useEffect, useState } from "react";
 
 const heroSlides = [
   {
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/Everglades1_ab21cca9.jpg",
-    fallback: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&h=700&fit=crop&q=80",
-    headline: "Relax. We are here to help.",
-    subline: "Get the personalized attention you deserve.",
-    body: "Worry-free tax & accounting services.",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&h=700&fit=crop&q=80",
+    headline: "Your finances, handled with care.",
+    subline: "Get the personalized attention your situation deserves.",
+    body: "Tax preparation, planning, and accounting services for individuals and businesses.",
   },
   {
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663421545679/GAny9ryeuRBMRWCTBX4hrw/Beach1_d03a43e4.jpg",
-    fallback: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=700&fit=crop&q=80",
-    headline: "A Family Business Since 1965.",
-    subline: "Trusted by our community for over 60 years.",
-    body: "Accountants and Income Tax Specialists.",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&h=700&fit=crop&q=80",
+    headline: "Decades of trusted service.",
+    subline: "A local firm built on relationships, not transactions.",
+    body: "Certified Public Accountants · Enrolled Agents · Tax Specialists.",
   },
   {
-    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1600&h=700&fit=crop&q=80",
-    fallback: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1600&h=700&fit=crop&q=80",
-    headline: "Just one less thing to worry about.",
-    subline: "Strategic financial planning for your family and business.",
-    body: "Your City, FL · Serving the Greater Metro Area.",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&h=700&fit=crop&q=80",
+    headline: "One less thing to manage.",
+    subline: "We handle the numbers so you can focus on what matters.",
+    body: "Individual, business, and estate tax services.",
   },
   {
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=700&fit=crop&q=80",
-    fallback: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=700&fit=crop&q=80",
-    headline: "Your trusted financial partner.",
-    subline: "Enrolled Agents admitted to practice before the IRS.",
-    body: "Income Tax Specialists since 1965.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&h=700&fit=crop&q=80",
+    headline: "Strategic planning for long-term results.",
+    subline: "Proactive advice, not just annual filings.",
+    body: "Tax planning · Bookkeeping · Financial consulting.",
   },
 ];
 
@@ -89,7 +85,7 @@ export default function HeroSection() {
                 className="text-[#D4A843] text-xs font-bold tracking-[0.2em] uppercase"
                 style={{ fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                Premier Accounting & Tax Specialists · Est. 1965
+                Premier Accounting & Tax Specialists · Est. 1978
               </span>
             </div>
 
