@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd frontend && npm install && npm run build",
+  "buildCommand": "cd frontend && npm install && npm run build && cd .. && npm install serve-handler && node prerender.js",
   "outputDirectory": "frontend/build",
   "headers": [
     {
@@ -47,6 +47,6 @@
     { "source": "/demo/education/(.*)", "destination": "/demo/education/index.html" },
     { "source": "/demo/permit-portal", "destination": "/demo/permit-portal/index.html" },
     { "source": "/demo/permit-portal/(.*)", "destination": "/demo/permit-portal/index.html" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|government|enterprise|local-business|capabilities|case-studies|about|contact|request-proposal|insights).*)", "destination": "/index.html" }
   ]
 }
