@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University CRM - Concept Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0f1419;
+      --bg-secondary: #1a2028;
+      --bg-card: #222a35;
+      --bg-elevated: #2a3441;
+      --fg-primary: #f1f5f9;
+      --fg-secondary: #94a3b8;
+      --fg-muted: #64748b;
+      --accent: #f59e0b;
+      --accent-soft: rgba(245, 158, 11, 0.15);
+      --border: #2e3a47;
+      --success: #22c55e;
+      --info: #3b82f6;
+    }
+
+    * {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--fg-primary);
+    }
+
+    .bg-grid {
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .glow-blob {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card:hover {
+      border-color: rgba(245, 158, 11, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .nav-item {
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--fg-secondary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-item:hover {
+      background: var(--bg-elevated);
+      color: var(--fg-primary);
+    }
+
+    .nav-item.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .stat-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+      transform: translate(30%, -30%);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-primary);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-elevated);
+      color: var(--fg-primary);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--fg-muted);
+    }
+
+    .table-row {
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .table-row:hover {
+      background: var(--bg-elevated);
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .tag-alumni { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+    .tag-sponsor { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .tag-student { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+    .tag-faculty { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
+    .tag-mentor { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 28px;
+      padding-bottom: 24px;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline-item:last-child {
+      border-left: 2px solid transparent;
+    }
+
+    .search-input {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 16px 10px 44px;
+      color: var(--fg-primary);
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .filter-select {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 16px;
+      color: var(--fg-primary);
+      cursor: pointer;
+    }
+
+    .filter-select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .status-badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status-upcoming { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+    .status-ongoing { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+    .status-completed { background: rgba(148, 163, 184, 0.2); color: #94a3b8; }
+
+    .page {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes chartGrow {
+      from { transform: scaleY(0); }
+      to { transform: scaleY(1); }
+    }
+
+    .stagger > * {
+      animation: fadeIn 0.4s ease backwards;
+    }
+
+    .stagger > *:nth-child(1) { animation-delay: 0.05s; }
+    .stagger > *:nth-child(2) { animation-delay: 0.1s; }
+    .stagger > *:nth-child(3) { animation-delay: 0.15s; }
+    .stagger > *:nth-child(4) { animation-delay: 0.2s; }
+    .stagger > *:nth-child(5) { animation-delay: 0.25s; }
+    .stagger > *:nth-child(6) { animation-delay: 0.3s; }
+
+    .chart-bar {
+      transition: all 0.3s ease;
+      transform-origin: bottom;
+    }
+
+    .chart-bar:hover {
+      filter: brightness(1.2);
+    }
+
+    .chart-container {
+      position: relative;
+    }
+
+    .chart-tooltip {
+      position: absolute;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    .chart-tooltip.visible {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, .card, .nav-item, .btn-primary, .btn-secondary, .table-row, .chart-bar {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        left: -280px;
+        transition: left 0.3s ease;
+        z-index: 100;
+      }
+
+      .sidebar.open {
+        left: 0;
+      }
+
+      .mobile-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 90;
+      }
+
+      .mobile-overlay.active {
+        display: block;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--fg-muted);
+    }
+
+    .metric-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-grid">
+  <!-- Ambient Glow -->
+  <div class="glow-blob" style="top: -200px; right: -200px;"></div>
+  <div class="glow-blob" style="bottom: -200px; left: -200px; background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);"></div>
+
+  <!-- Demo Banner -->
+  <div class="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-b border-amber-500/20 py-3 px-4 relative z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-3 text-sm">
+      <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span class="text-amber-200/90 font-medium">Concept Demonstration – Built by Bare Force One for Illustrative Purposes Only</span>
+    </div>
+  </div>
+
+  <div class="flex min-h-[calc(100vh-52px)]">
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuBtn" class="md:hidden fixed top-16 left-4 z-50 p-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Mobile Overlay -->
+    <div id="mobileOverlay" class="mobile-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar w-64 bg-[var(--bg-secondary)] border-r border-[var(--border)] p-6 flex flex-col fixed md:sticky top-[52px] h-[calc(100vh-52px)]">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-display font-bold text-lg">UniCRM</h1>
+          <p class="text-xs text-[var(--fg-muted)]">University Relations</p>
+        </div>
+      </div>
+
+      <nav class="flex-1 space-y-1">
+        <div class="nav-item active" data-page="dashboard">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+          Dashboard
+        </div>
+        <div class="nav-item" data-page="constituents">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+          Constituents
+        </div>
+        <div class="nav-item" data-page="organizations">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+          </svg>
+          Organizations
+        </div>
+        <div class="nav-item" data-page="events">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          Events
+        </div>
+        <div class="nav-item" data-page="relationships">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+          </svg>
+          Relationships
+        </div>
+        <div class="nav-item" data-page="reports">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+          Reports
+        </div>
+      </nav>
+
+      <div class="pt-4 border-t border-[var(--border)]">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-sm font-semibold">JD</div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium truncate">Jane Doe</p>
+            <p class="text-xs text-[var(--fg-muted)]">Admin</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 md:p-8 md:ml-0 relative z-10">
+      <!-- Dashboard Page -->
+      <div id="page-dashboard" class="page active">
+        <div class="mb-8">
+          <h2 class="font-display text-2xl md:text-3xl font-bold mb-2">Welcome back, Jane</h2>
+          <p class="text-[var(--fg-secondary)]">Here's what's happening with your constituents today.</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 stagger">
+          <div class="card stat-card p-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-[var(--fg-muted)] text-sm mb-1">Total Constituents</p>
+                <p class="font-display text-3xl font-bold">20,482</p>
+                <p class="text-[var(--success)] text-sm mt-2 flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                  </svg>
+                  +12% this month
+                </p>
+              </div>
+              <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="card stat-card p-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-[var(--fg-muted)] text-sm mb-1">Active Organizations</p>
+                <p class="font-display text-3xl font-bold">1,230</p>
+                <p class="text-[var(--success)] text-sm mt-2 flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                  </svg>
+                  +8 new partners
+                </p>
+              </div>
+              <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="card stat-card p-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-[var(--fg-muted)] text-sm mb-1">Upcoming Events</p>
+                <p class="font-display text-3xl font-bold">6</p>
+                <p class="text-[var(--info)] text-sm mt-2">Next: Career Fair</p>
+              </div>
+              <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="card stat-card p-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-[var(--fg-muted)] text-sm mb-1">Engagement Rate</p>
+                <p class="font-display text-3xl font-bold">73%</p>
+                <p class="text-[var(--success)] text-sm mt-2 flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                  </svg>
+                  +5% vs last quarter
+                </p>
+              </div>
+              <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity Feed & Quick Actions -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2">
+            <div class="card p-6">
+              <h3 class="font-display font-semibold text-lg mb-4">Recent Activity</h3>
+              <div class="space-y-4" id="activity-feed">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card p-6">
+              <h3 class="font-display font-semibold text-lg mb-4">Quick Actions</h3>
+              <div class="space-y-3">
+                <button class="btn-primary w-full flex items-center justify-center gap-2" onclick="showPage('constituents')">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                  </svg>
+                  Add Constituent
+                </button>
+                <button class="btn-secondary w-full flex items-center justify-center gap-2" onclick="showPage('events')">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                  Create Event
+                </button>
+                <button class="btn-secondary w-full flex items-center justify-center gap-2" onclick="showPage('reports')">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  Generate Report
+                </button>
+              </div>
+            </div>
+
+            <div class="card p-6 mt-4">
+              <h3 class="font-display font-semibold text-lg mb-4">Upcoming Events</h3>
+              <div class="space-y-3" id="upcoming-events-mini">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Constituents List Page -->
+      <div id="page-constituents" class="page">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <h2 class="font-display text-2xl md:text-3xl font-bold mb-1">Constituents</h2>
+            <p class="text-[var(--fg-secondary)]">Manage and view all constituent records</p>
+          </div>
+          <button class="btn-primary flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+            Add Constituent
+          </button>
+        </div>
+
+        <!-- Search & Filter -->
+        <div class="card p-4 mb-6">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="flex-1 relative">
+              <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-[var(--fg-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <input type="text" id="constituent-search" class="search-input" placeholder="Search by name, email, or organization...">
+            </div>
+            <select id="role-filter" class="filter-select min-w-[150px]">
+              <option value="">All Roles</option>
+              <option value="Alumni">Alumni</option>
+              <option value="Student">Student</option>
+              <option value="Faculty">Faculty</option>
+              <option value="Sponsor">Sponsor</option>
+            </select>
+            <select id="org-filter" class="filter-select min-w-[150px]">
+              <option value="">All Organizations</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Constituents Table -->
+        <div class="card overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-[var(--border)]">
+                  <th class="text-left p-4 text-[var(--fg-muted)] font-medium text-sm">Name</th>
+                  <th class="text-left p-4 text-[var(--fg-muted)] font-medium text-sm">Organization</th>
+                  <th class="text-left p-4 text-[var(--fg-muted)] font-medium text-sm">Role</th>
+                  <th class="text-left p-4 text-[var(--fg-muted)] font-medium text-sm hidden md:table-cell">Email</th>
+                  <th class="text-left p-4 text-[var(--fg-muted)] font-medium text-sm hidden lg:table-cell">Last Interaction</th>
+                </tr>
+              </thead>
+              <tbody id="constituents-table">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Constituent Profile Page -->
+      <div id="page-profile" class="page">
+        <button onclick="showPage('constituents')" class="flex items-center gap-2 text-[var(--fg-secondary)] hover:text-[var(--fg-primary)] mb-6 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to Constituents
+        </button>
+
+        <div id="profile-content">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Organizations Page -->
+      <div id="page-organizations" class="page">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <h2 class="font-display text-2xl md:text-3xl font-bold mb-1">Organizations</h2>
+            <p class="text-[var(--fg-secondary)]">Partner companies and institutions</p>
+          </div>
+          <button class="btn-primary flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+            Add Organization
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="organizations-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Events Page -->
+      <div id="page-events" class="page">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <h2 class="font-display text-2xl md:text-3xl font-bold mb-1">Events</h2>
+            <p class="text-[var(--fg-secondary)]">Manage university events and track attendance</p>
+          </div>
+          <button class="btn-primary flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+            Create Event
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="events-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Relationships Page -->
+      <div id="page-relationships" class="page">
+        <div class="mb-6">
+          <h2 class="font-display text-2xl md:text-3xl font-bold mb-1">Relationship Mapping</h2>
+          <p class="text-[var(--fg-secondary)]">Visualize connections between constituents and organizations</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="card p-6">
+            <h3 class="font-display font-semibold text-lg mb-4">Organization Connections</h3>
+            <div id="relationship-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <div class="card p-6">
+            <h3 class="font-display font-semibold text-lg mb-4">Top Connected Organizations</h3>
+            <div id="top-organizations">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reports Page -->
+      <div id="page-reports" class="page">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <h2 class="font-display text-2xl md:text-3xl font-bold mb-1">Reports & Analytics</h2>
+            <p class="text-[var(--fg-secondary)]">Track engagement metrics and growth trends</p>
+          </div>
+          <div class="flex gap-3">
+            <select id="report-period" class="filter-select">
+              <option value="year">This Year</option>
+              <option value="quarter">This Quarter</option>
+              <option value="month">This Month</option>
+            </select>
+            <button class="btn-secondary flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              Export
+            </button>
+          </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="metric-card card p-5 border-0">
+            <p class="text-[var(--fg-muted)] text-sm mb-1">Avg Event Attendance</p>
+            <p class="font-display text-2xl font-bold text-[var(--accent)]">156</p>
+            <p class="text-xs text-[var(--success)] mt-1">+23% vs last year</p>
+          </div>
+          <div class="metric-card card p-5 border-0">
+            <p class="text-[var(--fg-muted)] text-sm mb-1">New Constituents</p>
+            <p class="font-display text-2xl font-bold text-blue-400">1,247</p>
+            <p class="text-xs text-[var(--success)] mt-1">+18% vs last year</p>
+          </div>
+          <div class="metric-card card p-5 border-0">
+            <p class="text-[var(--fg-muted)] text-sm mb-1">Active Partners</p>
+            <p class="font-display text-2xl font-bold text-green-400">89</p>
+            <p class="text-xs text-[var(--success)] mt-1">+12 new this year</p>
+          </div>
+          <div class="metric-card card p-5 border-0">
+            <p class="text-[var(--fg-muted)] text-sm mb-1">Event Satisfaction</p>
+            <p class="font-display text-2xl font-bold text-purple-400">4.7</p>
+            <p class="text-xs text-[var(--fg-secondary)] mt-1">out of 5.0</p>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <!-- Event Attendance Chart -->
+          <div class="card p-6">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="font-display font-semibold text-lg">Event Attendance</h3>
+                <p class="text-sm text-[var(--fg-muted)]">Attendance by event type</p>
+              </div>
+            </div>
+            <div class="chart-container" id="attendance-chart-container">
+              <canvas id="attendanceChart" width="400" height="250"></canvas>
+              <div class="chart-tooltip" id="attendance-tooltip"></div>
+            </div>
+          </div>
+
+          <!-- Constituent Growth Chart -->
+          <div class="card p-6">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="font-display font-semibold text-lg">Constituent Growth</h3>
+                <p class="text-sm text-[var(--fg-muted)]">Monthly growth trend</p>
+              </div>
+            </div>
+            <div class="chart-container" id="growth-chart-container">
+              <canvas id="growthChart" width="400" height="250"></canvas>
+              <div class="chart-tooltip" id="growth-tooltip"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Role Distribution & Event Performance -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Role Distribution -->
+          <div class="card p-6">
+            <h3 class="font-display font-semibold text-lg mb-6">Constituent Distribution</h3>
+            <div class="space-y-4" id="role-distribution">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Top Events -->
+          <div class="card p-6">
+            <h3 class="font-display font-semibold text-lg mb-6">Top Performing Events</h3>
+            <div class="space-y-3" id="top-events-report">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Mock Data
+    const constituents = [
+      { id: 1, name: "John Smith", organization: "Google", role: "Alumni", email: "john.smith@google.com", phone: "(555) 123-4567", lastInteraction: "2024-01-15", tags: ["Alumni", "Mentor"] },
+      { id: 2, name: "Sarah Johnson", organization: "Lockheed Martin", role: "Sponsor", email: "sarah.j@lockheed.com", phone: "(555) 234-5678", lastInteraction: "2024-01-14", tags: ["Sponsor", "Alumni"] },
+      { id: 3, name: "Michael Chen", organization: "Microsoft", role: "Alumni", email: "m.chen@microsoft.com", phone: "(555) 345-6789", lastInteraction: "2024-01-13", tags: ["Alumni", "Mentor"] },
+      { id: 4, name: "Emily Davis", organization: "Local Startup Inc.", role: "Student", email: "emily.d@startup.com", phone: "(555) 456-7890", lastInteraction: "2024-01-12", tags: ["Student", "Intern"] },
+      { id: 5, name: "Robert Wilson", organization: "Amazon", role: "Alumni", email: "r.wilson@amazon.com", phone: "(555) 567-8901", lastInteraction: "2024-01-11", tags: ["Alumni", "Sponsor"] },
+      { id: 6, name: "Jennifer Lee", organization: "TechCorp", role: "Faculty", email: "j.lee@techcorp.com", phone: "(555) 678-9012", lastInteraction: "2024-01-10", tags: ["Faculty", "Mentor"] },
+      { id: 7, name: "David Brown", organization: "Apple", role: "Alumni", email: "d.brown@apple.com", phone: "(555) 789-0123", lastInteraction: "2024-01-09", tags: ["Alumni"] },
+      { id: 8, name: "Amanda Martinez", organization: "Meta", role: "Alumni", email: "a.martinez@meta.com", phone: "(555) 890-1234", lastInteraction: "2024-01-08", tags: ["Alumni", "Sponsor"] },
+      { id: 9, name: "Christopher Taylor", organization: "NVIDIA", role: "Sponsor", email: "c.taylor@nvidia.com", phone: "(555) 901-2345", lastInteraction: "2024-01-07", tags: ["Sponsor"] },
+      { id: 10, name: "Jessica Anderson", organization: "Tesla", role: "Alumni", email: "j.anderson@tesla.com", phone: "(555) 012-3456", lastInteraction: "2024-01-06", tags: ["Alumni", "Mentor"] }
+    ];
+
+    const organizations = [
+      { id: 1, name: "Google", type: "Technology", members: 45, logo: "G" },
+      { id: 2, name: "Lockheed Martin", type: "Defense", members: 32, logo: "LM" },
+      { id: 3, name: "Microsoft", type: "Technology", members: 58, logo: "MS" },
+      { id: 4, name: "Local Startup Inc.", type: "Startup", members: 12, logo: "LS" },
+      { id: 5, name: "Amazon", type: "Technology", members: 67, logo: "AM" },
+      { id: 6, name: "TechCorp", type: "Consulting", members: 23, logo: "TC" },
+      { id: 7, name: "Apple", type: "Technology", members: 41, logo: "AP" },
+      { id: 8, name: "Meta", type: "Technology", members: 38, logo: "FB" },
+      { id: 9, name: "NVIDIA", type: "Technology", members: 29, logo: "NV" },
+      { id: 10, name: "Tesla", type: "Automotive", members: 35, logo: "TS" }
+    ];
+
+    const events = [
+      { id: 1, name: "Career Fair 2024", date: "2024-02-15", attendees: 450, status: "upcoming", location: "Main Campus", type: "Career" },
+      { id: 2, name: "Capstone Showcase", date: "2024-03-01", attendees: 120, status: "upcoming", location: "Engineering Hall", type: "Academic" },
+      { id: 3, name: "Company Day - Google", date: "2024-02-20", attendees: 85, status: "upcoming", location: "Business Center", type: "Networking" },
+      { id: 4, name: "Alumni Networking Night", date: "2024-01-20", attendees: 200, status: "completed", location: "Grand Hall", type: "Networking" },
+      { id: 5, name: "Tech Talk Series", date: "2024-02-25", attendees: 75, status: "upcoming", location: "Auditorium B", type: "Workshop" },
+      { id: 6, name: "Mentorship Kickoff", date: "2024-02-10", attendees: 60, status: "ongoing", location: "Student Center", type: "Mentorship" }
+    ];
+
+    const activities = [
+      { id: 1, type: "attendance", constituent: "John Smith", event: "Career Fair", time: "2 hours ago" },
+      { id: 2, type: "interaction", constituent: "Sarah Johnson", action: "scheduled meeting", time: "4 hours ago" },
+      { id: 3, type: "update", constituent: "Michael Chen", action: "updated profile", time: "6 hours ago" },
+      { id: 4, type: "attendance", constituent: "Emily Davis", event: "Tech Talk Series", time: "Yesterday" },
+      { id: 5, type: "interaction", constituent: "Robert Wilson", action: "completed survey", time: "Yesterday" }
+    ];
+
+    const interactionHistory = [
+      { date: "2024-01-15", type: "Event", description: "Attended Career Fair 2024" },
+      { date: "2024-01-10", type: "Email", description: "Responded to alumni survey" },
+      { date: "2023-12-20", type: "Meeting", description: "Mentorship session with students" },
+      { date: "2023-11-15", type: "Event", description: "Attended Alumni Networking Night" },
+      { date: "2023-10-05", type: "Call", description: "Discussion about internship program" }
+    ];
+
+    // Chart Data
+    const attendanceData = [
+      { label: "Career", value: 450, color: "#f59e0b" },
+      { label: "Networking", value: 285, color: "#3b82f6" },
+      { label: "Academic", value: 120, color: "#22c55e" },
+      { label: "Workshop", value: 75, color: "#a855f7" },
+      { label: "Mentorship", value: 60, color: "#ec4899" }
+    ];
+
+    const growthData = [
+      { month: "Jan", value: 18200 },
+      { month: "Feb", value: 18650 },
+      { month: "Mar", value: 19100 },
+      { month: "Apr", value: 19400 },
+      { month: "May", value: 19850 },
+      { month: "Jun", value: 20100 },
+      { month: "Jul", value: 20350 },
+      { month: "Aug", value: 20580 },
+      { month: "Sep", value: 20720 },
+      { month: "Oct", value: 20900 },
+      { month: "Nov", value: 20200 },
+      { month: "Dec", value: 20482 }
+    ];
+
+    const roleDistribution = [
+      { role: "Alumni", count: 12450, percentage: 61, color: "#3b82f6" },
+      { role: "Student", count: 5120, percentage: 25, color: "#22c55e" },
+      { role: "Faculty", count: 1843, percentage: 9, color: "#a855f7" },
+      { role: "Sponsor", count: 1069, percentage: 5, color: "#f59e0b" }
+    ];
+
+    // DOM Elements
+    const navItems = document.querySelectorAll('.nav-item');
+    const pages = document.querySelectorAll('.page');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderActivityFeed();
+      renderUpcomingEventsMini();
+      renderConstituentsTable();
+      renderOrganizationsGrid();
+      renderEventsGrid();
+      renderRelationships();
+      renderRoleDistribution();
+      renderTopEventsReport();
+      populateOrgFilter();
+      setupSearchAndFilter();
+    });
+
+    // Navigation
+    function showPage(pageId) {
+      pages.forEach(page => page.classList.remove('active'));
+      navItems.forEach(item => item.classList.remove('active'));
+      
+      const targetPage = document.getElementById(`page-${pageId}`);
+      if (targetPage) {
+        targetPage.classList.add('active');
+      }
+      
+      const targetNav = document.querySelector(`[data-page="${pageId}"]`);
+      if (targetNav) {
+        targetNav.classList.add('active');
+      }
+
+      // Close mobile menu
+      sidebar.classList.remove('open');
+      mobileOverlay.classList.remove('active');
+
+      // Render charts when reports page is shown
+      if (pageId === 'reports') {
+        setTimeout(() => {
+          renderAttendanceChart();
+          renderGrowthChart();
+        }, 100);
+      }
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const pageId = item.dataset.page;
+        showPage(pageId);
+      });
+    });
+
+    // Mobile menu
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        mobileOverlay.classList.toggle('active');
+      });
+    }
+
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        mobileOverlay.classList.remove('active');
+      });
+    }
+
+    // Chart Rendering
+    function renderAttendanceChart() {
+      const canvas = document.getElementById('attendanceChart');
+      if (!canvas) return;
+      
+      const ctx = canvas.getContext('2d');
+      const container = document.getElementById('attendance-chart-container');
+      const tooltip = document.getElementById('attendance-tooltip');
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const padding = { top: 20, right: 20, bottom: 40, left: 50 };
+      const chartWidth = canvas.width - padding.left - padding.right;
+      const chartHeight = canvas.height - padding.top - padding.bottom;
+      
+      const maxValue = Math.max(...attendanceData.map(d => d.value));
+      const barWidth = chartWidth / attendanceData.length - 20;
+      
+      // Draw grid lines
+      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 4; i++) {
+        const y = padding.top + (chartHeight / 4) * i;
+        ctx.beginPath();
+        ctx.moveTo(padding.left, y);
+        ctx.lineTo(canvas.width - padding.right, y);
+        ctx.stroke();
+        
+        // Y-axis labels
+        ctx.fillStyle = '#64748b';
+        ctx.font = '11px DM Sans';
+        ctx.textAlign = 'right';
+        const labelValue = Math.round(maxValue - (maxValue / 4) * i);
+        ctx.fillText(labelValue.toString(), padding.left - 10, y + 4);
+      }
+      
+      // Draw bars
+      attendanceData.forEach((d, i) => {
+        const barHeight = Math.max(1, (d.value / maxValue) * chartHeight);
+        const x = padding.left + (chartWidth / attendanceData.length) * i + 10;
+        const y = padding.top + chartHeight - barHeight;
+        
+        // Bar gradient
+        const gradient = ctx.createLinearGradient(x, y + barHeight, x, y);
+        gradient.addColorStop(0, d.color);
+        gradient.addColorStop(1, d.color + '99');
+        
+        ctx.fillStyle = gradient;
+        
+        // Rounded top corners
+        const radius = 4;
+        ctx.beginPath();
+        ctx.moveTo(x, y + barHeight);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.lineTo(x + barWidth - radius, y);
+        ctx.quadraticCurveTo(x + barWidth, y, x + barWidth, y + radius);
+        ctx.lineTo(x + barWidth, y + barHeight);
+        ctx.closePath();
+        ctx.fill();
+        
+        // X-axis labels
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '12px DM Sans';
+        ctx.textAlign = 'center';
+        ctx.fillText(d.label, x + barWidth / 2, canvas.height - 15);
+      });
+
+      // Hover interaction
+      canvas.onmousemove = (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        let hoveredBar = null;
+        attendanceData.forEach((d, i) => {
+          const barX = padding.left + (chartWidth / attendanceData.length) * i + 10;
+          const barHeight = Math.max(1, (d.value / maxValue) * chartHeight);
+          const barY = padding.top + chartHeight - barHeight;
+          
+          if (x >= barX && x <= barX + barWidth && y >= barY && y <= barY + barHeight) {
+            hoveredBar = { data: d, x: barX + barWidth / 2, y: barY };
+          }
+        });
+        
+        if (hoveredBar) {
+          tooltip.innerHTML = `<strong>${hoveredBar.data.label}</strong><br>${hoveredBar.data.value} attendees`;
+          tooltip.style.left = `${hoveredBar.x}px`;
+          tooltip.style.top = `${hoveredBar.y - 50}px`;
+          tooltip.classList.add('visible');
+        } else {
+          tooltip.classList.remove('visible');
+        }
+      };
+
+      canvas.onmouseleave = () => {
+        tooltip.classList.remove('visible');
+      };
+    }
+
+    function renderGrowthChart() {
+      const canvas = document.getElementById('growthChart');
+      if (!canvas) return;
+      
+      const ctx = canvas.getContext('2d');
+      const tooltip = document.getElementById('growth-tooltip');
+      
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const padding = { top: 20, right: 20, bottom: 40, left: 55 };
+      const chartWidth = canvas.width - padding.left - padding.right;
+      const chartHeight = canvas.height - padding.top - padding.bottom;
+      
+      const maxValue = Math.max(...growthData.map(d => d.value));
+      const minValue = Math.min(...growthData.map(d => d.value));
+      const valueRange = maxValue - minValue;
+      
+      // Draw grid lines
+      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 4; i++) {
+        const y = padding.top + (chartHeight / 4) * i;
+        ctx.beginPath();
+        ctx.moveTo(padding.left, y);
+        ctx.lineTo(canvas.width - padding.right, y);
+        ctx.stroke();
+        
+        ctx.fillStyle = '#64748b';
+        ctx.font = '11px DM Sans';
+        ctx.textAlign = 'right';
+        const labelValue = Math.round(maxValue - (valueRange / 4) * i);
+        ctx.fillText(labelValue.toLocaleString(), padding.left - 10, y + 4);
+      }
+      
+      // Calculate points
+      const points = growthData.map((d, i) => ({
+        x: padding.left + (chartWidth / (growthData.length - 1)) * i,
+        y: padding.top + chartHeight - ((d.value - minValue) / valueRange) * chartHeight,
+        data: d
+      }));
+      
+      // Draw area fill
+      const gradient = ctx.createLinearGradient(0, padding.top, 0, padding.top + chartHeight);
+      gradient.addColorStop(0, 'rgba(59, 130, 246, 0.3)');
+      gradient.addColorStop(1, 'rgba(59, 130, 246, 0.02)');
+      
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, padding.top + chartHeight);
+      points.forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.lineTo(points[points.length - 1].x, padding.top + chartHeight);
+      ctx.closePath();
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      
+      // Draw line
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, points[0].y);
+      points.forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.strokeStyle = '#3b82f6';
+      ctx.lineWidth = 2.5;
+      ctx.stroke();
+      
+      // Draw points
+      points.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+        ctx.fillStyle = '#0f1419';
+        ctx.fill();
+        ctx.strokeStyle = '#3b82f6';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      });
+      
+      // X-axis labels (every other month)
+      growthData.forEach((d, i) => {
+        if (i % 2 === 0) {
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '11px DM Sans';
+          ctx.textAlign = 'center';
+          ctx.fillText(d.month, padding.left + (chartWidth / (growthData.length - 1)) * i, canvas.height - 15);
+        }
+      });
+
+      // Hover interaction
+      canvas.onmousemove = (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        let hoveredPoint = null;
+        points.forEach(p => {
+          const dist = Math.sqrt(Math.pow(x - p.x, 2) + Math.pow(y - p.y, 2));
+          if (dist < 15) {
+            hoveredPoint = p;
+          }
+        });
+        
+        if (hoveredPoint) {
+          tooltip.innerHTML = `<strong>${hoveredPoint.data.month}</strong><br>${hoveredPoint.data.value.toLocaleString()} constituents`;
+          tooltip.style.left = `${hoveredPoint.x}px`;
+          tooltip.style.top = `${hoveredPoint.y - 50}px`;
+          tooltip.classList.add('visible');
+        } else {
+          tooltip.classList.remove('visible');
+        }
+      };
+
+      canvas.onmouseleave = () => {
+        tooltip.classList.remove('visible');
+      };
+    }
+
+    // Render Functions
+    function renderActivityFeed() {
+      const container = document.getElementById('activity-feed');
+      if (!container) return;
+      
+      container.innerHTML = activities.map(activity => `
+        <div class="flex items-start gap-4 p-3 rounded-lg hover:bg-[var(--bg-elevated)] transition-colors">
+          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center flex-shrink-0">
+            ${activity.type === 'attendance' ? `
+              <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            ` : activity.type === 'interaction' ? `
+              <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            ` : `
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+              </svg>
+            `}
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm">
+              <span class="font-medium">${activity.constituent}</span>
+              ${activity.type === 'attendance' ? ` attended <span class="text-[var(--accent)]">${activity.event}</span>` : ` ${activity.action}`}
+            </p>
+            <p class="text-xs text-[var(--fg-muted)] mt-1">${activity.time}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderUpcomingEventsMini() {
+      const container = document.getElementById('upcoming-events-mini');
+      if (!container) return;
+      
+      const upcoming = events.filter(e => e.status !== 'completed').slice(0, 3);
+      container.innerHTML = upcoming.map(event => `
+        <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--bg-elevated)] transition-colors cursor-pointer" onclick="showPage('events')">
+          <div class="w-2 h-2 rounded-full bg-[var(--accent)]"></div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium truncate">${event.name}</p>
+            <p class="text-xs text-[var(--fg-muted)]">${formatDate(event.date)}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderConstituentsTable(filteredData = null) {
+      const container = document.getElementById('constituents-table');
+      if (!container) return;
+      
+      const data = filteredData || constituents;
+      container.innerHTML = data.map(c => `
+        <tr class="table-row border-b border-[var(--border)]" onclick="showProfile(${c.id})">
+          <td class="p-4">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center text-sm font-semibold text-[var(--accent)]">
+                ${c.name.split(' ').map(n => n[0]).join('')}
+              </div>
+              <span class="font-medium">${c.name}</span>
+            </div>
+          </td>
+          <td class="p-4 text-[var(--fg-secondary)]">${c.organization}</td>
+          <td class="p-4">
+            <span class="tag tag-${c.role.toLowerCase()}">${c.role}</span>
+          </td>
+          <td class="p-4 text-[var(--fg-secondary)] hidden md:table-cell">${c.email}</td>
+          <td class="p-4 text-[var(--fg-muted)] hidden lg:table-cell">${formatDate(c.lastInteraction)}</td>
+        </tr>
+      `).join('');
+    }
+
+    function showProfile(id) {
+      const constituent = constituents.find(c => c.id === id);
+      if (!constituent) return;
+
+      const container = document.getElementById('profile-content');
+      container.innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-1">
+            <div class="card p-6">
+              <div class="text-center mb-6">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
+                  ${constituent.name.split(' ').map(n => n[0]).join('')}
+                </div>
+                <h2 class="font-display text-xl font-bold">${constituent.name}</h2>
+                <p class="text-[var(--fg-secondary)]">${constituent.role} at ${constituent.organization}</p>
+              </div>
+              
+              <div class="space-y-3 mb-6">
+                <div class="flex items-center gap-3 text-sm">
+                  <svg class="w-4 h-4 text-[var(--fg-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                  <span class="text-[var(--fg-secondary)]">${constituent.email}</span>
+                </div>
+                <div class="flex items-center gap-3 text-sm">
+                  <svg class="w-4 h-4 text-[var(--fg-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                  <span class="text-[var(--fg-secondary)]">${constituent.phone}</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                ${constituent.tags.map(tag => `
+                  <span class="tag tag-${tag.toLowerCase()}">${tag}</span>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="card p-6 mt-4">
+              <h3 class="font-display font-semibold mb-4">Quick Actions</h3>
+              <div class="space-y-2">
+                <button class="btn-secondary w-full text-sm">Send Email</button>
+                <button class="btn-secondary w-full text-sm">Schedule Meeting</button>
+                <button class="btn-secondary w-full text-sm">Add Note</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2 space-y-6">
+            <div class="card p-6">
+              <h3 class="font-display font-semibold text-lg mb-4">Interaction History</h3>
+              <div class="pl-2">
+                ${interactionHistory.map(interaction => `
+                  <div class="timeline-item">
+                    <div class="flex items-start justify-between">
+                      <div>
+                        <p class="font-medium">${interaction.description}</p>
+                        <p class="text-sm text-[var(--fg-muted)]">${interaction.type}</p>
+                      </div>
+                      <span class="text-sm text-[var(--fg-muted)]">${formatDate(interaction.date)}</span>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="card p-6">
+              <h3 class="font-display font-semibold text-lg mb-4">Events Attended</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                ${events.slice(0, 4).map(event => `
+                  <div class="p-4 bg-[var(--bg-elevated)] rounded-lg">
+                    <p class="font-medium">${event.name}</p>
+                    <p class="text-sm text-[var(--fg-muted)]">${formatDate(event.date)}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      showPage('profile');
+    }
+
+    function renderOrganizationsGrid() {
+      const container = document.getElementById('organizations-grid');
+      if (!container) return;
+      
+      container.innerHTML = organizations.map(org => {
+        const members = constituents.filter(c => c.organization === org.name);
+        return `
+          <div class="card p-6 cursor-pointer" onclick="filterByOrganization('${org.name}')">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center font-display font-bold text-[var(--accent)]">
+                ${org.logo}
+              </div>
+              <div class="flex-1">
+                <h3 class="font-display font-semibold">${org.name}</h3>
+                <p class="text-sm text-[var(--fg-muted)]">${org.type}</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-[var(--fg-secondary)]">${org.members} members</span>
+              <div class="flex -space-x-2">
+                ${members.slice(0, 3).map(m => `
+                  <div class="w-6 h-6 rounded-full bg-[var(--bg-elevated)] border-2 border-[var(--bg-card)] flex items-center justify-center text-xs">
+                    ${m.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                `).join('')}
+                ${members.length > 3 ? `
+                  <div class="w-6 h-6 rounded-full bg-[var(--bg-elevated)] border-2 border-[var(--bg-card)] flex items-center justify-center text-xs">
+                    +${members.length - 3}
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderEventsGrid() {
+      const container = document.getElementById('events-grid');
+      if (!container) return;
+      
+      container.innerHTML = events.map(event => `
+        <div class="card p-6">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h3 class="font-display font-semibold">${event.name}</h3>
+              <p class="text-sm text-[var(--fg-muted)]">${event.location}</p>
+            </div>
+            <span class="status-badge status-${event.status}">${event.status}</span>
+          </div>
+          <div class="flex items-center gap-4 text-sm text-[var(--fg-secondary)]">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              ${formatDate(event.date)}
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              ${event.attendees} attendees
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-[var(--border)]">
+            <button class="btn-secondary w-full text-sm">View Details</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderRelationships() {
+      const listContainer = document.getElementById('relationship-list');
+      const topContainer = document.getElementById('top-organizations');
+      
+      if (listContainer) {
+        listContainer.innerHTML = organizations.slice(0, 5).map(org => {
+          const members = constituents.filter(c => c.organization === org.name);
+          return `
+            <div class="mb-4 last:mb-0">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-medium">${org.name}</span>
+                <span class="text-sm text-[var(--fg-muted)]">${members.length} connections</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                ${members.map(m => `
+                  <span class="text-xs px-2 py-1 bg-[var(--bg-elevated)] rounded cursor-pointer hover:bg-[var(--accent-soft)] transition-colors" onclick="showProfile(${m.id})">
+                    ${m.name}
+                  </span>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      if (topContainer) {
+        const sortedOrgs = [...organizations].sort((a, b) => b.members - a.members).slice(0, 5);
+        topContainer.innerHTML = sortedOrgs.map((org, index) => `
+          <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-[var(--bg-elevated)] transition-colors">
+            <div class="w-8 h-8 rounded-full bg-[var(--accent-soft)] flex items-center justify-center font-display font-bold text-[var(--accent)]">
+              ${index + 1}
+            </div>
+            <div class="flex-1">
+              <p class="font-medium">${org.name}</p>
+              <p class="text-sm text-[var(--fg-muted)]">${org.members} constituents</p>
+            </div>
+            <div class="w-24 h-2 bg-[var(--bg-elevated)] rounded-full overflow-hidden">
+              <div class="h-full bg-[var(--accent)] rounded-full" style="width: ${(org.members / 70) * 100}%"></div>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function renderRoleDistribution() {
+      const container = document.getElementById('role-distribution');
+      if (!container) return;
+      
+      container.innerHTML = roleDistribution.map(r => `
+        <div class="flex items-center gap-4">
+          <div class="w-3 h-3 rounded-full" style="background-color: ${r.color}"></div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-sm font-medium">${r.role}</span>
+              <span class="text-sm text-[var(--fg-muted)]">${r.count.toLocaleString()}</span>
+            </div>
+            <div class="h-2 bg-[var(--bg-elevated)] rounded-full overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-500" style="width: ${r.percentage}%; background-color: ${r.color}"></div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderTopEventsReport() {
+      const container = document.getElementById('top-events-report');
+      if (!container) return;
+      
+      const sortedEvents = [...events].sort((a, b) => b.attendees - a.attendees).slice(0, 5);
+      container.innerHTML = sortedEvents.map((event, index) => `
+        <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-[var(--bg-elevated)] transition-colors">
+          <div class="w-8 h-8 rounded-lg bg-[var(--bg-elevated)] flex items-center justify-center font-display font-bold text-sm text-[var(--accent)]">
+            ${index + 1}
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-medium truncate">${event.name}</p>
+            <p class="text-sm text-[var(--fg-muted)]">${formatDate(event.date)}</p>
+          </div>
+          <div class="text-right">
+            <p class="font-display font-semibold text-[var(--accent)]">${event.attendees}</p>
+            <p class="text-xs text-[var(--fg-muted)]">attendees</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Search and Filter
+    function populateOrgFilter() {
+      const filter = document.getElementById('org-filter');
+      if (!filter) return;
+      
+      const uniqueOrgs = [...new Set(constituents.map(c => c.organization))];
+      uniqueOrgs.forEach(org => {
+        const option = document.createElement('option');
+        option.value = org;
+        option.textContent = org;
+        filter.appendChild(option);
+      });
+    }
+
+    function setupSearchAndFilter() {
+      const searchInput = document.getElementById('constituent-search');
+      const roleFilter = document.getElementById('role-filter');
+      const orgFilter = document.getElementById('org-filter');
+
+      const applyFilters = () => {
+        const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        const roleValue = roleFilter ? roleFilter.value : '';
+        const orgValue = orgFilter ? orgFilter.value : '';
+
+        const filtered = constituents.filter(c => {
+          const matchesSearch = !searchTerm || 
+            c.name.toLowerCase().includes(searchTerm) ||
+            c.email.toLowerCase().includes(searchTerm) ||
+            c.organization.toLowerCase().includes(searchTerm);
+          const matchesRole = !roleValue || c.role === roleValue;
+          const matchesOrg = !orgValue || c.organization === orgValue;
+          return matchesSearch && matchesRole && matchesOrg;
+        });
+
+        renderConstituentsTable(filtered);
+      };
+
+      if (searchInput) searchInput.addEventListener('input', applyFilters);
+      if (roleFilter) roleFilter.addEventListener('change', applyFilters);
+      if (orgFilter) orgFilter.addEventListener('change', applyFilters);
+    }
+
+    function filterByOrganization(orgName) {
+      showPage('constituents');
+      const orgFilter = document.getElementById('org-filter');
+      if (orgFilter) {
+        orgFilter.value = orgName;
+        orgFilter.dispatchEvent(new Event('change'));
+      }
+    }
+
+    // Utility Functions
+    function formatDate(dateStr) {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+  </script>
+</body>
+</html>
